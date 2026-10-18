@@ -1,0 +1,88 @@
+{
+  "E1": {
+    "baseline": {
+      "verdicts": [
+        "pass",
+        "fail",
+        "pass",
+        "pass",
+        "fail"
+      ],
+      "pass_rate": 0.6,
+      "completed": 5,
+      "errors": 0,
+      "avg_distinct_papers": 3.0,
+      "sub_queries": []
+    },
+    "both": {
+      "verdicts": [
+        "pass",
+        "pass",
+        "pass",
+        "pass",
+        "fail"
+      ],
+      "pass_rate": 0.8,
+      "completed": 5,
+      "errors": 0,
+      "avg_distinct_papers": 4.0,
+      "sub_queries": [
+        [
+          "storyboard programming definition and core principles in programming languages research",
+          "how storyboard programming represents and composes data structure manipulations",
+          "mechanisms used by storyboard programming to synthesize data structure updates or transformations",
+          "examples or case studies of storyboard programming applied to data structure manipulation synthesis"
+        ],
+        [
+          "storyboard programming definition and core concepts in program synthesis",
+          "storyboard programming mechanism for synthesizing data structure manipulations from examples or specifications",
+          "relationship between storyboard programming and synthesis of imperative heap-manipulating programs",
+          "algorithms, representations, and constraints used by storyboard programming to infer data structure operations"
+        ]
+      ]
+    }
+  },
+  "E4": {
+    "baseline": {
+      "verdicts": [
+        "pass",
+        "pass",
+        "fail",
+        "pass",
+        "fail"
+      ],
+      "pass_rate": 0.6,
+      "completed": 5,
+      "errors": 0,
+      "avg_distinct_papers": 4.0,
+      "sub_queries": []
+    },
+    "both": {
+      "verdicts": [
+        "pass",
+        "pass",
+        "pass",
+        "fail",
+        "fail"
+      ],
+      "pass_rate": 0.6,
+      "completed": 5,
+      "errors": 0,
+      "avg_distinct_papers": 5.0,
+      "sub_queries": [
+        [
+          "learning reusable libraries of program abstractions in program synthesis and inductive programming",
+          "automatic discovery or mining of reusable code abstractions, components, or libraries from program corpora",
+          "neural or probabilistic approaches to inducing program abstractions, DSL primitives, or library elements",
+          "comparative characteristics of abstraction-learning methods: representation, learning objective, supervision signal, and reuse mechanism"
+        ],
+        [
+          "learning reusable libraries of program abstractions in program synthesis and inductive programming",
+          "library learning methods for discovering abstractions, macros, or primitives from program corpora",
+          "comparative analysis of approaches to abstraction discovery, including probabilistic, grammar-based, and neural methods",
+          "how learned libraries differ in representation, learning objective, and reuse across tasks"
+        ]
+      ]
+    }
+  }
+}

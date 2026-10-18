@@ -1,0 +1,172 @@
+{
+  "when": "2026-10-12T18:28:50",
+  "cost": {
+    "model": "openai/gpt-5.4-mini",
+    "baseline": {
+      "total_tokens": 12924,
+      "n_tasks": 5,
+      "planner_share": 0.62,
+      "input_output_ratio": 7.6
+    },
+    "rows": [
+      {
+        "task": "T1",
+        "path": "agent",
+        "reason": "comparison across systems needs more than one query",
+        "tokens": 3327,
+        "input": 2936,
+        "output": 391,
+        "planner_tokens": 1716,
+        "by_role": {
+          "planner": {
+            "input": 1601,
+            "output": 115,
+            "calls": 2
+          },
+          "answerer": {
+            "input": 1335,
+            "output": 276,
+            "calls": 1
+          }
+        },
+        "ms": 397808.25890018605,
+        "llm_calls": 3,
+        "steps": 2
+      },
+      {
+        "task": "T2",
+        "path": "agent",
+        "reason": "lineage/citation traversal needs the graph tools",
+        "tokens": 2856,
+        "input": 2521,
+        "output": 335,
+        "planner_tokens": 1625,
+        "by_role": {
+          "planner": {
+            "input": 1513,
+            "output": 112,
+            "calls": 2
+          },
+          "answerer": {
+            "input": 1008,
+            "output": 223,
+            "calls": 1
+          }
+        },
+        "ms": 3840.656999964267,
+        "llm_calls": 3,
+        "steps": 2
+      },
+      {
+        "task": "T3",
+        "path": "agent",
+        "reason": "scope is vague; only the agent path can ask for clarification",
+        "tokens": 3649,
+        "input": 2958,
+        "output": 691,
+        "planner_tokens": 1835,
+        "by_role": {
+          "planner": {
+            "input": 1713,
+            "output": 122,
+            "calls": 2
+          },
+          "decomposer": {
+            "input": 116,
+            "output": 94,
+            "calls": 1
+          },
+          "answerer": {
+            "input": 1129,
+            "output": 475,
+            "calls": 1
+          }
+        },
+        "ms": 9012.709700036794,
+        "llm_calls": 4,
+        "steps": 2
+      },
+      {
+        "task": "T4",
+        "path": "direct",
+        "reason": "single-fact or definitional lookup",
+        "tokens": 1376,
+        "input": 1225,
+        "output": 151,
+        "planner_tokens": 0,
+        "by_role": {
+          "answerer": {
+            "input": 1225,
+            "output": 151,
+            "calls": 1
+          }
+        },
+        "ms": 2428.853000048548,
+        "llm_calls": 1,
+        "steps": 1
+      },
+      {
+        "task": "T5",
+        "path": "direct",
+        "reason": "single-fact or definitional lookup",
+        "tokens": 1211,
+        "input": 1118,
+        "output": 93,
+        "planner_tokens": 0,
+        "by_role": {
+          "answerer": {
+            "input": 1118,
+            "output": 93,
+            "calls": 1
+          }
+        },
+        "ms": 1433.851599926129,
+        "llm_calls": 1,
+        "steps": 1
+      },
+      {
+        "task": "T1'",
+        "path": "agent",
+        "reason": "comparison across systems needs more than one query",
+        "tokens": 3414,
+        "input": 3044,
+        "output": 370,
+        "planner_tokens": 1880,
+        "by_role": {
+          "planner": {
+            "input": 1770,
+            "output": 110,
+            "calls": 2
+          },
+          "answerer": {
+            "input": 1274,
+            "output": 260,
+            "calls": 1
+          }
+        },
+        "ms": 4557.404200080782,
+        "llm_calls": 3,
+        "steps": 2
+      },
+      {
+        "task": "T5'",
+        "path": "direct",
+        "reason": "single-fact or definitional lookup",
+        "tokens": 1557,
+        "input": 1455,
+        "output": 102,
+        "planner_tokens": 0,
+        "by_role": {
+          "answerer": {
+            "input": 1455,
+            "output": 102,
+            "calls": 1
+          }
+        },
+        "ms": 1631.7032999359071,
+        "llm_calls": 1,
+        "steps": 1
+      }
+    ]
+  }
+}

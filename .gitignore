@@ -1,0 +1,34 @@
+# --- secrets: never commit ---
+.env
+*.key
+
+# --- the corpus itself: 153 third-party research PDFs, not ours to redistribute ---
+ResearchPapers/
+*.pdf
+
+# --- generated indexes and caches (rebuilt on first run, ~10 min) ---
+chroma_papers/
+chroma_db/
+chroma*/
+graph_cache/
+*.pkl
+*.sqlite3
+*.bin
+
+# --- python ---
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ipynb_checkpoints/
+
+# --- new run output (the frozen results live in evidence/ and ARE committed) ---
+/*.log
+/*.json
+/src/*.log
+/src/*.json
+
+# --- os ---
+Thumbs.db
+.DS_Store

@@ -1,0 +1,1976 @@
+[2026-09-17T11:18:45] baseline | E3 | run 1
+primary=['DBLP_conf_tacas_InalaPQLS17.pdf#p527#c15519', 'DBLP_journals_corr_abs-1906-04604.pdf#p1#c17506', 'DBLP_conf_snapl_2015.pdf#p284#c13320', 'DBLP_journals_corr_KoppelS17.pdf#p7#c20511', 'DBLP_journals_pacmpl_KoppelPS18.pdf#p7#c22391']
+context=[]
+distinct_papers=5
+verdict=fail
+answer=The documents do not directly describe a general “leave gaps in code and have the computer fill them in” mechanism.
+
+What they do say is that programming systems can support **partially written code** and transitions between writing, executing, and assessing it: the paper notes that “the ability to execute the partially-written code” is crucial, and that systems should “effectively transition between states of writing, executing, and assessing the code” [DBLP_journals_corr_abs-1906-04604.pdf#p1#c17506].
+
+For a more concrete mechanism, the syntax paper describes an **incremental parametric syntax** where the program is transformed through several representations, and “the user only writes code to translate between removed node types and their generic equivalents” [DBLP_journals_corr_KoppelS17.pdf#p7#c20511]. That is, the programmer can omit certain node types and provide only the pieces needed to map those removed parts to generic placeholders.
+
+So, based on the documents, a programmer can leave gaps by using a system with **generic placeholders / removed node types** and then supplying only the translation logic for those gaps, while the rest is generated automatically.
+--------------------------------------------------------------------------
+[2026-09-17T11:18:53] both | E3 | run 1
+primary=['DBLP_journals_corr_InalaQLS15.pdf#p15#c20418', 'DBLP_conf_snapl_2015.pdf#p255#c13192', 'DBLP_conf_tacas_InalaPQLS17.pdf#p321#c14805']
+context=[('DBLP_conf_cav_JeonQSF15.pdf#p16#c5893', 'cites from DBLP_journals_corr_InalaQLS1'), ('DBLP_journals_corr_PolikarpovaS15.pdf#p17#c20733', 'similar_to from DBLP_journals_corr_InalaQLS1')]
+distinct_papers=5
+verdict=pass
+answer=A programmer can do this by writing a **template program** with **holes** or **template parameters** that mark the missing parts.
+
+The TACAS paper says:
+
+> “A synthesis template expresses the shape of program constructs, but includes holes (sometimes called template parameters)... We refer to a program containing such templates as a template program”
+
+It also explains that synthesis systems can then **fill in well-structured gaps**:
+
+> “many practical synthesis techniques operate on partially-complete programs, filling in well-structured gaps”
+
+So the idea is to leave placeholders in the code, and let a program synthesis tool instantiate those placeholders automatically.
+--------------------------------------------------------------------------
+[2026-09-17T11:30:07] baseline | E1 | run 1
+primary=['DBLP_conf_sigsoft_SinghS11.pdf#p9#c12155', 'DBLP_conf_sigsoft_SinghS11.pdf#p1#c12097', 'DBLP_conf_cav_SinghS12.pdf#p1#c7751', 'DBLP_conf_cav_SinghS12.pdf#p6#c7767', 'DBLP_conf_mapl_GottschlichSTCR18.pdf#p3#c10136']
+context=[]
+distinct_papers=3
+verdict=fail
+answer=Storyboard programming is a synthesis framework for helping programmers write low-level imperative data-structure code from higher-level descriptions.
+
+From the paper, its goal is to “bridge the gap between the ‘boxes-and-arrows’ diagrams that programmers often use to think about data-structure manipulation algorithms and the low-level imperative code that implements them.” It takes as input “a set of partial input-output examples, as well as a description of the high-level structure of the desired solution,” and then “is able to synthesize low-level imperative implementations in a matter of minutes.”
+
+How it synthesizes manipulations:
+- It combines “constraint-based synthesis and abstract-interpretation-” techniques.
+- The tool uses multiple kinds of programmer guidance, including “abstract and concrete input-output examples as well as implementation skeletons.”
+- It can also use “intermediate state configurations” to reduce the search space and help synthesize more complex manipulations.
+
+In short, storyboard programming synthesizes pointer-manipulating data-structure code by combining examples, high-level structure descriptions, and constraints to automatically fill in the low-level implementation.
+--------------------------------------------------------------------------
+[2026-09-17T11:30:13] baseline | E1 | run 2
+primary=['DBLP_conf_sigsoft_SinghS11.pdf#p9#c12155', 'DBLP_conf_sigsoft_SinghS11.pdf#p1#c12097', 'DBLP_conf_cav_SinghS12.pdf#p1#c7751', 'DBLP_conf_cav_SinghS12.pdf#p6#c7767', 'DBLP_conf_mapl_GottschlichSTCR18.pdf#p3#c10136']
+context=[]
+distinct_papers=3
+verdict=pass
+answer=Storyboard Programming is a synthesis framework for helping programmers write **imperative low-level data-structure manipulations**.
+
+From the paper’s abstract, its goal is:
+
+> “to bridge the gap between the ‘boxes-and-arrows’ diagrams that programmers often use to think about data-structure manipulation algorithms and the low-level imperative code that implements them.”
+
+It works by taking as input:
+
+> “a set of partial input-output examples, as well as a description of the high-level structure of the desired solution.”
+
+Using that information, it can then:
+
+> “synthesize low-level imperative implementations in a matter of minutes.”
+
+The papers describe it as combining multiple kinds of user guidance, including:
+
+> “abstract and concrete input-output examples as well as implementation skeletons”
+
+and using:
+
+> “a new approach for combining constraint-based synthesis and abstract-interpretation-”
+
+In the experimental discussion, the authors also note that the framework can use additional storyboard information beyond examples, such as:
+
+> “intermediate state configurations”
+
+to reduce search space and help synthesize more complex manipulations.
+
+So, in short: storyboard programming is a multi-modal synthesis approach that turns high-level visual/structural descriptions plus examples and skeletons into low-level pointer-manipulating code for data structures like linked lists and binary search trees.
+--------------------------------------------------------------------------
+[2026-09-17T11:30:18] baseline | E1 | run 3
+primary=['DBLP_conf_sigsoft_SinghS11.pdf#p9#c12155', 'DBLP_conf_sigsoft_SinghS11.pdf#p1#c12097', 'DBLP_conf_cav_SinghS12.pdf#p1#c7751', 'DBLP_conf_cav_SinghS12.pdf#p6#c7767', 'DBLP_conf_mapl_GottschlichSTCR18.pdf#p3#c10136']
+context=[]
+distinct_papers=3
+verdict=fail
+answer=Storyboard programming is a synthesis framework for helping programmers write “imperative low-level data-structure manipulations.”
+
+From the paper’s abstract:
+
+> “We present the Storyboard Programming framework, a new synthesis system designed to help programmers write imperative low-level data-structure manipulations.”
+
+It is meant to bridge:
+
+> “the ‘boxes-and-arrows’ diagrams that programmers often use to think about data-structure manipulation algorithms and the low-level imperative code that implements them.”
+
+### How it synthesizes
+The system takes as input:
+
+> “a set of partial input-output examples, as well as a description of the high-level structure of the desired solution.”
+
+Using that information, it can:
+
+> “synthesize low-level imperative implementations in a matter of minutes.”
+
+The related SPT paper adds that the system combines different kinds of programmer insight:
+
+> “abstract and concrete input-output examples as well as implementation skeletons.”
+
+and that it uses a synthesis algorithm that combines:
+
+> “abstract-interpretation-”
+
+The experiments section also notes that users can add intermediate state information to guide synthesis:
+
+> “The user can label a program location in the loop skeleton and provide the state description at that point using the intermediate keyword…”
+
+### In short
+Storyboard programming is a multi-modal program synthesis approach: it uses examples, high-level structural descriptions, and sometimes intermediate state constraints or skeletons to automatically generate pointer-manipulating code for data structures like linked lists and binary search trees.
+--------------------------------------------------------------------------
+[2026-09-17T11:30:23] baseline | E1 | run 4
+primary=['DBLP_conf_sigsoft_SinghS11.pdf#p9#c12155', 'DBLP_conf_sigsoft_SinghS11.pdf#p1#c12097', 'DBLP_conf_cav_SinghS12.pdf#p1#c7751', 'DBLP_conf_cav_SinghS12.pdf#p6#c7767', 'DBLP_conf_mapl_GottschlichSTCR18.pdf#p3#c10136']
+context=[]
+distinct_papers=3
+verdict=fail
+answer=Storyboard Programming is a synthesis framework for helping programmers write “imperative low-level data-structure manipulations.” It is described as a system that “bridge[s] the gap between the ‘boxes-and-arrows’ diagrams that programmers often use to think about data-structure manipulation algorithms and the low-level imperative code that implements them.”
+
+According to the paper, it takes as input:
+
+- “a set of partial input-output examples”
+- “a description of the high-level structure of the desired solution”
+
+Using that information, it can “synthesize low-level imperative implementations in a matter of minutes.”
+
+How it works, at a high level:
+- It combines “constraint-based synthesis” with “abstract-interpretation”
+- The user can provide not only examples, but also “abstract and concrete input-output examples” and “implementation skeletons”
+- The framework uses these clues to search for a program that matches the desired data-structure behavior
+
+The papers also note that users can add “intermediate state configurations” to help reduce the search space and make it easier to synthesize more complex manipulations.
+
+In short, Storyboard Programming is a multi-modal synthesis approach that uses examples, high-level structure, and optional intermediate states/skeletons to automatically generate pointer-manipulating code for data structures.
+--------------------------------------------------------------------------
+[2026-09-17T11:30:27] baseline | E1 | run 5
+primary=['DBLP_conf_sigsoft_SinghS11.pdf#p9#c12155', 'DBLP_conf_sigsoft_SinghS11.pdf#p1#c12097', 'DBLP_conf_cav_SinghS12.pdf#p1#c7751', 'DBLP_conf_cav_SinghS12.pdf#p6#c7767', 'DBLP_conf_mapl_GottschlichSTCR18.pdf#p3#c10136']
+context=[]
+distinct_papers=3
+verdict=pass
+answer=Storyboard programming is a synthesis framework for helping programmers write low-level imperative data-structure manipulations.
+
+From the paper:
+
+- It is “a new synthesis system designed to help programmers write imperative low-level data-structure manipulations.”
+- Its goal is “to bridge the gap between the ‘boxes-and-arrows’ diagrams that programmers often use to think about data-structure manipulation algorithms and the low-level imperative code that implements them.”
+
+How it works:
+
+- The system takes “a set of partial input-output examples, as well as a description of the high-level structure of the desired solution.”
+- In the CAV paper, this is expanded to combining “abstract and concrete input-output examples as well as implementation skeletons.”
+- It then “is able to synthesize low-level imperative implementations in a matter of minutes.”
+- The approach is based on “a new approach for combining constraint-based synthesis and abstract-interpretation-” and the papers say the problem is formulated “as a set of constraints which are solved efficiently by the Sketch solver.”
+
+So, in short: storyboard programming lets users specify the intended manipulation through examples, high-level structure, and sometimes intermediate state descriptions, and then synthesizes the pointer-manipulating code automatically by solving constraints.
+--------------------------------------------------------------------------
+[2026-09-17T11:30:36] both | E1 | run 1
+primary=['DBLP_conf_sigsoft_SinghS11.pdf#p1#c12097', 'DBLP_conf_sigsoft_SinghS11.pdf#p9#c12155', 'DBLP_conf_cav_SinghS12.pdf#p1#c7752']
+context=[('DBLP_conf_cikm_CheungSM12.pdf#p1#c7825', 'cites from DBLP_conf_sigsoft_SinghS11'), ('DBLP_conf_iclr_NyePBATS21.pdf#p11#c8656', 'cites from DBLP_conf_sigsoft_SinghS11')]
+distinct_papers=4
+verdict=pass
+answer=Storyboard Programming is a synthesis framework “designed to help programmers write imperative low-level data-structure manipulations.” It tries to bridge the gap between the “boxes-and-arrows” diagrams programmers use to think about such algorithms and the low-level imperative code that implements them.
+
+According to the paper, the system takes as input:
+
+- “a set of partial input-output examples,” and
+- “a description of the high-level structure of the desired solution.”
+
+Using that information, it can “synthesize low-level imperative implementations in a matter of minutes.”
+
+For how it works, the paper says the framework is “based on a new approach for combining constraint-based synthesis and abstract-interpretation-based shape-analysis.” In the later paper, this is described more specifically as a synthesis algorithm that “combines abstract-interpretation based shape-analysis with constraint-based synthesis,” using “an abstraction refinement based approach to concisely encode synthesis constraints obtained from shape analysis.”
+
+So, in short: storyboard programming lets users describe data-structure behavior at a high level with partial examples and structural hints, and then synthesizes the concrete imperative manipulation code by combining shape analysis with constraint-based program synthesis.
+--------------------------------------------------------------------------
+[2026-09-17T11:31:14] both | E1 | run 2
+primary=['DBLP_conf_sigsoft_SinghS11.pdf#p1#c12097', 'DBLP_conf_cav_SinghS12.pdf#p1#c7751', 'DBLP_journals_corr_abs-1803-07244.pdf#p4#c16910']
+context=[('DBLP_conf_cikm_CheungSM12.pdf#p1#c7825', 'cites from DBLP_conf_sigsoft_SinghS11'), ('DBLP_conf_iclr_NyePBATS21.pdf#p11#c8656', 'cites from DBLP_conf_sigsoft_SinghS11')]
+distinct_papers=5
+verdict=fail
+answer=Storyboard Programming is described as “a new synthesis system designed to help programmers write imperative low-level data-structure manipulations.” Its goal is to “bridge the gap between the ‘boxes-and-arrows’ diagrams that programmers often use to think about data-structure manipulation algorithms and the low-level imperative code that implements them.”
+
+According to the paper, the system takes as input:
+
+- “a set of partial input-output examples,” and
+- “a description of the high-level structure of the desired solution.”
+
+Using this information, it can “synthesize low-level imperative implementations in a matter of minutes.”
+
+The related CAV paper adds that the tool helps programmers by combining “abstract and concrete input-output examples as well as implementation skeletons,” and that it is based on “a new synthesis algorithm” that combines abstract interpretation with the Sketch solver. It reports successful synthesis of “several linked list and binary search tree manipulations.”
+
+So, in short: Storyboard Programming is a program synthesis framework that turns high-level storyboard-like insights plus partial examples and a solution skeleton into concrete pointer-manipulating code for data structures.
+--------------------------------------------------------------------------
+[2026-09-17T11:31:25] both | E1 | run 3
+primary=['DBLP_conf_sigsoft_SinghS11.pdf#p1#c12097', 'DBLP_conf_cav_SinghS12.pdf#p1#c7751', 'DBLP_conf_sigsoft_SinghS11.pdf#p10#c12159']
+context=[('DBLP_conf_cikm_CheungSM12.pdf#p1#c7825', 'cites from DBLP_conf_sigsoft_SinghS11'), ('DBLP_conf_iclr_NyePBATS21.pdf#p11#c8656', 'cites from DBLP_conf_sigsoft_SinghS11')]
+distinct_papers=4
+verdict=fail
+answer=Storyboard Programming is described as “a new synthesis system designed to help programmers write imperative low-level data-structure manipulations.” It is meant to bridge “the ‘boxes-and-arrows’ diagrams that programmers often use to think about data-structure manipulation algorithms and the low-level imperative code that implements them.”
+
+How it works:
+- It takes “a set of partial input-output examples, as well as a description of the high-level structure of the desired solution.”
+- In the related paper on the Storyboard Programming Tool, this is expanded to include “abstract and concrete input-output examples as well as implementation skeletons.”
+- The system then “synthesize[s] low-level imperative implementations in a matter of minutes.”
+- It does so using “a new approach for combining constraint-based synthesis and abstract-interpretation-” and, in the related paper, “a new synthesis algorithm ... that combines various forms of insights” and “solved efficiently by the Sketch solver.”
+
+In short, storyboard programming lets a user specify the intended manipulation at a high level, and the synthesis engine turns those examples and structural hints into low-level pointer-manipulating code. The papers note successful synthesis of “several linked list and binary search tree manipulations,” and even say the framework helped synthesize fragments for difficult cases like red-black tree invariant fixes.
+--------------------------------------------------------------------------
+[2026-09-17T11:31:35] both | E1 | run 4
+primary=['DBLP_conf_sigsoft_SinghS11.pdf#p1#c12097', 'DBLP_conf_sigsoft_SinghS11.pdf#p10#c12159', 'DBLP_conf_cav_SinghS12.pdf#p1#c7751']
+context=[('DBLP_conf_cikm_CheungSM12.pdf#p1#c7825', 'cites from DBLP_conf_sigsoft_SinghS11'), ('DBLP_conf_iclr_NyePBATS21.pdf#p3#c8619', 'cites from DBLP_conf_sigsoft_SinghS11')]
+distinct_papers=4
+verdict=pass
+answer=Storyboard Programming is a synthesis framework for helping programmers write “imperative low-level data-structure manipulations.” The paper describes it as a way to “bridge the gap between the ‘boxes-and-arrows’ diagrams that programmers often use to think about data-structure manipulation algorithms and the low-level imperative code that implements them.”
+
+How it works:
+- It takes as input “a set of partial input-output examples, as well as a description of the high-level structure of the desired solution.”
+- It then “is able to synthesize low-level imperative implementations in a matter of minutes.”
+- The approach is based on “combining constraint-based synthesis and abstract-interpretation-” techniques, and the later paper says the tool “combines various forms of insights, including abstract and concrete input-output examples as well as implementation skeletons.”
+
+In short, storyboard programming uses high-level storyboard-like descriptions plus examples and structure constraints to automatically generate the low-level pointer-manipulating code for data-structure operations.
+--------------------------------------------------------------------------
+[2026-09-17T11:31:45] both | E1 | run 5
+primary=['DBLP_conf_sigsoft_SinghS11.pdf#p1#c12097', 'DBLP_conf_cav_SinghS12.pdf#p1#c7752', 'DBLP_conf_sigsoft_SinghS11.pdf#p9#c12155']
+context=[('DBLP_conf_cikm_CheungSM12.pdf#p1#c7825', 'cites from DBLP_conf_sigsoft_SinghS11'), ('DBLP_conf_iclr_NyePBATS21.pdf#p11#c8656', 'cites from DBLP_conf_sigsoft_SinghS11')]
+distinct_papers=4
+verdict=pass
+answer=Storyboard Programming is a synthesis framework “designed to help programmers write imperative low-level data-structure manipulations” by bridging the gap between the “boxes-and-arrows” diagrams programmers use to reason about these algorithms and the low-level code that implements them.
+
+According to the paper, the system takes:
+
+- “a set of partial input-output examples,” and
+- “a description of the high-level structure of the desired solution”
+
+and from that information it can “synthesize low-level imperative implementations in a matter of minutes.”
+
+How it works, based on the documents:
+
+- It uses “a new synthesis algorithm” that “combines abstract-interpretation based shape-analysis with constraint-based synthesis.”
+- The algorithm “uses an abstraction refinement based approach to concisely encode synthesis constraints obtained from shape analysis.”
+- The paper also presents “a high-level storyboard language” that lets programmers “succinctly express the different elements that make up a storyboard,” with “inference to derive many low-level details.”
+
+In short, storyboard programming lets a user specify the intended manipulation at a high level using partial examples and storyboard structure, and then synthesizes the corresponding imperative data-structure code by combining shape analysis with constraint solving.
+--------------------------------------------------------------------------
+[2026-09-17T11:31:48] baseline | E2 | run 1
+primary=['DBLP_journals_corr_abs-1204-1751.pdf#p1#c16239', 'DBLP_journals_corr_abs-1204-1751.pdf#p10#c16308', 'DBLP_conf_pldi_SinghGS13.pdf#p8#c11274', 'DBLP_conf_oopsla_PuNSB16.pdf#p1#c10688', 'DBLP_journals_corr_PuNSB16.pdf#p1#c20975']
+context=[]
+distinct_papers=4
+verdict=pass
+answer=A system can help by using **automatic feedback generation** based on a **reference implementation** and an **error model** of likely student mistakes.
+
+From the paper:
+
+- It “**need[s] a reference implementation of the assignment, and an error model consisting of potential corrections to errors that students might make**.”
+- Using this, “**the system automatically derives minimal corrections to student’s incorrect solutions**,” giving students:
+  - “**a quantifiable measure of exactly how incorrect a given solution was**,” and
+  - “**feedback about what they did wrong**.”
+
+The paper also says the technique uses “**constraint-based synthesis to compute minimal corrections to student’s incorrect solutions**.”
+
+So, in short: the system compares a student’s program against the reference, searches through allowed corrections from the error model, and returns the smallest fixes it can find as feedback.
+--------------------------------------------------------------------------
+[2026-09-17T11:31:52] baseline | E2 | run 2
+primary=['DBLP_journals_corr_abs-1204-1751.pdf#p1#c16239', 'DBLP_journals_corr_abs-1204-1751.pdf#p10#c16308', 'DBLP_conf_pldi_SinghGS13.pdf#p8#c11274', 'DBLP_conf_oopsla_PuNSB16.pdf#p1#c10688', 'DBLP_journals_corr_PuNSB16.pdf#p1#c20975']
+context=[]
+distinct_papers=4
+verdict=pass
+answer=The paper says the system can help by **automatically generating feedback from a reference solution and an error model**.
+
+Specifically, it:
+
+- requires **“a reference implementation of the assignment”** and **“an error model consisting of potential corrections to errors that students might make”**
+- then **“automatically derives minimal corrections to student’s incorrect solutions”**
+- so it can give students **“a quantiﬁable measure of exactly how incorrect a given solution was, as well as feedback about what they did wrong.”**
+
+In short, the system helps students fix mistakes by comparing their program to a correct reference, using a rule-based error model to synthesize minimal edits that would correct the student’s solution.
+--------------------------------------------------------------------------
+[2026-09-17T11:31:55] baseline | E2 | run 3
+primary=['DBLP_journals_corr_abs-1204-1751.pdf#p1#c16239', 'DBLP_journals_corr_abs-1204-1751.pdf#p10#c16308', 'DBLP_conf_pldi_SinghGS13.pdf#p8#c11274', 'DBLP_conf_oopsla_PuNSB16.pdf#p1#c10688', 'DBLP_journals_corr_PuNSB16.pdf#p1#c20975']
+context=[]
+distinct_papers=4
+verdict=pass
+answer=According to the paper, the system helps by using:
+
+- **a reference implementation of the assignment**, and
+- **an error model** that describes “potential corrections to errors that students might make.”
+
+It then **“automatically derives minimal corrections to student’s incorrect solutions,”** giving students:
+
+- **“a quantifiable measure of exactly how incorrect a given solution was”**
+- and **“feedback about what they did wrong.”**
+
+The paper also says this is done with **“constraint-based synthesis to compute minimal corrections to student’s incorrect solutions.”**
+
+So, in short: the system automatically compares a student’s program against a reference implementation, uses an instructor-supplied error model of likely mistakes, and synthesizes minimal fixes to generate feedback.
+--------------------------------------------------------------------------
+[2026-09-17T11:31:59] baseline | E2 | run 4
+primary=['DBLP_journals_corr_abs-1204-1751.pdf#p1#c16239', 'DBLP_journals_corr_abs-1204-1751.pdf#p10#c16308', 'DBLP_conf_pldi_SinghGS13.pdf#p8#c11274', 'DBLP_conf_oopsla_PuNSB16.pdf#p1#c10688', 'DBLP_journals_corr_PuNSB16.pdf#p1#c20975']
+context=[]
+distinct_papers=4
+verdict=pass
+answer=A system can help by using **a reference implementation** of the assignment plus **an error model** of likely student mistakes.
+
+From the paper:
+
+- “we need a reference implementation of the assignment, and an error model consisting of potential corrections to errors that students might make.”
+- “the system automatically derives minimal corrections to student’s incorrect solutions, providing them with a quantifiable measure of exactly how incorrect a given solution was, as well as feedback about what they did wrong.”
+
+In other words, the system compares a student’s program against the reference, searches through allowed corrections from the error model, and finds the **minimal corrections** needed to fix the solution. This lets it generate feedback that tells students what they did wrong and how to repair it.
+--------------------------------------------------------------------------
+[2026-09-17T11:32:03] baseline | E2 | run 5
+primary=['DBLP_journals_corr_abs-1204-1751.pdf#p1#c16239', 'DBLP_journals_corr_abs-1204-1751.pdf#p10#c16308', 'DBLP_conf_pldi_SinghGS13.pdf#p8#c11274', 'DBLP_conf_oopsla_PuNSB16.pdf#p1#c10688', 'DBLP_journals_corr_PuNSB16.pdf#p1#c20975']
+context=[]
+distinct_papers=4
+verdict=pass
+answer=A system can help by using a **reference implementation** of the assignment together with an **error model** of likely student mistakes.
+
+From the paper, the idea is to “**automatically derive minimal corrections to student’s incorrect solutions**,” which gives students both “**a quantifiable measure of exactly how incorrect a given solution was**” and “**feedback about what they did wrong**.” The paper also says it uses “**constraint-based synthesis to compute minimal corrections to student’s incorrect solutions**.”
+
+So, in practice, the system:
+1. takes the student’s program,
+2. compares it against a reference solution,
+3. uses a set of correction rules / error model,
+4. and computes the smallest fixes needed to turn the student’s answer into a correct one.
+
+This lets it automatically generate feedback for introductory programming assignments.
+--------------------------------------------------------------------------
+[2026-09-17T11:32:11] both | E2 | run 1
+primary=['DBLP_journals_corr_abs-1204-1751.pdf#p10#c16309', 'DBLP_journals_corr_abs-1204-1751.pdf#p1#c16239', 'DBLP_journals_corr_abs-1204-1751.pdf#p10#c16312']
+context=[('DBLP_conf_cav_JeonQSF15.pdf#p17#c5900', 'cites from DBLP_journals_corr_abs-1204-'), ('DBLP_conf_nips_EllisST16.pdf#p1#c10383', 'cites from DBLP_journals_corr_abs-1204-')]
+distinct_papers=3
+verdict=pass
+answer=The paper says the system needs **a reference implementation** of the assignment and **an error model consisting of potential corrections to errors that students might make**. Using those, it can **automatically derive minimal corrections to the student’s incorrect solutions**, giving:
+
+- “a quantiﬁable measure of exactly how incorrect a given solution was”
+- “feedback about what they did wrong”
+
+It also says it “introduce[s] a simple language for describing error models in terms of correction rules,” and a “rule-directed translation strategy” is used to reduce the problem of finding minimal corrections.
+--------------------------------------------------------------------------
+[2026-09-17T11:32:19] both | E2 | run 2
+primary=['DBLP_journals_corr_abs-1204-1751.pdf#p1#c16239', 'DBLP_journals_corr_abs-1204-1751.pdf#p10#c16312', 'DBLP_journals_corr_abs-1204-1751.pdf#p1#c16244']
+context=[('DBLP_conf_cav_JeonQSF15.pdf#p17#c5900', 'cites from DBLP_journals_corr_abs-1204-'), ('DBLP_conf_nips_EllisST16.pdf#p1#c10383', 'cites from DBLP_journals_corr_abs-1204-')]
+distinct_papers=3
+verdict=pass
+answer=The paper says the system can help by using **program synthesis** to find **minimal fixes** to a student’s incorrect solution.
+
+In particular, it needs:
+- “**a reference implementation of the assignment**,” and
+- “**an error model consisting of potential corrections to errors that students might make**.”
+
+Using those, the system “**automatically derives minimal corrections to student’s incorrect solutions**,” which gives:
+- “**a quantifiable measure of exactly how incorrect a given solution was**,” and
+- “**feedback about what they did wrong**.”
+
+It also explains that the approach “**leverages program synthesis technology to automatically determine minimal fixes to the student’s solution that will make it match the behavior of a reference solution written by the instructor**.”
+--------------------------------------------------------------------------
+[2026-09-17T11:32:26] both | E2 | run 3
+primary=['DBLP_journals_corr_abs-1204-1751.pdf#p1#c16239', 'DBLP_journals_corr_abs-1204-1751.pdf#p2#c16247', 'DBLP_journals_corr_abs-1204-1751.pdf#p10#c16312']
+context=[('DBLP_conf_cav_JeonQSF15.pdf#p1#c5840', 'cites from DBLP_journals_corr_abs-1204-'), ('DBLP_conf_nips_EllisST16.pdf#p1#c10383', 'cites from DBLP_journals_corr_abs-1204-')]
+distinct_papers=3
+verdict=pass
+answer=The paper says the system helps by combining:
+
+- a **reference implementation** of the assignment, and
+- an **error model** that describes “potential corrections to errors that students might make.”
+
+Using these, it “**automatically derives minimal corrections to student’s incorrect solutions**,” giving students both:
+
+- “a **quantiﬁable measure of exactly how incorrect** a given solution was,” and
+- “**feedback about what they did wrong**.”
+
+It also explains that the tool “**symbolically explores the space of all possible combinations of corrections allowed by the error model and ﬁnds a correct solution requiring a minimal set of corrections**.”
+--------------------------------------------------------------------------
+[2026-09-17T11:32:35] both | E2 | run 4
+primary=['DBLP_journals_corr_abs-1204-1751.pdf#p10#c16312', 'DBLP_journals_corr_abs-1204-1751.pdf#p1#c16239', 'DBLP_journals_corr_abs-1204-1751.pdf#p10#c16309']
+context=[('DBLP_conf_cav_JeonQSF15.pdf#p17#c5900', 'cites from DBLP_journals_corr_abs-1204-'), ('DBLP_conf_nips_EllisST16.pdf#p1#c10383', 'cites from DBLP_journals_corr_abs-1204-')]
+distinct_papers=3
+verdict=pass
+answer=The paper says the system can help by using:
+
+- **a reference implementation of the assignment**
+- **an error model consisting of potential corrections to errors that students might make**
+
+With those, it can **“automatically derive minimal corrections to student’s incorrect solutions”**, giving students:
+
+- **“a quantifiable measure of exactly how incorrect a given solution was”**
+- **feedback about what they did wrong**
+
+It also explains that the system uses **“a simple language for describing error models in terms of correction rules”** and a **rule-directed translation strategy** to reduce the problem of finding minimal corrections.
+--------------------------------------------------------------------------
+[2026-09-17T11:32:43] both | E2 | run 5
+primary=['DBLP_journals_corr_abs-1204-1751.pdf#p10#c16309', 'DBLP_journals_corr_abs-1204-1751.pdf#p8#c16296', 'DBLP_journals_corr_GopalakrishnanH17.pdf#p36#c20304']
+context=[('DBLP_conf_cav_JeonQSF15.pdf#p17#c5900', 'cites from DBLP_journals_corr_abs-1204-'), ('DBLP_conf_nips_EllisST16.pdf#p8#c10414', 'cites from DBLP_journals_corr_abs-1204-')]
+distinct_papers=4
+verdict=fail
+answer=The documents say that automated tutoring systems can help by providing feedback about semantic errors in student programs, and that there are “code-based matching approaches” such as LAURA, which “converts teacher’s and student’s program into a graph based representation and compares them heuristically.”
+
+More generally, the papers describe systems for “automated feedback generation for introductory programming assignments,” and related work in automated program repair, fault localization, automated debugging, and program synthesis. The idea is to analyze the student’s code, identify likely mistakes, and then suggest fixes or feedback automatically rather than requiring manual grading or debugging help.
+
+One document also notes that “These tutoring systems can be categorized into the following major classes,” indicating that a system can help by matching student code against expected solutions or by using other AI-based methods to infer errors and generate hints.
+--------------------------------------------------------------------------
+[2026-09-17T11:32:48] baseline | E3 | run 1
+primary=['DBLP_conf_tacas_InalaPQLS17.pdf#p527#c15519', 'DBLP_journals_corr_abs-1906-04604.pdf#p1#c17506', 'DBLP_conf_snapl_2015.pdf#p284#c13320', 'DBLP_journals_corr_KoppelS17.pdf#p7#c20511', 'DBLP_journals_pacmpl_KoppelPS18.pdf#p7#c22391']
+context=[]
+distinct_papers=5
+verdict=fail
+answer=The documents suggest two related ways a programmer can “leave gaps” for the computer to fill in:
+
+1. **Partially-written code that can be executed and refined**
+   The paper on program synthesis says that writing code is often an iterative process of “trying out a piece of code, executing it to see if you’re still on the right track, and trying out something different if the current execution looks buggy.” It argues that systems should support “the ability to execute the partially-written code.”
+
+2. **Using an incremental parametric syntax with placeholders/removed node types**
+   In the C-syntax paper, the programmer creates representations where “the user only writes code to translate between removed node types and their generic equivalents.” The system then generates the rest: “These three representations are mutually isomorphic, and translations between them are derived mostly automatically.” It also says the user can generate the needed data types “completely automatically, using the Template Haskell code-generation engine.”
+
+So, in the papers’ terms, a programmer can leave gaps by writing only the parts that translate or specify the missing pieces, while the system automatically generates or infers the rest.
+--------------------------------------------------------------------------
+[2026-09-17T11:32:52] baseline | E3 | run 2
+primary=['DBLP_conf_tacas_InalaPQLS17.pdf#p527#c15519', 'DBLP_journals_corr_abs-1906-04604.pdf#p1#c17506', 'DBLP_conf_snapl_2015.pdf#p284#c13320', 'DBLP_journals_corr_KoppelS17.pdf#p7#c20511', 'DBLP_journals_pacmpl_KoppelPS18.pdf#p7#c22391']
+context=[]
+distinct_papers=5
+verdict=fail
+answer=The documents describe this as **incremental / parametric syntax**: a program is transformed through several mutually isomorphic representations, and “**the user only writes code to translate between removed node types and their generic equivalents**” while the rest is generated automatically.
+
+In particular, for C syntax, “**the user must generate a new data type representing nodes of that sort inside an arbitrary AST**,” and “**the user generates these definitions completely automatically, using the Template Haskell code-generation engine**.”
+
+So, in the sense asked by the question, a programmer can “leave gaps” by:
+- representing parts of the program as **removed node types** or placeholders,
+- providing only the small amount of translation code needed for those missing pieces,
+- and letting the system **auto-generate** the rest of the syntax/boilerplate.
+
+The documents do not describe a general-purpose “code completion” mechanism beyond this generated AST/syntax transformation framework.
+--------------------------------------------------------------------------
+[2026-09-17T11:32:56] baseline | E3 | run 3
+primary=['DBLP_conf_tacas_InalaPQLS17.pdf#p527#c15519', 'DBLP_journals_corr_abs-1906-04604.pdf#p1#c17506', 'DBLP_conf_snapl_2015.pdf#p284#c13320', 'DBLP_journals_corr_KoppelS17.pdf#p7#c20511', 'DBLP_journals_pacmpl_KoppelPS18.pdf#p7#c22391']
+context=[]
+distinct_papers=5
+verdict=fail
+answer=The documents say that a programmer can do this by working with an **incremental parametric syntax** and letting the system generate the missing pieces automatically.
+
+In particular, the paper describes “three representations” that are “**mutually isomorphic**,” and says that “**translations between them are derived mostly automatically**,” where “**the user only writes code to translate between removed node types and their generic equivalents**” [DBLP_journals_corr_KoppelS17.pdf#p7#c20511]. It also says the user can generate the needed representations “**completely automatically, using the Template Haskell code-generation engine**” [DBLP_journals_corr_KoppelS17.pdf#p7#c20511].
+
+So, in effect, the programmer leaves gaps by defining the program structure and the “removed node types,” and the computer fills in the corresponding generic/translated parts automatically.
+--------------------------------------------------------------------------
+[2026-09-17T11:33:00] baseline | E3 | run 4
+primary=['DBLP_conf_tacas_InalaPQLS17.pdf#p527#c15519', 'DBLP_journals_corr_abs-1906-04604.pdf#p1#c17506', 'DBLP_conf_snapl_2015.pdf#p284#c13320', 'DBLP_journals_corr_KoppelS17.pdf#p7#c20511', 'DBLP_journals_pacmpl_KoppelPS18.pdf#p7#c22391']
+context=[]
+distinct_papers=5
+verdict=fail
+answer=The documents suggest that a programmer can “leave gaps” by working with an **incremental parametric syntax** and related generated representations, where parts of a program are represented in a form that can be transformed at runtime.
+
+In particular, the paper says there are “**three representations**” that are “**mutually isomorphic**,” and that “**the user only writes code to translate between removed node types and their generic equivalents**” [DBLP_journals_corr_KoppelS17.pdf#p7#c20511]. It also says the user can generate these representations “**completely automatically, using the Template Haskell code-generation engine**” [DBLP_journals_corr_KoppelS17.pdf#p7#c20511].
+
+So, based on the documents, a programmer leaves gaps by using a system where incomplete or removed parts of the syntax are represented generically, and the missing structure is filled in through automatically generated translations and runtime transformations.
+
+If you want, I can also explain this in simpler terms or compare it to partial program synthesis.
+--------------------------------------------------------------------------
+[2026-09-17T11:33:03] baseline | E3 | run 5
+primary=['DBLP_conf_tacas_InalaPQLS17.pdf#p527#c15519', 'DBLP_journals_corr_abs-1906-04604.pdf#p1#c17506', 'DBLP_conf_snapl_2015.pdf#p284#c13320', 'DBLP_journals_corr_KoppelS17.pdf#p7#c20511', 'DBLP_journals_pacmpl_KoppelPS18.pdf#p7#c22391']
+context=[]
+distinct_papers=5
+verdict=fail
+answer=A programmer can leave gaps by using an **incremental parametric syntax** / modularized AST representation where parts of the program are represented as removable or generic nodes.
+
+The paper says:
+
+- “**These three representations are mutually isomorphic, and translations between them are derived mostly automatically: the user only writes code to translate between removed node types and their generic equivalents.**”
+- “**For each algebraic data type in the C abstract syntax, the user must generate a new data type representing nodes of that sort inside an arbitrary AST** ...”
+
+So the idea is to encode the program in a form where some nodes are replaced by generic placeholders, and then transformations can fill in or translate those gaps automatically.
+--------------------------------------------------------------------------
+[2026-09-17T11:33:15] both | E3 | run 1
+primary=['DBLP_conf_icml_GuJLSESS25.pdf#p30#c9159', 'DBLP_conf_tacas_InalaPQLS17.pdf#p278#c14655', 'DBLP_conf_tacas_InalaPQLS17.pdf#p321#c14805']
+context=[('DBLP_conf_icml_GuRLSS024.pdf#p14#c9414', 'cites from DBLP_conf_icml_GuJLSESS25'), ('DBLP_journals_corr_abs-2401-03065.pdf#p2#c18479', 'cites from DBLP_conf_icml_GuJLSESS25')]
+distinct_papers=4
+verdict=pass
+answer=A programmer can use **template-based synthesis with holes**. The paper says practical synthesis often works on **“partially-complete programs, filling in well-structured gaps”** and that **“A synthesis template expresses the shape of program constructs, but includes holes (sometimes called template parameters).”** It also notes that **“We refer to a program containing such templates as a template program.”**
+
+So, by writing a **template program** with **holes/template parameters**, the computer can automatically fill in the missing parts.
+--------------------------------------------------------------------------
+[2026-09-17T11:33:23] both | E3 | run 2
+primary=['DBLP_journals_corr_abs-1204-1751.pdf#p10#c16307', 'DBLP_journals_corr_abs-1204-1751.pdf#p4#c16261', 'DBLP_journals_pvldb_SinghMEMPQST17.pdf#p4#c22831']
+context=[('DBLP_conf_cav_JeonQSF15.pdf#p1#c5841', 'cites from DBLP_journals_corr_abs-1204-'), ('DBLP_conf_nips_EllisST16.pdf#p8#c10415', 'cites from DBLP_journals_corr_abs-1204-')]
+distinct_papers=4
+verdict=fail
+answer=A programmer can write a **partial program** with **holes** or **unspecified fragments**. The synthesis system then fills in those holes automatically.
+
+From the documents:
+
+- “programmers to write programs while leaving fragments of it unspeciﬁed as holes; the contents of these holes are ﬁlled up automatically by the synthesizer”
+- “In these partial programs, holes are used to represent the unknown aspects of the program”
+
+In the cited Sketch-based approach, the holes are filled using **constraint-based reasoning** and a specification or reference implementation.
+--------------------------------------------------------------------------
+[2026-09-17T11:33:31] both | E3 | run 3
+primary=['DBLP_conf_aplas_Solar-Lezama09.pdf#p1#c527', 'DBLP_conf_sigsoft_JeonQFS15.pdf#p1#c12054', 'DBLP_conf_snapl_2015.pdf#p63#c12398']
+context=[('DBLP_conf_cav_JeonQSF15.pdf#p1#c5841', 'cites from DBLP_conf_sigsoft_JeonQFS15'), ('DBLP_journals_corr_abs-1204-1751.pdf#p10#c16307', 'cites from DBLP_conf_sigsoft_JeonQFS15')]
+distinct_papers=5
+verdict=fail
+answer=A programmer can do this by writing a **partial program** or **sketch** and leaving some details unspecified for synthesis.
+
+The papers describe sketching as follows:
+
+- “the programmer uses **partial programs** to describe the desired implementation strategy, and leaves the low-level details of the implementation to an automated synthesis procedure.”
+- In the related summary, this is also called “a **partial program**—referred to in the literature as a **sketch** … or template—that constrains the space of possible programs the synthesizer needs to consider.”
+
+So, the programmer writes the parts they know and leaves **gaps/unknowns** in the sketch for the synthesizer to fill in automatically.
+--------------------------------------------------------------------------
+[2026-09-17T11:33:40] both | E3 | run 4
+primary=['DBLP_conf_tacas_InalaPQLS17.pdf#p321#c14805', 'DBLP_journals_corr_InalaQLS15.pdf#p15#c20418', 'DBLP_conf_aplas_Solar-Lezama09.pdf#p1#c528']
+context=[('DBLP_conf_cav_JeonQSF15.pdf#p11#c5880', 'cites from DBLP_journals_corr_InalaQLS1'), ('DBLP_journals_corr_PolikarpovaS15.pdf#p17#c20733', 'similar_to from DBLP_journals_corr_InalaQLS1')]
+distinct_papers=5
+verdict=pass
+answer=A programmer can do this by writing a **template program** or a **sketch** with **holes / template parameters** left unspecified.
+
+The papers say synthesis techniques “operate on partially-complete programs, filling in well-structured gaps” and that “a synthesis template expresses the shape of program constructs, but includes holes (sometimes called template parameters).” They also describe sketching as “a partial program that encodes the structure of a solution while leaving its low-level details unspecified.”
+
+So the idea is:  
+- write the overall program structure yourself,  
+- leave certain parts as gaps,  
+- and let the synthesizer fill in those missing details automatically.
+--------------------------------------------------------------------------
+[2026-09-17T11:33:51] both | E3 | run 5
+primary=['DBLP_conf_icml_GuJLSESS25.pdf#p30#c9159', 'DBLP_journals_corr_abs-1204-1751.pdf#p10#c16307', 'DBLP_conf_tacas_InalaPQLS17.pdf#p321#c14805']
+context=[('DBLP_conf_icml_GuRLSS024.pdf#p1#c9342', 'cites from DBLP_conf_icml_GuJLSESS25'), ('DBLP_journals_corr_abs-2401-03065.pdf#p2#c18479', 'cites from DBLP_conf_icml_GuJLSESS25')]
+distinct_papers=5
+verdict=pass
+answer=A programmer can do this with **template-based program synthesis**.
+
+The papers explain that practical synthesis methods often work on **partially-complete programs** with **holes** or **template parameters** that are later filled in automatically. One document says these techniques “operate on partially-complete programs, filling in well-structured gaps” and that “a synthesis template expresses the shape of program constructs, but includes holes (sometimes called template parameters).” Another notes that S KETCH “takes a partial program and a reference implementation as input and uses constraint-based reasoning to synthesize a complete program.”
+
+So, the idea is: **write a template program with gaps/holes**, and then a synthesis system fills those gaps in for you.
+--------------------------------------------------------------------------
+[2026-09-17T11:33:58] baseline | E4 | run 1
+primary=['DBLP_journals_pacmpl_BowersOWGTES23.pdf#p6#c21718', 'DBLP_journals_corr_abs-2503-22625.pdf#p18#c19657', 'DBLP_journals_pacmpl_BowersOWGTES23.pdf#p20#c21781', 'DBLP_conf_icml_GuJLSESS25.pdf#p39#c9213', 'DBLP_journals_corr_abs-2006-08381.pdf#p18#c17705']
+context=[]
+distinct_papers=4
+verdict=pass
+answer=The corpus mentions a few different approaches to learning reusable libraries of program abstractions:
+
+1. **Iterative library learning / interleaved compression and rewriting**
+   - In Bowers et al. (Stitch), the system “can easily run this algorithm for multiple iterations on a corpus of programs to build up an entire library of abstractions.”
+   - They describe this as “iterative library learning, which interleaves compression and rewriting.”
+   - At each iteration, “Stitch discovers a single abstraction that is used to rewrite the entire corpus of programs,” and later abstractions “build hierarchically on one another.”
+
+   **How it differs:** this is a *sequential, hierarchical* process: learn one abstraction, rewrite the corpus, then learn again on the rewritten corpus.
+
+2. **Large-scale corpus library learning**
+   - The same Stitch paper also describes a more traditional setting: “learn libraries of abstractions from a large corpus of existing programs all at once.”
+   - They contrast this with the earlier iterated learning setting, which “only evaluates library learning on relatively small corpora of short programs discovered by the synthesizer.”
+
+   **How it differs:** this is a *batch learning* setting over a larger existing corpus, rather than iterative discovery from small synthesized programs.
+
+3. **Library learning as part of broader API/design goals**
+   - The ICML corpus summary says library learning aims “to derive a library of useful abstractions from a corpus of programs by abstracting out common reusable features.”
+   - It also adds that a truly effective library should prioritize “ease of use and maintainability,” and be “robust and adaptable to future extensions.”
+
+   **How it differs:** this frames library learning less as a specific algorithm and more as a *design objective* for abstractions, emphasizing usability and maintainability in addition to reuse.
+
+4. **Learning atop richer built-in knowledge**
+   - Another paper suggests the future may lie in systems “initialized with even richer yet broadly applicable resources,” such as “simulation engines or ... standard libraries of modern programming languages.”
+   - It contrasts this with “blank-slate learning,” advocating “learning on top of rich systems of built-in knowledge.”
+
+   **How it differs:** this is not directly a library-learning algorithm, but a *starting-point philosophy*: learn abstractions on top of substantial built-in primitives rather than from minimal foundations.
+
+### Summary of the main differences
+- **Iterative learning:** learns one abstraction at a time and rewrites the corpus between iterations.
+- **Large-scale/batch learning:** learns from a large existing corpus in one go.
+- **Design-oriented view:** focuses on deriving abstractions that are reusable *and* usable/maintainable.
+- **Rich-initialization view:** emphasizes learning abstractions on top of already powerful built-in libraries or engines.
+
+If you want, I can also turn this into a side-by-side comparison table.
+--------------------------------------------------------------------------
+[2026-09-17T11:34:05] baseline | E4 | run 2
+primary=['DBLP_journals_pacmpl_BowersOWGTES23.pdf#p6#c21718', 'DBLP_journals_corr_abs-2503-22625.pdf#p18#c19657', 'DBLP_journals_pacmpl_BowersOWGTES23.pdf#p20#c21781', 'DBLP_conf_icml_GuJLSESS25.pdf#p39#c9213', 'DBLP_journals_corr_abs-2006-08381.pdf#p18#c17705']
+context=[]
+distinct_papers=4
+verdict=pass
+answer=The corpus mentions a few related approaches to learning reusable libraries of program abstractions, with different emphases:
+
+1. **Iterative corpus-guided library learning / compression**
+   - In Stitch, a top-down search “yields a single abstraction,” and this can be repeated over a corpus:
+   - “*we can easily run this algorithm for multiple iterations on a corpus of programs to build up an entire library of abstractions*.”
+   - Each round “*discovers a single abstraction that is used to rewrite the entire corpus of programs*,” so the library grows **hierarchically** and programs become “*compact expressions*.”
+   - This approach is explicitly **iterative** and interleaves “*compression and rewriting*.”
+
+2. **Large-scale corpus library learning from existing programs**
+   - The paper also describes a more traditional setting:
+   - “*learn libraries of abstractions from a large corpus of existing programs all at once*.”
+   - This differs from the iterative setting because it is not about gradually growing the library from synthesized programs, but about mining abstractions from a **large preexisting dataset**.
+   - The authors contrast this with Ellis et al. 2021, whose iterated learning setting used “*relatively small corpora of short programs discovered by the synthesizer*.”
+
+3. **Library learning as API/library design for reuse**
+   - The related discussion in the ICML paper frames library learning as the challenge of deriving “*a library of useful abstractions from a corpus of programs by abstracting out common reusable features*.”
+   - Here the emphasis is not only on reuse, but also on “*ease of use and maintainability*,” and being “*robust and adaptable to future extensions*.”
+   - So this view broadens the goal beyond compression or reuse alone.
+
+4. **Learning on top of rich built-in systems**
+   - Another related perspective argues for starting with “*relatively spartan but generically powerful sets of control flow operators, higher-order functions, and types*” and then “*learning to grow specialized languages atop these foundations*.”
+   - This differs from corpus-based library learning: instead of extracting abstractions from examples, the system is initialized with broad built-in primitives and then learns specialized language features on top.
+
+### Main differences
+- **Source of abstractions**:
+  - corpus of programs vs. built-in foundational machinery.
+- **Process**:
+  - iterative one-abstraction-at-a-time growth vs. one-shot large-scale learning.
+- **Objective**:
+  - compression/rewrite efficiency vs. reusable, maintainable, user-friendly APIs and extensible libraries.
+- **Scope of learning**:
+  - short synthesized programs in small corpora vs. large existing program corpora.
+
+If you want, I can also turn this into a compact comparison table.
+--------------------------------------------------------------------------
+[2026-09-17T11:34:11] baseline | E4 | run 3
+primary=['DBLP_journals_pacmpl_BowersOWGTES23.pdf#p6#c21718', 'DBLP_journals_corr_abs-2503-22625.pdf#p18#c19657', 'DBLP_journals_pacmpl_BowersOWGTES23.pdf#p20#c21781', 'DBLP_conf_icml_GuJLSESS25.pdf#p39#c9213', 'DBLP_journals_corr_abs-2006-08381.pdf#p18#c17705']
+context=[]
+distinct_papers=4
+verdict=pass
+answer=The corpus mentions a few related but distinct approaches to learning reusable libraries of program abstractions:
+
+1. **Iterative library learning / compression-and-rewriting**
+   - In *Stitch*, the system “can easily run this algorithm for multiple iterations on a corpus of programs to build up an entire library of abstractions.”
+   - It works by **interleaving compression and rewriting**: “At each iteration, Stitch discovers a single abstraction that is used to rewrite the entire corpus of programs.”
+   - Successive iterations “yield abstractions that build hierarchically on one another,” so the library becomes increasingly higher-level over time.  
+   - This is described as a **top-down search algorithm** applied repeatedly.
+
+2. **Traditional corpus-based library learning from existing programs**
+   - The same Stitch paper contrasts the above with a more conventional setting: “we aim to learn libraries of abstractions from a large corpus of existing programs all at once.”
+   - This is framed as a **large-scale corpus library learning** problem rather than iterative discovery from short synthesizer-generated programs.
+   - The datasets come from benchmark corpora such as technical drawings and block-tower planning tasks.
+
+3. **Library learning as part of API/design abstraction discovery**
+   - Another paper frames library learning more broadly as a design problem: “derive a library of useful abstractions from a corpus of programs by abstracting out common reusable features.”
+   - It emphasizes that a good library should not only maximize reuse, but also “prioritize ease of use and maintainability, as well as be robust and adaptable to future extensions.”
+   - So here the focus is less on the mechanics of search and more on the **qualities of the resulting abstractions**.
+
+4. **Learning on top of rich built-in systems**
+   - A related perspective says future synthesis systems may be initialized with “even richer yet broadly applicable resources, such as those embodied by simulation engines or by the standard libraries of modern programming languages.”
+   - This differs from learning an entire library from scratch: it suggests **starting from rich existing primitives** and then learning specialized languages or abstractions on top of them.
+
+### Main differences
+- **Iterative vs. one-shot**: Stitch’s iterative method builds abstractions one at a time and rewrites the corpus after each step, whereas the large-scale setting learns from a corpus “all at once.”
+- **Discovery vs. design goals**: Some texts emphasize how abstractions are discovered from programs; others emphasize what makes a library good for human use—reuse, maintainability, robustness.
+- **From scratch vs. built on foundations**: One view learns a library from raw program corpora, while another advocates learning atop rich preexisting resources and standard libraries.
+
+If you want, I can also turn this into a compact comparison table.
+--------------------------------------------------------------------------
+[2026-09-17T11:34:19] baseline | E4 | run 4
+primary=['DBLP_journals_pacmpl_BowersOWGTES23.pdf#p6#c21718', 'DBLP_journals_corr_abs-2503-22625.pdf#p18#c19657', 'DBLP_journals_pacmpl_BowersOWGTES23.pdf#p20#c21781', 'DBLP_conf_icml_GuJLSESS25.pdf#p39#c9213', 'DBLP_journals_corr_abs-2006-08381.pdf#p18#c17705']
+context=[]
+distinct_papers=4
+verdict=pass
+answer=The corpus describes a few related but distinct approaches to learning reusable libraries of program abstractions:
+
+1. **Iterative / corpus-guided top-down abstraction learning**
+   - In Stitch, “the top-down search algorithm described above yields a single abstraction,” but it can be run “for multiple iterations on a corpus of programs to build up an entire library of abstractions.”
+   - This is an **iterative library-learning** process that “interleaves compression and rewriting,” where “at each iteration, Stitch discovers a single abstraction that is used to rewrite the entire corpus of programs.”
+   - The abstractions are said to “build hierarchically on one another,” so later abstractions become more high-level as the library grows.
+
+2. **Traditional large-scale corpus library learning**
+   - The paper also contrasts this with a more standard setting: “we aim to learn libraries of abstractions from a large corpus of existing programs all at once.”
+   - This is described as the “large-scale corpus library learning” setup, using datasets from Wong et al. 2022.
+   - The emphasis here is on learning from a **large existing corpus**, rather than iteratively discovering and rewriting a smaller corpus step by step.
+
+3. **Library learning as API/library design from common reusable features**
+   - Another document frames library learning as: “derive a library of useful abstractions from a corpus of programs by abstracting out common reusable features.”
+   - Here the focus is on **designing APIs and libraries** that increase “code reuse” and provide “more intuitive interfaces.”
+   - This perspective adds extra goals beyond reuse: “ease of use and maintainability,” plus being “robust and adaptable to future extensions.”
+
+4. **Broader view: learning on top of rich built-in systems**
+   - A related paper argues that future learning may build on “richer yet broadly applicable resources,” such as “simulation engines” or “the standard libraries of modern programming languages.”
+   - This is less about extracting abstractions from a corpus and more about **learning over existing powerful primitives**, i.e., initializing systems with rich prior structure and then learning specialized languages on top.
+
+### Main differences
+- **Iterative Stitch-style learning**: learns one abstraction at a time and rewrites the corpus repeatedly, producing hierarchical abstraction layers.
+- **Large-scale corpus learning**: learns from a large corpus in a more conventional one-shot learning setting.
+- **Library/API design perspective**: emphasizes not just abstraction extraction, but also usability, maintainability, and future extensibility.
+- **Rich-initialization perspective**: emphasizes starting from strong built-in resources rather than learning a library from scratch.
+
+If you want, I can also turn this into a compact comparison table.
+--------------------------------------------------------------------------
+[2026-09-17T11:34:25] baseline | E4 | run 5
+primary=['DBLP_journals_pacmpl_BowersOWGTES23.pdf#p6#c21718', 'DBLP_journals_corr_abs-2503-22625.pdf#p18#c19657', 'DBLP_journals_pacmpl_BowersOWGTES23.pdf#p20#c21781', 'DBLP_conf_icml_GuJLSESS25.pdf#p39#c9213', 'DBLP_journals_corr_abs-2006-08381.pdf#p18#c17705']
+context=[]
+distinct_papers=4
+verdict=pass
+answer=The corpus mentions a few related but distinct approaches to learning reusable libraries of program abstractions:
+
+1. **Iterative library learning / compression-and-rewriting**
+   - In *Stitch*, the system learns one abstraction at a time and then rewrites the whole corpus with it:  
+     > “At each iteration, Stitch discovers a single abstraction that is used to rewrite the entire corpus of programs.”
+   - Repeating this process builds a hierarchy of abstractions:  
+     > “Successive iterations therefore yield abstractions that build hierarchically on one another.”
+
+   **How it differs:** this is an incremental, iterative process that interleaves learning and rewriting, gradually growing a library.
+
+2. **Large-scale corpus library learning**
+   - The same paper also describes learning libraries “from a large corpus of existing programs all at once”:  
+     > “our second experiment is instead designed to evaluate Stitch in a more traditional learning setting, in which we aim to learn libraries of abstractions from a large corpus of existing programs all at once.”
+   
+   **How it differs:** instead of discovering abstractions over repeated iterations on small synthesized corpora, this approach learns from a larger existing corpus in a more batch-like setting.
+
+3. **Traditional library learning from common reusable features**
+   - The review paper defines library learning as:  
+     > “derive a library of useful abstractions from a corpus of programs by abstracting out common reusable features.”
+   - It notes that the goal is not just reuse, but also:  
+     > “ease of use and maintainability, as well as be robust and adaptable to future extensions.”
+
+   **How it differs:** this frames library learning more broadly as a design problem for APIs/libraries, emphasizing usability and maintainability in addition to compression or reuse.
+
+4. **Learning specialized languages atop broadly applicable foundations**
+   - Another paper describes a more hierarchical, foundation-first view:  
+     > “We then used learning to grow specialized languages atop these foundations.”
+   - It suggests future systems may learn on top of rich built-in resources, like:  
+     > “simulation engines or ... the standard libraries of modern programming languages.”
+
+   **How it differs:** this is less about extracting abstractions from a corpus and more about *extending* a strong base language/system with learned specialized abstractions.
+
+### In short
+The corpus presents library learning as:
+- **iterative abstraction discovery and rewriting**,
+- **batch learning from a large program corpus**,
+- **API/library design for reuse and maintainability**, and
+- **growing specialized languages on top of rich built-in foundations**.
+
+The main differences are in **when** learning happens (iterative vs. all-at-once), **what is being optimized** (compression/reuse vs. usability/maintainability), and **what the learned abstractions are built on** (a corpus of programs vs. a strong pre-existing foundation).
+--------------------------------------------------------------------------
+[2026-09-17T11:34:39] both | E4 | run 1
+primary=['DBLP_conf_nips_EllisMSST18.pdf#p9#c10289', 'DBLP_journals_pacmpl_BowersOWGTES23.pdf#p2#c21701', 'DBLP_journals_corr_abs-2503-22625.pdf#p18#c19657']
+context=[('DBLP_conf_nips_EllisRST18.pdf#p1#c10301', 'cites from DBLP_conf_nips_EllisMSST18'), ('DBLP_journals_corr_EllisRST17.pdf#p1#c20067', 'cites from DBLP_conf_nips_EllisMSST18')]
+distinct_papers=5
+verdict=pass
+answer=The corpus mentions several approaches to learning reusable libraries of program abstractions:
+
+1. **EC-style multitask subroutine learning**
+   - The NIPS paper says that “program induction algorithms, most prominently the EC algorithm,” aim “to learn new, reusable subroutines that are shared in a multitask setting.”
+   - This approach focuses on discovering subroutines that can be reused across tasks.
+
+2. **Fragment Grammar–based library learning**
+   - Ellis et al. say they “propose a new algorithm for inducing reusable subroutines, based on Fragment Grammars.”
+   - Compared with EC-style learning, this is presented as a more specific algorithmic framework for extracting reusable pieces.
+
+3. **Bottom-up neural recognition models combined with library learning**
+   - The same paper says they “show how to combine these techniques with bottom-up neural recognition models.”
+   - So this approach differs by integrating library induction with a neural proposal/recognition system.
+
+4. **Tree-fragment abstraction from program corpora**
+   - The PACMPL paper says: “One popular approach to library learning is to search for common tree fragments across a corpus of programs, which can be introduced as new abstractions.”
+   - Here the abstractions are literally common syntactic fragments shared across programs.
+
+5. **Function abstraction via variable binding reasoning**
+   - The same paper contrasts that with Ellis et al. 2021, which “introduces an algorithm that reasons about variable bindings to abstract out well-formed functions instead of just tree fragments.”
+   - This differs from fragment-based approaches because it aims to infer higher-level, well-formed functions, not only shared subtrees.
+
+6. **Broader “library learning” as abstraction extraction for reuse**
+   - The corr_abs document defines library learning as deriving “a library of useful abstractions from a corpus of programs by abstracting out common reusable features.”
+   - It also notes that this literature has focused on “code reuse,” though an effective library should also prioritize “ease of use and maintainability.”
+
+### In short
+The main differences are:
+- **What is abstracted**: tree fragments vs. reusable subroutines vs. well-formed functions.
+- **How it is learned**: direct corpus mining, grammar-based induction, or neural-guided synthesis.
+- **What the library is for**: primarily code reuse, or more broadly generalization and maintainability.
+
+If you want, I can also make this into a side-by-side comparison table.
+--------------------------------------------------------------------------
+[2026-09-17T11:34:50] both | E4 | run 2
+primary=['DBLP_journals_corr_abs-2503-22625.pdf#p18#c19657', 'DBLP_conf_icml_GuJLSESS25.pdf#p39#c9213', 'DBLP_journals_pacmpl_BowersOWGTES23.pdf#p6#c21718']
+context=[('DBLP_conf_icml_GuRLSS024.pdf#p3#c9355', 'cites from DBLP_journals_corr_abs-2503-'), ('DBLP_journals_corr_abs-2401-03065.pdf#p4#c18492', 'cites from DBLP_journals_corr_abs-2503-')]
+distinct_papers=5
+verdict=fail
+answer=The corpus mentions **two library-learning settings**, but only one concrete algorithmic approach is described in detail.
+
+1. **Library learning as abstraction discovery from a corpus of programs**
+   - The main idea is to “**derive a library of useful abstractions from a corpus of programs by abstracting out common reusable features**.”
+   - This is described as a way to improve “**code reuse**” and “**more intuitive interfaces**.”
+   - The documents also note that a good library should go beyond reuse and be “**robust and adaptable to future extensions**” and “**prioritize ease of use and maintainability**.”
+
+2. **Iterative library learning / building up a library of abstractions**
+   - In Bowers et al. 2023, the approach is explicitly iterative: “**we can easily run this algorithm for multiple iterations on a corpus of programs to build up an entire library of abstractions**.”
+   - Each iteration “**discovers a single abstraction**” and then “**rewrites the entire corpus of programs**.”
+   - Over successive iterations, the abstractions “**build hierarchically on one another**,” yielding “**increasingly higher-level behaviors**.”
+
+### How they differ
+- The first description is the **general goal** of library learning: finding reusable abstractions from programs.
+- The second is the **specific iterative method** described in the corpus: repeatedly discover one abstraction at a time and rewrite the corpus, producing a **hierarchical abstraction library**.
+
+So, in this corpus, the main contrast is between:
+- **library learning as a broad problem/objective**, and
+- **iterative compression-and-rewriting library construction** as the concrete procedure.
+--------------------------------------------------------------------------
+[2026-09-17T11:35:00] both | E4 | run 3
+primary=['DBLP_journals_corr_abs-2503-22625.pdf#p18#c19657', 'DBLP_journals_pacmpl_BowersOWGTES23.pdf#p2#c21703', 'DBLP_conf_icml_GuJLSESS25.pdf#p39#c9213']
+context=[('DBLP_conf_icml_GuRLSS024.pdf#p3#c9355', 'cites from DBLP_journals_corr_abs-2503-'), ('DBLP_journals_corr_abs-2401-03065.pdf#p4#c18491', 'cites from DBLP_journals_corr_abs-2503-')]
+distinct_papers=5
+verdict=fail
+answer=The corpus mentions one main library-learning approach directly, and contrasts it with the traditional literature it builds on.
+
+- **Traditional library learning**: the primary document says this literature “has focused primarily on **code reuse**,” where the goal is “to derive a library of useful abstractions from a corpus of programs by abstracting out common reusable features.” It also notes that a good library should additionally support “**ease of use and maintainability**” and be “robust and adaptable to future extensions.”  
+  - Quote: “The challenge of library learning is to derive a library of useful abstractions from a corpus of programs by abstracting out common reusable features.”
+
+- **Corpus-guided top-down synthesis**: Bowers et al. describe “an alternate approach to library learning” that “preserv[es] the focus on well-formed function abstractions,” but instead of using “a deductive approach based on refactoring the corpus with rewrite rules,” it “**directly synthesize[s] abstractions**.”  
+  - Quote: “Instead of taking a deductive approach based on refactoring the corpus with rewrite rules, we directly synthesize abstractions.”
+  - They call it “**corpus-guided top-down synthesis**,” where “top-down search can be guided precisely towards discovering shared abstractions over a set of existing training programs.”
+
+So, in short:
+
+1. **Older/traditional library learning**: abstracts common features from programs, mainly with an eye toward reuse.
+2. **Corpus-guided top-down synthesis**: a newer approach that synthesizes abstractions directly via top-down search, rather than refactoring with rewrite rules.
+3. **Broader goal emphasized in the corpus**: libraries should not only enable reuse but also be easy to use, maintainable, and extensible.
+--------------------------------------------------------------------------
+[2026-09-17T11:35:12] both | E4 | run 4
+primary=['DBLP_journals_corr_abs-2503-22625.pdf#p17#c19649', 'DBLP_journals_pacmpl_BowersOWGTES23.pdf#p18#c21771', 'DBLP_conf_nips_EllisMSST18.pdf#p9#c10289']
+context=[('DBLP_conf_icml_GuRLSS024.pdf#p14#c9416', 'cites from DBLP_journals_corr_abs-2503-'), ('DBLP_journals_corr_abs-2401-03065.pdf#p15#c18528', 'cites from DBLP_journals_corr_abs-2503-')]
+distinct_papers=5
+verdict=pass
+answer=The corpus mentions several approaches to learning reusable program abstractions, and they differ mainly in **how the abstractions are represented and learned**:
+
+- **DreamCoder / deductive library learning**  
+  One paper describes DreamCoder as learning libraries **iteratively**: it starts with “a low-level DSL,” then alternates between **synthesizing programs** for tasks and **updating the library of abstractions**. The text calls this “the state-of-the-art in deductive library learning.”  
+  > “DreamCoder learns libraries iteratively: the system is initialized with a low-level DSL, and then alternates between synthesizing programs … and updating the library of abstractions available to the synthesizer.”
+
+- **Fragment Grammars**  
+  Another paper proposes “a new algorithm for inducing reusable subroutines, based on Fragment Grammars.” This suggests a more grammar-based approach to discovering reusable code fragments, rather than DreamCoder’s iterative synthesis-and-library-update loop.  
+  > “we propose a new algorithm for inducing reusable subroutines, based on Fragment Grammars”
+
+- **Bottom-up neural recognition models combined with subroutine induction**  
+  The same paper says it “show[s] how to combine these techniques with bottom-up neural recognition models.” So, unlike a purely symbolic/grammar-based method, this approach integrates **neural recognition** to guide induction.  
+  > “we show how to combine these techniques with bottom-up neural recognition models.”
+
+- **EC algorithm / multitask subroutine learning**  
+  The paper frames this as part of a broader line of work where algorithms “take as their goal to learn new, reusable subroutines that are shared in a multitask setting.” This emphasizes reuse across tasks.  
+  > “take as their goal to learn new, reusable subroutines that are shared in a multitask setting.”
+
+- **Bayesian program merging**  
+  Mentioned as a related idea, this appears to be another way to learn shared structure by merging programs probabilistically, rather than the iterative abstraction-learning of DreamCoder or fragment-based induction.  
+  > “Other instances of this related idea are … Bayesian program merging”
+
+- **Predicate invention in Inductive Logic Programming**  
+  Also listed as related, this learns reusable intermediate predicates in logical programs, which is conceptually similar to subroutine invention but in a logic-programming setting.  
+  > “predicate invention in Inductive Logic Programming”
+
+- **Mining code idioms**  
+  The paper notes approaches that mine “code idioms” from programs, and even use those idioms to improve synthesis from natural language. This is more about discovering recurring usage patterns from existing code than synthesizing abstractions from task-solving.  
+  > “mining ‘code idioms’ from programs”
+
+So, in short:
+
+- **DreamCoder** = iterative deductive library learning via program synthesis and library updates  
+- **Fragment Grammars** = grammar-based induction of reusable subroutines  
+- **Neural recognition + subroutine induction** = combines symbolic induction with neural guidance  
+- **Bayesian program merging / predicate invention / code idioms** = related but different mechanisms for finding reusable structure, in probabilistic, logical, or code-mining settings
+
+The corpus does not provide enough detail to compare their algorithms more deeply than this.
+--------------------------------------------------------------------------
+[2026-09-17T11:35:23] both | E4 | run 5
+primary=['DBLP_journals_corr_abs-2409-17490.pdf#p6#c19239', 'DBLP_journals_pacmpl_BowersOWGTES23.pdf#p24#c21797', 'DBLP_conf_nips_EllisMSST18.pdf#p1#c10251']
+context=[('DBLP_journals_corr_abs-2006-08381.pdf#p16#c17694', 'cites from DBLP_journals_corr_abs-2409-'), ('DBLP_journals_corr_abs-1802-04408.pdf#p1#c16730', 'similar_to from DBLP_journals_corr_abs-2409-')]
+distinct_papers=5
+verdict=pass
+answer=The corpus mentions several different approaches to learning reusable libraries of program abstractions:
+
+1. **DreamCoder**
+   - In the program synthesis description, the paper says: “we use DreamCoder [2], a wake-sleep learning algorithm.”
+   - It starts from “an initial library L0 containing the ‘base primitives’” and returns “a learned final library, Lf,” made of “subroutines (or abstractions) generated by composing the program primitives.”
+   - In the related context, DreamCoder is also described as learning higher-order functions such as “map, fold, unfold, filter,” and even assembling a library “equivalent to the modern repertoire of functional programming idioms.”
+
+2. **Stitch**
+   - The same synthesis description says Stitch is “a library-learning algorithm.”
+   - The related POPL text contrasts it with rewrite-based approaches and says that when corpus-guided pruning is disabled, “Stitch fails to find an abstraction within the resource budget on any of the domains.”
+   - This suggests Stitch is focused on tractable top-down abstraction search, with “corpus-guided pruning of the search space” being key.
+
+3. **EC²**
+   - The NeurIPS paper describes EC² as “a program induction algorithm that learns a DSL while jointly training a neural network to efficiently search for programs in the learned DSL.”
+   - It “learns a domain-specific library of program components for expressing solutions to problems in the domain.”
+   - So unlike DreamCoder’s wake-sleep library learning, EC² couples library learning directly with neural-guided search.
+
+### How they differ
+- **DreamCoder**: learns abstractions iteratively through a **wake-sleep** process, starting from base primitives and building a final library of composed subroutines.
+- **Stitch**: is a **library-learning algorithm** emphasizing **top-down synthesis of abstractions** and the importance of **corpus-guided pruning** to keep the search tractable.
+- **EC²**: learns a DSL/library **jointly with a neural network** that guides search, so the library and the search strategy are learned together.
+
+The corpus also contrasts these with **rewrite-based systems**, which “can, in principle, express broader spaces of refactorings,” including inventing auxiliary lambda abstractions for higher-order functions, but the text frames those as a different kind of approach rather than the main library-learning method.
+
+If you want, I can also turn this into a compact comparison table.
+--------------------------------------------------------------------------
+[2026-09-17T11:35:26] baseline | E5 | run 1
+primary=['DBLP_conf_snapl_2015.pdf#p235#c13111', 'DBLP_journals_corr_abs-2501-02825.pdf#p32#c19370', 'DBLP_conf_snapl_2015.pdf#p184#c12890', 'DBLP_conf_cav_BraggFRS21.pdf#p440#c2170', 'DBLP_conf_cav_BraggFRS21.pdf#p279#c1622']
+context=[]
+distinct_papers=3
+verdict=pass
+answer=The provided documents do not contain Nvidia’s current market capitalization. They only mention Nvidia in contexts like a GPU benchmark and hardware used for experiments, e.g. “with an Nvidia GeForce RTX 2080 Ti GPU,” but give no market-cap data.
+--------------------------------------------------------------------------
+[2026-09-17T11:35:28] baseline | E5 | run 2
+primary=['DBLP_conf_snapl_2015.pdf#p235#c13111', 'DBLP_journals_corr_abs-2501-02825.pdf#p32#c19370', 'DBLP_conf_snapl_2015.pdf#p184#c12890', 'DBLP_conf_cav_BraggFRS21.pdf#p440#c2170', 'DBLP_conf_cav_BraggFRS21.pdf#p279#c1622']
+context=[]
+distinct_papers=3
+verdict=pass
+answer=I’m sorry, but the provided documents do not contain Nvidia’s current market capitalization, so I can’t answer that from the corpus.
+--------------------------------------------------------------------------
+[2026-09-17T11:35:32] baseline | E5 | run 3
+primary=['DBLP_conf_snapl_2015.pdf#p235#c13111', 'DBLP_journals_corr_abs-2501-02825.pdf#p32#c19370', 'DBLP_conf_snapl_2015.pdf#p184#c12890', 'DBLP_conf_cav_BraggFRS21.pdf#p440#c2170', 'DBLP_conf_cav_BraggFRS21.pdf#p279#c1622']
+context=[]
+distinct_papers=3
+verdict=pass
+answer=The provided documents do **not** contain Nvidia’s current market capitalization. They mention an **“Nvidia GeForce RTX 2080 Ti GPU”** and **“NVIDIA GPU Computing”**, but nothing about NVIDIA’s stock market value or market cap.
+--------------------------------------------------------------------------
+[2026-09-17T11:35:35] baseline | E5 | run 4
+primary=['DBLP_conf_snapl_2015.pdf#p235#c13111', 'DBLP_journals_corr_abs-2501-02825.pdf#p32#c19370', 'DBLP_conf_snapl_2015.pdf#p184#c12890', 'DBLP_conf_cav_BraggFRS21.pdf#p440#c2170', 'DBLP_conf_cav_BraggFRS21.pdf#p279#c1622']
+context=[]
+distinct_papers=3
+verdict=pass
+answer=The provided documents do not contain Nvidia’s current market capitalization. They mention NVIDIA in other contexts, such as CUDA kernels and GPU hardware, but give no market cap figure.
+--------------------------------------------------------------------------
+[2026-09-17T11:35:38] baseline | E5 | run 5
+primary=['DBLP_conf_snapl_2015.pdf#p235#c13111', 'DBLP_journals_corr_abs-2501-02825.pdf#p32#c19370', 'DBLP_conf_snapl_2015.pdf#p184#c12890', 'DBLP_conf_cav_BraggFRS21.pdf#p440#c2170', 'DBLP_conf_cav_BraggFRS21.pdf#p279#c1622']
+context=[]
+distinct_papers=3
+verdict=pass
+answer=I’m sorry, but the provided documents do not contain Nvidia’s current market capitalization. They mention an “Nvidia GeForce RTX 2080 Ti GPU” and “NVIDIA GPU Computing” in experimental contexts, but nothing about Nvidia’s market cap.
+--------------------------------------------------------------------------
+[2026-09-17T11:35:45] both | E5 | run 1
+primary=['DBLP_journals_corr_abs-2501-02825.pdf#p32#c19370', 'DBLP_conf_snapl_2015.pdf#p184#c12890', 'DBLP_conf_snapl_2015.pdf#p190#c12916']
+context=[('DBLP_conf_emnlp_OlaussonGLZSTL23.pdf#p5#c8065', 'similar_to from DBLP_journals_corr_abs-2501-'), ('DBLP_conf_iclr_JainHGLYZWSSS25.pdf#p41#c8521', 'similar_to from DBLP_journals_corr_abs-2501-')]
+distinct_papers=4
+verdict=pass
+answer=The provided documents do not contain Nvidia’s current market capitalization. They only mention GPU usage and costs, e.g., “open weight experiments took a cumulative 10-50 GPU-hours on NVIDIA RTX 6000 Ada Generation GPUs,” but no market cap figure.
+--------------------------------------------------------------------------
+[2026-09-17T11:35:52] both | E5 | run 2
+primary=['DBLP_journals_corr_abs-2501-02825.pdf#p32#c19370', 'DBLP_conf_snapl_2015.pdf#p190#c12916', 'DBLP_conf_cav_BraggFRS21.pdf#p163#c1161']
+context=[('DBLP_conf_emnlp_OlaussonGLZSTL23.pdf#p10#c8094', 'similar_to from DBLP_journals_corr_abs-2501-'), ('DBLP_conf_iclr_JainHGLYZWSSS25.pdf#p36#c8512', 'similar_to from DBLP_journals_corr_abs-2501-')]
+distinct_papers=5
+verdict=pass
+answer=The provided documents do not contain Nvidia’s market capitalization. They only mention that some experiments used “NVIDIA RTX 6000 Ada Generation GPUs” and give compute costs, but no market cap figure.
+--------------------------------------------------------------------------
+[2026-09-17T11:35:58] both | E5 | run 3
+primary=['DBLP_journals_corr_abs-2501-02825.pdf#p32#c19370', 'conf_iclr_gupta2025sparling.pdf#p36#c126', 'DBLP_journals_corr_abs-2302-01976.pdf#p36#c18476']
+context=[('DBLP_conf_emnlp_OlaussonGLZSTL23.pdf#p15#c8124', 'similar_to from DBLP_journals_corr_abs-2501-'), ('DBLP_conf_iclr_JainHGLYZWSSS25.pdf#p6#c8420', 'similar_to from DBLP_journals_corr_abs-2501-')]
+distinct_papers=5
+verdict=pass
+answer=I’m sorry, but the provided documents do not contain Nvidia’s current market capitalization.
+
+The documents only mention compute usage and GPU hardware/costs, for example:
+- “All our experiments were performed on NVIDIA GeForce GTX 1080 Ti … or Quadro RTX 5000 … GPUs.”
+- “The experiments in this paper on proprietary models had the following (approximate) costs.”
+
+No document gives Nvidia’s market cap.
+--------------------------------------------------------------------------
+[2026-09-17T11:36:06] both | E5 | run 4
+primary=['DBLP_journals_corr_abs-2501-02825.pdf#p32#c19370', 'DBLP_conf_snapl_2015.pdf#p184#c12890', 'DBLP_conf_snapl_2015.pdf#p190#c12916']
+context=[('DBLP_conf_emnlp_OlaussonGLZSTL23.pdf#p5#c8065', 'similar_to from DBLP_journals_corr_abs-2501-'), ('DBLP_conf_iclr_JainHGLYZWSSS25.pdf#p41#c8521', 'similar_to from DBLP_journals_corr_abs-2501-')]
+distinct_papers=4
+verdict=pass
+answer=I can’t determine that from the provided documents. None of the excerpts mention Nvidia’s market capitalization; they only mention NVIDIA RTX 6000 Ada GPUs and experiment costs.
+--------------------------------------------------------------------------
+[2026-09-17T11:36:13] both | E5 | run 5
+primary=['DBLP_journals_corr_abs-2501-02825.pdf#p32#c19370', 'DBLP_conf_snapl_2015.pdf#p184#c12890', 'DBLP_conf_pldi_PolikarpovaKS16.pdf#p12#c11190']
+context=[('DBLP_conf_emnlp_OlaussonGLZSTL23.pdf#p5#c8065', 'similar_to from DBLP_journals_corr_abs-2501-'), ('DBLP_conf_iclr_JainHGLYZWSSS25.pdf#p41#c8521', 'similar_to from DBLP_journals_corr_abs-2501-')]
+distinct_papers=5
+verdict=pass
+answer=I’m sorry, but the provided documents do not contain Nvidia’s current market capitalization, so I can’t determine it from the corpus.
+--------------------------------------------------------------------------
+[2026-09-17T21:55:01] baseline | E1 | run 1
+primary=['DBLP_conf_sigsoft_SinghS11.pdf#p9#c12155', 'DBLP_conf_sigsoft_SinghS11.pdf#p1#c12097', 'DBLP_conf_cav_SinghS12.pdf#p1#c7751', 'DBLP_conf_cav_SinghS12.pdf#p6#c7767', 'DBLP_conf_mapl_GottschlichSTCR18.pdf#p3#c10136']
+context=[]
+distinct_papers=3
+verdict=fail
+answer=Storyboard programming is a synthesis framework for helping programmers write imperative, low-level data-structure manipulation code. As described in the paper, its goal is to “bridge the gap between the ‘boxes-and-arrows’ diagrams that programmers often use to think about data-structure manipulation algorithms and the low-level imperative code that implements them.”
+
+It synthesizes programs from a combination of:
+- “a set of partial input-output examples,” and
+- “a description of the high-level structure of the desired solution.”
+
+The tool can also use more detailed guidance such as “abstract and concrete input-output examples as well as implementation skeletons,” and even “intermediate state configurations” to reduce the search space. The paper says this lets it synthesize “low-level imperative implementations in a matter of minutes.”
+
+In short, storyboard programming is a multi-modal program synthesis approach: it combines examples, high-level structural information, and sometimes intermediate states or skeletons, then uses a synthesis algorithm/solver to generate the low-level data-structure manipulation code.
+--------------------------------------------------------------------------
+[2026-09-17T21:55:04] baseline | E1 | run 2
+primary=['DBLP_conf_sigsoft_SinghS11.pdf#p9#c12155', 'DBLP_conf_sigsoft_SinghS11.pdf#p1#c12097', 'DBLP_conf_cav_SinghS12.pdf#p1#c7751', 'DBLP_conf_cav_SinghS12.pdf#p6#c7767', 'DBLP_conf_mapl_GottschlichSTCR18.pdf#p3#c10136']
+context=[]
+distinct_papers=3
+verdict=pass
+answer=Storyboard programming is a synthesis framework for helping programmers write “imperative low-level data-structure manipulations.”
+
+From the paper:
+
+- It is meant to “bridge the gap between the ‘boxes-and-arrows’ diagrams that programmers often use to think about data-structure manipulation algorithms and the low-level imperative code that implements them.”
+- It takes “a set of partial input-output examples, as well as a description of the high-level structure of the desired solution.”
+- With that information, it can “synthesize low-level imperative implementations in a matter of minutes.”
+
+How it synthesizes them:
+- The tool combines “abstract and concrete input-output examples as well as implementation skeletons.”
+- It uses “a new synthesis algorithm” that combines “constraint-based synthesis and abstract-interpretation.”
+- The papers also say the system can use “intermediate state configurations” to reduce the search space, letting the user label a point in a loop skeleton and describe the desired state there.
+
+In short, storyboard programming synthesizes data-structure manipulations by using partial examples plus high-level structural hints, then solving the resulting constraints to generate pointer-manipulating imperative code.
+--------------------------------------------------------------------------
+[2026-09-17T21:55:07] baseline | E1 | run 3
+primary=['DBLP_conf_sigsoft_SinghS11.pdf#p9#c12155', 'DBLP_conf_sigsoft_SinghS11.pdf#p1#c12097', 'DBLP_conf_cav_SinghS12.pdf#p1#c7751', 'DBLP_conf_cav_SinghS12.pdf#p6#c7767', 'DBLP_conf_mapl_GottschlichSTCR18.pdf#p3#c10136']
+context=[]
+distinct_papers=3
+verdict=pass
+answer=Storyboard programming is a synthesis framework for helping programmers write “imperative low-level data-structure manipulations.” The paper says its goal is to bridge the gap between the “boxes-and-arrows” diagrams programmers use to think about these algorithms and the low-level imperative code that implements them.
+
+It synthesizes code from a combination of:
+- “partial input-output examples,” and
+- “a description of the high-level structure of the desired solution.”
+
+More specifically, the framework combines constraint-based synthesis with abstract interpretation; the abstract interpretation helps guide the search, while the constraints are solved by the synthesis engine. As the paper puts it, it can produce “low-level imperative implementations in a matter of minutes.”
+
+The related paper on SPT adds that programmers can provide “abstract and concrete input-output examples as well as implementation skeletons,” and even “intermediate state configurations” to reduce the search space and enable synthesis of more complex manipulations.
+
+So, in short: storyboard programming lets a user specify the intended data-structure manipulation at a high level using examples and structural hints, and then automatically synthesizes the pointer-manipulating imperative code.
+--------------------------------------------------------------------------
+[2026-09-17T21:55:13] baseline | E1 | run 4
+primary=['DBLP_conf_sigsoft_SinghS11.pdf#p9#c12155', 'DBLP_conf_sigsoft_SinghS11.pdf#p1#c12097', 'DBLP_conf_cav_SinghS12.pdf#p1#c7751', 'DBLP_conf_cav_SinghS12.pdf#p6#c7767', 'DBLP_conf_mapl_GottschlichSTCR18.pdf#p3#c10136']
+context=[]
+distinct_papers=3
+verdict=fail
+answer=Storyboard programming is a synthesis framework for helping programmers write low-level imperative data-structure manipulations.
+
+From the paper:
+
+- It aims to “bridge the gap between the ‘boxes-and-arrows’ diagrams that programmers often use to think about data-structure manipulation algorithms and the low-level imperative code that implements them.”
+- It takes “a set of partial input-output examples, as well as a description of the high-level structure of the desired solution.”
+- Using that information, it can “synthesize low-level imperative implementations in a matter of minutes.”
+
+More specifically, the tool combines multiple kinds of user guidance:
+
+- “abstract and concrete input-output examples”
+- “implementation skeletons”
+- and, in some cases, “intermediate state configurations”
+
+The synthesis approach is described as combining “constraint-based synthesis and abstract-interpretation-” techniques, and the related paper notes that the constraints are “solved efficiently by the Sketch solver.”
+
+So, in short: storyboard programming is a multi-modal program synthesis approach that uses examples, high-level structure, and sometimes intermediate states to generate imperative code for linked lists, binary search trees, and similar data-structure manipulations.
+--------------------------------------------------------------------------
+[2026-09-17T21:55:16] baseline | E1 | run 5
+primary=['DBLP_conf_sigsoft_SinghS11.pdf#p9#c12155', 'DBLP_conf_sigsoft_SinghS11.pdf#p1#c12097', 'DBLP_conf_cav_SinghS12.pdf#p1#c7751', 'DBLP_conf_cav_SinghS12.pdf#p6#c7767', 'DBLP_conf_mapl_GottschlichSTCR18.pdf#p3#c10136']
+context=[]
+distinct_papers=3
+verdict=pass
+answer=Storyboard programming is a synthesis framework for helping programmers write imperative, low-level data-structure manipulations.
+
+From the paper:
+
+- It is “**designed to help programmers write imperative low-level data-structure manipulations**.”
+- Its goal is “**to bridge the gap between the ‘boxes-and-arrows’ diagrams that programmers often use to think about data-structure manipulation algorithms and the low-level imperative code that implements them**.”
+- The system takes “**a set of partial input-output examples, as well as a description of the high-level structure of the desired solution**,” and “**is able to synthesize low-level imperative implementations in a matter of minutes**.”
+
+How it synthesizes:
+- The framework uses “**a new approach for combining constraint-based synthesis and abstract-interpretation**.”
+- The tool also combines “**abstract and concrete input-output examples as well as implementation skeletons**.”
+- The papers note that users can provide extra structure such as “**intermediate state configurations**” to “**reduce the search space and enable the synthesizer to synthesize more complex manipulations**.”
+
+So, in short, storyboard programming synthesizes data-structure manipulations by combining examples, high-level structural guidance, and constraints to automatically produce low-level pointer-manipulating code.
+--------------------------------------------------------------------------
+[2026-09-17T21:55:23] both | E1 | run 1
+primary=['DBLP_conf_sigsoft_SinghS11.pdf#p10#c12159', 'DBLP_conf_cav_SinghS12.pdf#p2#c7754', 'DBLP_conf_sigsoft_SinghS11.pdf#p1#c12097']
+context=[('DBLP_journals_corr_0002S16.pdf#p12#c16208', 'cites from DBLP_conf_sigsoft_SinghS11'), ('DBLP_conf_cikm_CheungSM12.pdf#p3#c7845', 'cites from DBLP_conf_sigsoft_SinghS11')]
+distinct_papers=4
+verdict=pass
+answer=Storyboard programming is a synthesis framework for helping programmers write low-level, imperative data-structure manipulations.
+
+From the paper’s abstract, it is “**a new synthesis system designed to help programmers write imperative low-level data-structure manipulations**” and it aims to “**bridge the gap between the ‘boxes-and-arrows’ diagrams that programmers often use to think about data-structure manipulation algorithms and the low-level imperative code that implements them**” [DBLP_conf_sigsoft_SinghS11.pdf#p1#c12097].
+
+How it synthesizes code:
+- It takes as input “**a set of partial input-output examples, as well as a description of the high-level structure of the desired solution**” [DBLP_conf_sigsoft_SinghS11.pdf#p1#c12097].
+- In the later description of the tool, a storyboard is made of “**scenarios, inductive definitions and a loop skeleton**” [DBLP_conf_cav_SinghS12.pdf#p2#c7754].
+- A scenario captures the state of the data structure at different stages; it has at least “**input and output**” configurations, and may include intermediate states too [DBLP_conf_cav_SinghS12.pdf#p2#c7754].
+- Using this storyboard, “**Spt synthesizes an imperative implementation of deletion from a high-level storyboard in about two minutes**” in the linked-list example [DBLP_conf_cav_SinghS12.pdf#p2#c7754].
+
+The paper also notes that when the manipulation is complex, the storyboard can be used to synthesize “**fragments of low-level code of different cases individually and then manually compos[ing] the synthesized code**” into a complete implementation [DBLP_conf_sigsoft_SinghS11.pdf#p10#c12159].
+
+So, in short: storyboard programming synthesizes imperative data-structure code from high-level, diagram-like specifications by combining partial examples with structural descriptions such as scenarios, inductive definitions, and loop skeletons.
+--------------------------------------------------------------------------
+[2026-09-17T21:55:30] both | E1 | run 2
+primary=['DBLP_conf_sigsoft_SinghS11.pdf#p1#c12097', 'DBLP_conf_sigsoft_SinghS11.pdf#p1#c12098', 'DBLP_conf_cav_SinghS12.pdf#p1#c7751']
+context=[('DBLP_journals_corr_0002S16.pdf#p1#c16170', 'cites from DBLP_conf_sigsoft_SinghS11'), ('DBLP_conf_cikm_CheungSM12.pdf#p1#c7825', 'cites from DBLP_conf_sigsoft_SinghS11')]
+distinct_papers=4
+verdict=pass
+answer=Storyboard programming is described as “a new synthesis system designed to help programmers write imperative low-level data-structure manipulations.”
+
+It bridges the gap between the high-level “boxes-and-arrows” diagrams programmers use to reason about these algorithms and the low-level imperative code that implements them. According to the paper, the system:
+
+- takes “a set of partial input-output examples”
+- plus “a description of the high-level structure of the desired solution”
+- and “is able to synthesize low-level imperative implementations in a matter of minutes.”
+
+How it works:
+- “The framework is based on a new approach for combining constraint-based synthesis and abstract-interpretation-based shape analysis.”
+- “The approach works by encoding both the synthesis and the abstract interpretation problem as a constraint satisfaction problem whose solution defines the desired low-level implementation.”
+
+The paper says this was used to synthesize “several data-structure manipulations involving linked lists and binary search trees, as well as an insertion operation into an And Inverter Graph.”
+--------------------------------------------------------------------------
+[2026-09-17T21:55:37] both | E1 | run 3
+primary=['DBLP_conf_sigsoft_SinghS11.pdf#p1#c12097', 'DBLP_conf_sigsoft_SinghS11.pdf#p9#c12155', 'DBLP_conf_cav_SinghS12.pdf#p1#c7751']
+context=[('DBLP_journals_corr_0002S16.pdf#p1#c16170', 'cites from DBLP_conf_sigsoft_SinghS11'), ('DBLP_conf_cikm_CheungSM12.pdf#p1#c7825', 'cites from DBLP_conf_sigsoft_SinghS11')]
+distinct_papers=4
+verdict=pass
+answer=Storyboard programming is a synthesis framework “designed to help programmers write imperative low-level data-structure manipulations” by bridging the gap between “boxes-and-arrows” diagrams and low-level code.
+
+According to the paper, it takes as input:
+
+- “a set of partial input-output examples”
+- “a description of the high-level structure of the desired solution”
+
+From that information, it “is able to synthesize low-level imperative implementations in a matter of minutes.”
+
+The paper also says the framework is based on “a new approach for combining constraint-based synthesis and abstract-interpretation,” and the related paper describes Storyboard Programming Tool (Spt) as helping programmers write low-level implementations by combining “abstract and concrete input-output examples as well as implementation skeletons.”
+
+So, in short: storyboard programming lets the user specify the intended behavior at a high level using examples and structural guidance, and then synthesizes the low-level pointer-manipulating code automatically via constraint solving plus abstraction.
+--------------------------------------------------------------------------
+[2026-09-17T21:55:44] both | E1 | run 4
+primary=['DBLP_conf_sigsoft_SinghS11.pdf#p10#c12159', 'DBLP_conf_sigsoft_SinghS11.pdf#p1#c12097', 'DBLP_conf_sigsoft_SinghS11.pdf#p9#c12155']
+context=[('DBLP_conf_cikm_CheungSM12.pdf#p1#c7825', 'cites from DBLP_conf_sigsoft_SinghS11'), ('DBLP_conf_iclr_NyePBATS21.pdf#p11#c8656', 'cites from DBLP_conf_sigsoft_SinghS11')]
+distinct_papers=3
+verdict=pass
+answer=Storyboard programming is a synthesis framework “designed to help programmers write imperative low-level data-structure manipulations.” Its goal is to bridge the gap between the “boxes-and-arrows” diagrams programmers use to reason about data-structure algorithms and the low-level imperative code that implements them.
+
+According to the paper, the system takes as input:
+
+- “a set of partial input-output examples,” and
+- “a description of the high-level structure of the desired solution.”
+
+From that information, it can “synthesize low-level imperative implementations in a matter of minutes.”
+
+The paper also says the framework is “based on a new approach for combining constraint-based synthesis and abstract-interpretation-” (the excerpt cuts off there), and in the experiments section it notes that it is aimed at synthesizing “reasonably complex data-structure manipulations.”
+
+A concrete example given is the red-black tree `fixInvariant` method: when a simple storyboard is hard to draw for the whole invariant, they used the framework to synthesize “low-level code for the four cases,” and then “manually composing the synthesized code” into the complete algorithm.
+
+So, in short: storyboard programming uses a storyboard-style high-level specification plus partial examples to automatically generate low-level code for data-structure operations, especially by synthesizing individual cases that can then be composed into a full implementation.
+--------------------------------------------------------------------------
+[2026-09-17T21:55:52] both | E1 | run 5
+primary=['DBLP_conf_sigsoft_SinghS11.pdf#p1#c12097', 'DBLP_conf_cav_SinghS12.pdf#p1#c7752', 'DBLP_conf_cav_SinghS12.pdf#p1#c7751']
+context=[('DBLP_conf_pldi_Solar-LezamaRBE05.pdf#p8#c11486', 'cites from DBLP_conf_cav_SinghS12'), ('DBLP_journals_corr_0002S16.pdf#p1#c16170', 'cites from DBLP_conf_sigsoft_SinghS11')]
+distinct_papers=4
+verdict=pass
+answer=Storyboard programming is a synthesis framework for helping programmers write imperative, low-level data-structure manipulations.
+
+From the paper’s abstract, it is designed to “bridge the gap between the ‘boxes-and-arrows’ diagrams that programmers often use to think about data-structure manipulation algorithms and the low-level imperative code that implements them.” It takes as input:
+
+- “a set of partial input-output examples,” and
+- “a description of the high-level structure of the desired solution.”
+
+Using that information, it can “synthesize low-level imperative implementations in a matter of minutes.”
+
+The later paper adds that the tool combines:
+- “abstract and concrete input-output examples,”
+- “implementation skeletons,” and
+- “abstract-interpretation based shape-analysis” with “constraint-based synthesis.”
+
+It also explains that the synthesis algorithm uses “an abstraction refinement based approach to concisely encode synthesis constraints obtained from shape analysis.”
+
+So, in short: storyboard programming lets the programmer provide high-level storyboards or sketches of the intended manipulation, along with examples, and then automatically fills in the low-level pointer-manipulating code for linked structures like lists and binary search trees.
+--------------------------------------------------------------------------
+[2026-09-17T21:55:57] baseline | E4 | run 1
+primary=['DBLP_journals_pacmpl_BowersOWGTES23.pdf#p6#c21718', 'DBLP_journals_corr_abs-2503-22625.pdf#p18#c19657', 'DBLP_journals_pacmpl_BowersOWGTES23.pdf#p20#c21781', 'DBLP_conf_icml_GuJLSESS25.pdf#p39#c9213', 'DBLP_journals_corr_abs-2006-08381.pdf#p18#c17705']
+context=[]
+distinct_papers=4
+verdict=fail
+answer=The corpus mentions two main approaches to learning reusable libraries of program abstractions:
+
+1. **Iterative corpus-guided library learning**
+   - In *Stitch*, the system “**run[s] this algorithm for multiple iterations on a corpus of programs to build up an entire library of abstractions**.”
+   - The process is iterative: “**At each iteration, Stitch discovers a single abstraction that is used to rewrite the entire corpus of programs**,” and “**Successive iterations therefore yield abstractions that build hierarchically on one another**.”
+   - So this approach learns a library by repeatedly compressing and rewriting the same corpus, gradually creating higher-level abstractions.
+
+2. **Large-scale corpus library learning from existing programs**
+   - The paper also describes a more traditional setting: “**we aim to learn libraries of abstractions from a large corpus of existing programs all at once**.”
+   - This is contrasted with the earlier “iterated learning setting” from Ellis et al. 2021, which used “**relatively small corpora of short programs discovered by the synthesizer**.”
+   - So this approach learns abstractions in one pass over a larger corpus, rather than building them incrementally through repeated rewriting.
+
+### How they differ
+- **Iteration vs. one-shot learning**: the first approach builds a library step by step; the second learns from a large corpus “all at once.”
+- **Corpus size and source**: the iterative setting uses smaller synthesized program corpora, while the large-scale setting uses “existing programs.”
+- **Structure of abstractions**: iterative learning yields abstractions that “build hierarchically on one another,” whereas the large-scale setting is framed as learning a library directly from the corpus.
+
+The corpus also gives a broader motivation for both: library learning is “**to derive a library of useful abstractions from a corpus of programs by abstracting out common reusable features**.”
+--------------------------------------------------------------------------
+[2026-09-17T21:56:01] baseline | E4 | run 2
+primary=['DBLP_journals_pacmpl_BowersOWGTES23.pdf#p6#c21718', 'DBLP_journals_corr_abs-2503-22625.pdf#p18#c19657', 'DBLP_journals_pacmpl_BowersOWGTES23.pdf#p20#c21781', 'DBLP_conf_icml_GuJLSESS25.pdf#p39#c9213', 'DBLP_journals_corr_abs-2006-08381.pdf#p18#c17705']
+context=[]
+distinct_papers=4
+verdict=pass
+answer=The corpus mentions a few related approaches to learning reusable libraries of program abstractions:
+
+1. **Iterative library learning / compression-and-rewriting**
+   - In *Stitch*, the system can be run “for multiple iterations on a corpus of programs to build up an entire library of abstractions.”
+   - The process is iterative: “At each iteration, Stitch discovers a single abstraction that is used to rewrite the entire corpus of programs.”
+   - This yields “abstractions that build hierarchically on one another,” and “individual programs shrink into compact expressions.”
+   - So this approach is **sequential and hierarchical**: learn one abstraction, rewrite programs, then learn more abstractions from the rewritten corpus.
+
+2. **Large-scale corpus library learning**
+   - The same paper contrasts the above with a “more traditional learning setting,” where the goal is to “learn libraries of abstractions from a large corpus of existing programs all at once.”
+   - This is a **batch/offline** setting rather than iterative learning on short programs discovered by synthesis.
+   - It is evaluated on larger datasets, including “technical drawings and block-tower planning tasks.”
+
+3. **Library learning as API/design abstraction learning**
+   - Another document frames library learning as a broader design problem: “deriv[ing] a library of useful abstractions from a corpus of programs by abstracting out common reusable features.”
+   - Here the emphasis is not just code reuse, but also that “a truly effective library must also prioritize ease of use and maintainability, as well as be robust and adaptable to future extensions.”
+   - This differs from the more algorithmic Stitch setup by emphasizing **software-engineering qualities** of the learned abstractions, not only compression or reuse.
+
+4. **Learning specialized languages atop broadly useful foundations**
+   - One paper describes learning as growing “specialized languages atop these foundations,” starting from “relatively spartan but generically powerful sets of control flow operators, higher-order functions, and types.”
+   - This is not exactly library learning in the narrow corpus-compression sense, but it is a related form of abstraction learning: instead of extracting abstractions from a program corpus, the system **starts from built-in general-purpose primitives and learns domain-specific extensions**.
+   - The key difference is that the abstractions are built **on top of an existing core language**, rather than mined from repeated patterns in a corpus.
+
+In short, the main contrasts are:
+
+- **Iterative vs. one-shot** learning of abstractions.
+- **Compression-oriented** learning vs. **API/usability-oriented** learning.
+- **Mining abstractions from a corpus** vs. **growing specialized languages from a rich base language**.
+
+If you want, I can also turn this into a compact comparison table.
+--------------------------------------------------------------------------
+[2026-09-17T21:56:07] baseline | E4 | run 3
+primary=['DBLP_journals_pacmpl_BowersOWGTES23.pdf#p6#c21718', 'DBLP_journals_corr_abs-2503-22625.pdf#p18#c19657', 'DBLP_journals_pacmpl_BowersOWGTES23.pdf#p20#c21781', 'DBLP_conf_icml_GuJLSESS25.pdf#p39#c9213', 'DBLP_journals_corr_abs-2006-08381.pdf#p18#c17705']
+context=[]
+distinct_papers=4
+verdict=pass
+answer=The corpus mentions several related but distinct approaches to learning reusable libraries of program abstractions:
+
+1. **Iterative corpus-guided library learning / abstraction learning**
+   - In *Stitch*, the system can be run “for multiple iterations on a corpus of programs to build up an entire library of abstractions.”
+   - The key idea is that “At each iteration, Stitch discovers a single abstraction that is used to rewrite the entire corpus of programs.”
+   - This is explicitly **hierarchical and iterative**: “Successive iterations therefore yield abstractions that build hierarchically on one another,” and “interleaves compression and rewriting.”
+
+2. **Traditional large-scale corpus library learning**
+   - The same paper contrasts the above with a “more traditional learning setting,” where the goal is “to learn libraries of abstractions from a large corpus of existing programs all at once.”
+   - So this approach is **single-shot over a large corpus**, rather than repeatedly discovering one abstraction at a time through iterative rewriting.
+
+3. **Library learning as part of API/library design**
+   - Another document frames library learning more broadly as “derive a library of useful abstractions from a corpus of programs by abstracting out common reusable features.”
+   - This perspective emphasizes not just reuse, but that “a truly effective library must also prioritize ease of use and maintainability, as well as be robust and adaptable to future extensions.”
+   - So this approach differs by focusing on **software engineering qualities** of the learned abstractions, not just compression or reuse.
+
+4. **Learning specialized languages atop broad built-in foundations**
+   - One document describes a strategy of starting from “relatively spartan but generically powerful sets of control flow operators, higher-order functions, and types,” and then “used learning to grow specialized languages atop these foundations.”
+   - This is related to library learning, but it differs in that learning happens **on top of an existing general foundation**, producing specialized expressive resources rather than directly mining a library from a corpus.
+
+### In short
+- **Iterative Stitch-style learning**: one abstraction per iteration, rewriting the corpus each time, building a hierarchy.
+- **Traditional large-corpus learning**: learn abstractions from the corpus “all at once.”
+- **API/library design view**: learned abstractions should optimize reuse *and* usability/maintainability.
+- **Language-growth view**: learn specialized abstractions on top of general built-in primitives.
+
+If you want, I can also turn this into a compact comparison table.
+--------------------------------------------------------------------------
+[2026-09-17T21:56:12] baseline | E4 | run 4
+primary=['DBLP_journals_pacmpl_BowersOWGTES23.pdf#p6#c21718', 'DBLP_journals_corr_abs-2503-22625.pdf#p18#c19657', 'DBLP_journals_pacmpl_BowersOWGTES23.pdf#p20#c21781', 'DBLP_conf_icml_GuJLSESS25.pdf#p39#c9213', 'DBLP_journals_corr_abs-2006-08381.pdf#p18#c17705']
+context=[]
+distinct_papers=4
+verdict=pass
+answer=The corpus mentions a few related but distinct approaches to learning reusable libraries of program abstractions:
+
+1. **Iterative library learning / compression-and-rewriting**
+   - In *Stitch*, “we can easily run this algorithm for multiple iterations on a corpus of programs to build up an entire library of abstractions.”
+   - The process is iterative: “At each iteration, Stitch discovers a single abstraction that is used to rewrite the entire corpus of programs.”
+   - This yields “abstractions that build hierarchically on one another,” with the library growing over time and programs becoming “compact expressions.”
+   - So this approach learns a library **one abstraction at a time**, repeatedly compressing the corpus.
+
+2. **Large-scale corpus library learning**
+   - The same Stitch paper also describes a “more traditional learning setting,” where the goal is “to learn libraries of abstractions from a large corpus of existing programs all at once.”
+   - This differs from the iterative setting because it is not just learning from a small set of synthesized programs in repeated rounds, but from “a large corpus of existing programs.”
+   - So this approach is **batch learning over a large corpus**, rather than stepwise iterative refinement.
+
+3. **Library learning as API / abstraction design**
+   - The ICML context frames library learning more broadly as: “derive a library of useful abstractions from a corpus of programs by abstracting out common reusable features.”
+   - It emphasizes that a good library is not just about reuse, but also “ease of use and maintainability,” and being “robust and adaptable to future extensions.”
+   - This differs from the Stitch framing by stressing **human-facing API quality and maintainability**, not just compression or reuse.
+
+4. **Learning specialized languages atop broad foundations**
+   - Another paper describes a related but broader strategy: start with “relatively spartan but generically powerful sets of control flow operators, higher-order functions, and types,” and then “used learning to grow specialized languages atop these foundations.”
+   - This is less about extracting abstractions from a corpus and more about **bootstrapping specialized programming languages from built-in general-purpose primitives**.
+   - The distinction is that the reusable structure is learned/grown on top of an existing foundation, rather than mined directly from program corpora.
+
+In short, the corpus contrasts:
+- **iterative, one-abstraction-at-a-time library induction**,  
+- **batch learning from a large corpus**,  
+- **library learning as API design with usability/maintainability goals**, and  
+- **growing specialized languages from general built-in primitives**.
+
+If you want, I can also turn this into a side-by-side comparison table.
+--------------------------------------------------------------------------
+[2026-09-17T21:56:17] baseline | E4 | run 5
+primary=['DBLP_journals_pacmpl_BowersOWGTES23.pdf#p6#c21718', 'DBLP_journals_corr_abs-2503-22625.pdf#p18#c19657', 'DBLP_journals_pacmpl_BowersOWGTES23.pdf#p20#c21781', 'DBLP_conf_icml_GuJLSESS25.pdf#p39#c9213', 'DBLP_journals_corr_abs-2006-08381.pdf#p18#c17705']
+context=[]
+distinct_papers=4
+verdict=fail
+answer=The corpus mentions a few related but distinct approaches to learning reusable libraries of program abstractions:
+
+1. **Iterative library learning / compression-and-rewriting**
+   - In Stitch, a corpus is processed by repeatedly discovering one abstraction at a time and rewriting the whole corpus with it.
+   - The paper says: “**we can easily run this algorithm for multiple iterations on a corpus of programs to build up an entire library of abstractions**.”
+   - Each round “**discovers a single abstraction that is used to rewrite the entire corpus of programs**,” so later abstractions “**build hierarchically on one another**.”
+   - This is a **sequential, iterative** approach that gradually grows a library.
+
+2. **Large-scale corpus library learning**
+   - The same Stitch paper also describes a more traditional setting: learning a library “**from a large corpus of existing programs all at once**.”
+   - It contrasts this with the earlier iterated-learning setting, which used “**relatively small corpora of short programs**.”
+   - So this is an **all-at-once corpus-based** approach, aimed at larger datasets rather than iterative refinement over short synthesized programs.
+
+3. **Traditional library learning as reusable abstraction extraction**
+   - Another paper summarizes library learning more generally as deriving “**a library of useful abstractions from a corpus of programs by abstracting out common reusable features**.”
+   - This framing emphasizes **code reuse** and useful interfaces, rather than the mechanics of how the abstractions are found.
+   - It also notes that a truly effective library should prioritize “**ease of use and maintainability**,” and be “**robust and adaptable to future extensions**.”
+
+4. **Learning specialized languages atop generic foundations**
+   - One paper describes a broader program-induction strategy: start with “**relatively spartan but generically powerful sets of control flow operators, higher-order functions, and types**,” then “**used learning to grow specialized languages atop these foundations**.”
+   - This is similar in spirit to library learning, but it is about **expanding a language from broad primitives**, not just extracting reusable abstractions from a corpus.
+
+### Main differences
+- **Iterative Stitch-style learning** builds abstractions **one by one**, rewriting the corpus after each discovery.
+- **Large-scale corpus learning** learns from a large existing corpus **in one setting**, rather than through many small iterative rounds.
+- **General library learning** is the broader goal of extracting reusable abstractions, with emphasis on **reuse, usability, maintainability, and extensibility**.
+- **Specialized-language growth** starts from a **rich base language** and learns new domain-specific constructs on top, which is broader than just discovering a library from programs.
+
+If you want, I can also turn this into a compact comparison table.
+--------------------------------------------------------------------------
+[2026-09-17T21:56:26] both | E4 | run 1
+primary=['DBLP_journals_corr_abs-2503-22625.pdf#p18#c19657', 'DBLP_conf_icml_GuJLSESS25.pdf#p39#c9213', 'DBLP_journals_pacmpl_BowersOWGTES23.pdf#p27#c21807']
+context=[('DBLP_conf_icml_GuRLSS024.pdf#p3#c9355', 'cites from DBLP_journals_corr_abs-2503-'), ('DBLP_journals_corr_abs-2401-03065.pdf#p4#c18492', 'cites from DBLP_journals_corr_abs-2503-')]
+distinct_papers=5
+verdict=pass
+answer=The corpus mentions two library-learning approaches:
+
+1. **Corpus-guided top-down abstraction learning (Stitch)**  
+   In *Top-Down Synthesis for Library Learning*, Stitch is described as using “**a corpus-guided top-down approach to learning library abstractions**.” The paper says this is “closely related to recent guided enumerative synthesis techniques,” including methods that use:
+   - “**type-based constraints on holes**”
+   - “**over- and under-approximations of the behaviors of holes**”
+   - “**probabilistic techniques to heuristically guide the search**”  
+   The key distinction is that these techniques are often used to “**synthesize entire programs based on input/output examples or another form of specification**,” whereas Stitch targets the “**abstraction-learning goal**.”
+
+2. **Library learning from a corpus of programs by abstracting common reusable features**  
+   The ICML/corresponding survey-style text defines library learning as the challenge “**to derive a library of useful abstractions from a corpus of programs by abstracting out common reusable features**.” It emphasizes that a good library should not only support “**more code reuse**,” but also “**ease of use and maintainability**,” and be “**robust and adaptable to future extensions**.”
+
+### How they differ
+- **Stitch** is presented as a *specific synthesis method* and is “**corpus-guided top-down**,” drawing on synthesis/search machinery.
+- The broader library-learning framing is about *what makes a library effective*: not just reuse, but also usability, maintainability, robustness, and extensibility.
+- The synthesis methods cited around Stitch are generally aimed at **program generation**, while Stitch is aimed at **learning abstractions/libraries** rather than complete programs.
+
+If you want, I can also summarize how these relate to **data representation** as the other example mentioned in the corpus.
+--------------------------------------------------------------------------
+[2026-09-17T21:56:35] both | E4 | run 2
+primary=['DBLP_conf_nips_EllisMSST18.pdf#p9#c10289', 'DBLP_conf_icml_GuJLSESS25.pdf#p39#c9213', 'DBLP_journals_pacmpl_BowersOWGTES23.pdf#p2#c21703']
+context=[('DBLP_conf_nips_EllisRST18.pdf#p9#c10332', 'cites from DBLP_conf_nips_EllisMSST18'), ('DBLP_journals_corr_EllisRST17.pdf#p11#c20108', 'cites from DBLP_conf_nips_EllisMSST18')]
+distinct_papers=5
+verdict=pass
+answer=The corpus mentions **three main approaches** to learning reusable libraries of program abstractions:
+
+1. **Fragment-grammar / subroutine induction**
+   - Ellis et al. describe “**a new algorithm for inducing reusable subroutines, based on Fragment Grammars**.”
+   - They position it as part of “**inventing new subroutines for program induction**,” i.e., learning reusable pieces shared in a multitask setting.
+
+2. **Deductive library learning via rewrite-rule refactoring**
+   - Bowers et al. say their paper presents “**an alternate approach to library learning**.”
+   - Specifically: “**Instead of taking a deductive approach based on refactoring the corpus with rewrite rules, we directly synthesize abstractions.**”
+   - So this approach learns abstractions by transforming existing programs through deduction/refactoring.
+
+3. **Corpus-guided top-down synthesis of abstractions**
+   - Bowers et al. name their method “**corpus-guided top-down synthesis**.”
+   - They explain that “**top-down search can be guided precisely towards discovering shared abstractions over a set of existing training programs**,” using “**syntactic comparisons between a partially constructed abstraction and the set of training programs**.”
+   - This differs from the deductive rewrite-rule approach by searching directly for abstractions rather than deriving them through refactoring.
+
+A broader framing from the ICML paper is that library learning is about “**derive a library of useful abstractions from a corpus of programs by abstracting out common reusable features**,” but the methods differ in how they get there:
+- **Fragment Grammars**: induce reusable subroutines.
+- **Deductive rewrite/refactoring**: extract abstractions by rewriting the corpus.
+- **Corpus-guided top-down synthesis**: directly synthesize abstractions with search guided by the training programs.
+
+If you want, I can also compare these approaches along dimensions like **search strategy, whether they are bottom-up vs top-down, and how they handle reuse**.
+--------------------------------------------------------------------------
+[2026-09-17T21:56:45] both | E4 | run 3
+primary=['DBLP_journals_corr_abs-2503-22625.pdf#p18#c19657', 'DBLP_journals_corr_abs-2409-17490.pdf#p6#c19239', 'DBLP_conf_icml_GuJLSESS25.pdf#p39#c9213']
+context=[('DBLP_conf_icml_GuRLSS024.pdf#p10#c9395', 'cites from DBLP_journals_corr_abs-2503-'), ('DBLP_journals_corr_abs-2401-03065.pdf#p17#c18537', 'cites from DBLP_journals_corr_abs-2503-')]
+distinct_papers=5
+verdict=pass
+answer=The corpus mentions at least two related approaches to learning reusable libraries of program abstractions:
+
+1. **Library learning as abstraction discovery from program corpora**
+   - The paper describes the goal as: “**derive a library of useful abstractions from a corpus of programs by abstracting out common reusable features**.”
+   - It emphasizes that such libraries are not only about reuse, but should also “**prioritize ease of use and maintainability, as well as be robust and adaptable to future extensions**.”
+   - This is presented as a broad library-design problem focused on producing useful APIs/libraries from existing code.
+
+2. **DreamCoder-style wake-sleep library learning**
+   - In the program synthesis system description, the paper says: “**we use DreamCoder [2], a wake-sleep learning algorithm, alongside Stitch [1], a library-learning algorithm**.”
+   - DreamCoder starts from an initial library “**L0 containing the ‘base primitives’ defined in the domain-specific DSL**” and ends with a learned final library “**Lf**,” which contains “**various subroutines (or abstractions) generated by composing the program primitives**.”
+   - So this approach is more specifically an algorithmic library-learning method inside a synthesis system, building abstractions by composing primitives in a DSL.
+
+### How they differ
+- The **general library-learning framing** is about the *design objective* of extracting reusable, usable, maintainable abstractions from code.
+- The **DreamCoder approach** is a *concrete algorithmic method* that learns a library incrementally from domain-specific primitives through wake-sleep synthesis.
+- The corpus does **not** provide enough detail to compare Stitch versus DreamCoder directly beyond naming both as library-learning algorithms.
+--------------------------------------------------------------------------
+[2026-09-17T21:56:53] both | E4 | run 4
+primary=['DBLP_conf_nips_EllisMSST18.pdf#p9#c10289', 'DBLP_journals_corr_abs-2503-22625.pdf#p18#c19657', 'DBLP_conf_icml_GuJLSESS25.pdf#p39#c9213']
+context=[('DBLP_conf_nips_EllisRST18.pdf#p9#c10332', 'cites from DBLP_conf_nips_EllisMSST18'), ('DBLP_journals_corr_EllisRST17.pdf#p11#c20108', 'cites from DBLP_conf_nips_EllisMSST18')]
+distinct_papers=5
+verdict=pass
+answer=The corpus mentions a few related approaches to learning reusable program abstractions / libraries:
+
+1. **Library learning from a corpus of programs**
+   - The ICML and survey documents describe this directly as a way to “derive a library of useful abstractions from a corpus of programs by abstracting out common reusable features.”
+   - They note that this literature has focused on **code reuse**, but argue a good library should also emphasize “ease of use and maintainability,” and be “robust and adaptable to future extensions.”
+
+2. **Fragment Grammar–based subroutine induction**
+   - Ellis et al. describe their own approach as “a new algorithm for inducing reusable subroutines, based on Fragment Grammars.”
+   - This differs from generic library learning in that it is framed as a **program induction** method for discovering reusable subroutines, rather than just mining abstractions from existing code.
+
+3. **The EC algorithm**
+   - The NIPS paper says “Several program induction algorithms, most prominently the EC algorithm, take as their goal to learn new, reusable subroutines that are shared in a multitask setting.”
+   - So EC is specifically a **multitask subroutine-learning** approach: it learns reusable pieces shared across tasks.
+
+4. **Bayesian Program Merging**
+   - It is listed as another related idea.
+   - From the context given, it is a different route to abstraction learning, using **Bayesian merging** of programs rather than Fragment Grammars or EC-style multitask induction.
+
+5. **Predicate invention in Inductive Logic Programming**
+   - Also listed as a related idea.
+   - This is the logic-programming analogue of learning reusable abstractions: instead of subroutines in programs, it invents **new predicates** as reusable concepts.
+
+6. **Code idiom mining**
+   - The paper says related ideas have been applied to “mining ‘code idioms’ from programs,” and then using those idioms to improve synthesis from natural language.
+   - This is more about identifying frequent implementation patterns than explicitly learning a general-purpose library.
+
+### Main differences
+- **Learning target**:
+  - EC / Fragment Grammars / Bayesian program merging: reusable **subroutines**.
+  - Predicate invention: reusable **predicates**.
+  - Code idiom mining: reusable **code patterns/idioms**.
+  - Library learning: reusable **abstractions for APIs/libraries**.
+
+- **Setting**:
+  - EC emphasizes a **multitask** setting.
+  - Library learning is described as learning from a **corpus of programs**.
+  - Code idioms are mined from programs and reused in downstream synthesis.
+
+- **Goal beyond reuse**:
+  - The survey stresses that library learning should not only maximize reuse, but also improve **intuitiveness, maintainability, robustness, and extensibility**.
+
+If you want, I can also turn this into a compact comparison table.
+--------------------------------------------------------------------------
+[2026-09-17T21:57:02] both | E4 | run 5
+primary=['DBLP_journals_corr_abs-2503-22625.pdf#p18#c19657', 'DBLP_journals_pacmpl_BowersOWGTES23.pdf#p2#c21703', 'DBLP_conf_icml_GuJLSESS25.pdf#p39#c9213']
+context=[('DBLP_conf_icml_GuRLSS024.pdf#p3#c9355', 'cites from DBLP_journals_corr_abs-2503-'), ('DBLP_journals_corr_abs-2401-03065.pdf#p4#c18491', 'cites from DBLP_journals_corr_abs-2503-')]
+distinct_papers=5
+verdict=fail
+answer=The corpus mentions two approaches to learning reusable libraries of program abstractions:
+
+1. **Traditional library learning via refactoring / rewrite rules**  
+   The primary documents contrast the new method with the earlier literature:  
+   > “the traditional library learning literature has focused primarily on code reuse”  
+   and Bowers et al. describe their method as  
+   > “an alternate approach to library learning… Instead of taking a deductive approach based on refactoring the corpus with rewrite rules…”
+
+   So, the earlier approach learns abstractions by **refactoring a corpus of programs**, using **rewrite rules** and a deductive process.
+
+2. **Corpus-guided top-down synthesis**  
+   Bowers et al. introduce this as their alternate approach:  
+   > “we directly synthesize abstractions. We call this approach corpus-guided top-down synthesis”  
+   It is  
+   > “based on the insight that when applied to the task of synthesizing abstractions, top-down search can be guided precisely towards discovering shared abstractions over a set of existing training programs.”  
+   And,  
+   > “At every step of the search, syntactic comparisons between a partially constructed abstraction and the set of training programs can be …”
+
+### How they differ
+- **Traditional approach:** starts from existing programs and **refactors** them using **rewrite rules** to extract common code.
+- **Corpus-guided top-down synthesis:** **directly synthesizes** abstractions, using **top-down search guided by syntactic comparison** against the training corpus.
+
+The corpus also notes a broader goal for libraries beyond reuse:
+> “a truly effective library must also prioritize ease of use and maintainability, as well as be robust and adaptable to future extensions.”
+
+So the newer approach is not just about reuse, but about discovering abstractions in a way that can better support usable and maintainable libraries.
+--------------------------------------------------------------------------
+[2026-09-17T22:04:37] baseline | E1 | run 1
+primary=['DBLP_conf_sigsoft_SinghS11.pdf#p9#c12155', 'DBLP_conf_sigsoft_SinghS11.pdf#p1#c12097', 'DBLP_conf_cav_SinghS12.pdf#p1#c7751', 'DBLP_conf_cav_SinghS12.pdf#p6#c7767', 'DBLP_conf_mapl_GottschlichSTCR18.pdf#p3#c10136']
+context=[]
+distinct_papers=3
+verdict=pass
+answer=Storyboard programming is a synthesis framework for helping programmers write low-level imperative data-structure manipulations. The papers describe it as bridging the gap between the “boxes-and-arrows” diagrams programmers use to reason about these algorithms and the code that implements them.
+
+From the paper:
+
+- It is “a new synthesis system designed to help programmers write imperative low-level data-structure manipulations.”
+- Its goal is to bridge “the gap between the ‘boxes-and-arrows’ diagrams that programmers often use to think about data-structure manipulation algorithms and the low-level imperative code that implements them.”
+
+How it synthesizes programs:
+
+- It takes “a set of partial input-output examples, as well as a description of the high-level structure of the desired solution.”
+- In the related paper, this is expanded to “abstract and concrete input-output examples as well as implementation skeletons.”
+- The framework combines “constraint-based synthesis and abstract-interpretation” and uses the Sketch solver to solve the resulting constraints.
+
+The papers also note that users can provide additional guidance such as:
+
+- “intermediate state configurations” to reduce the search space,
+- abstract diagrams,
+- code skeletons.
+
+With these inputs, the system can synthesize “low-level imperative implementations in a matter of minutes.”
+--------------------------------------------------------------------------
+[2026-09-17T22:04:40] baseline | E1 | run 2
+primary=['DBLP_conf_sigsoft_SinghS11.pdf#p9#c12155', 'DBLP_conf_sigsoft_SinghS11.pdf#p1#c12097', 'DBLP_conf_cav_SinghS12.pdf#p1#c7751', 'DBLP_conf_cav_SinghS12.pdf#p6#c7767', 'DBLP_conf_mapl_GottschlichSTCR18.pdf#p3#c10136']
+context=[]
+distinct_papers=3
+verdict=fail
+answer=Storyboard programming is a synthesis framework for helping programmers write imperative low-level data-structure manipulations.
+
+From the paper:
+
+- It is “a new synthesis system designed to help programmers write imperative low-level data-structure manipulations.”
+- Its goal is “to bridge the gap between the ‘boxes-and-arrows’ diagrams that programmers often use to think about data-structure manipulation algorithms and the low-level imperative code that implements them.”
+- It takes “a set of partial input-output examples, as well as a description of the high-level structure of the desired solution,” and “is able to synthesize low-level imperative implementations in a matter of minutes.”
+
+How it synthesizes:
+- The system combines “constraint-based synthesis and abstract-interpretation” techniques.
+- The related CAV paper says the tool “helps programmers write low-level implementations of data-structure manipulations by combining various forms of insights, including abstract and concrete input-output examples as well as implementation skeletons.”
+- The MAPL survey also characterizes SPT as allowing users to specify manipulations through “a combination of abstract diagrams, concrete examples, and code skeletons.”
+
+So, in short, storyboard programming synthesizes data-structure manipulations by letting the user provide high-level storyboard-style intent plus examples/skeletons, then solving constraints to produce the low-level pointer-manipulating code.
+--------------------------------------------------------------------------
+[2026-09-17T22:04:44] baseline | E1 | run 3
+primary=['DBLP_conf_sigsoft_SinghS11.pdf#p9#c12155', 'DBLP_conf_sigsoft_SinghS11.pdf#p1#c12097', 'DBLP_conf_cav_SinghS12.pdf#p1#c7751', 'DBLP_conf_cav_SinghS12.pdf#p6#c7767', 'DBLP_conf_mapl_GottschlichSTCR18.pdf#p3#c10136']
+context=[]
+distinct_papers=3
+verdict=pass
+answer=Storyboard programming is a synthesis framework for helping programmers write “imperative low-level data-structure manipulations.” It is described as bridging “the gap between the ‘boxes-and-arrows’ diagrams that programmers often use to think about data-structure manipulation algorithms and the low-level imperative code that implements them.”
+
+According to the paper, it takes as input:
+
+- “a set of partial input-output examples,” and
+- “a description of the high-level structure of the desired solution.”
+
+Using that information, it can “synthesize low-level imperative implementations in a matter of minutes.”
+
+The synthesis approach combines “constraint-based synthesis and abstract-interpretation” and, in the later SPT description, it also combines “abstract and concrete input-output examples as well as implementation skeletons.” The tool can additionally use “intermediate state configurations” to reduce the search space and help synthesize more complex manipulations.
+
+In short: storyboard programming lets users specify high-level intentions through examples, diagrams, and skeletons, then synthesizes pointer-manipulating code by solving the resulting constraints efficiently.
+--------------------------------------------------------------------------
+[2026-09-17T22:04:48] baseline | E1 | run 4
+primary=['DBLP_conf_sigsoft_SinghS11.pdf#p9#c12155', 'DBLP_conf_sigsoft_SinghS11.pdf#p1#c12097', 'DBLP_conf_cav_SinghS12.pdf#p1#c7751', 'DBLP_conf_cav_SinghS12.pdf#p6#c7767', 'DBLP_conf_mapl_GottschlichSTCR18.pdf#p3#c10136']
+context=[]
+distinct_papers=3
+verdict=pass
+answer=Storyboard programming is a synthesis framework for helping programmers write “imperative low-level data-structure manipulations.” The paper says its goal is to “bridge the gap between the ‘boxes-and-arrows’ diagrams that programmers often use to think about data-structure manipulation algorithms and the low-level imperative code that implements them” [DBLP_conf_sigsoft_SinghS11.pdf#p1#c12097].
+
+How it synthesizes code:
+- It takes “a set of partial input-output examples, as well as a description of the high-level structure of the desired solution” as input.
+- From that information, it “is able to synthesize low-level imperative implementations in a matter of minutes” [DBLP_conf_sigsoft_SinghS11.pdf#p1#c12097].
+- The approach combines “constraint-based synthesis and abstract-interpretation-” techniques [DBLP_conf_sigsoft_SinghS11.pdf#p1#c12097].
+- The related SPT description adds that it combines “abstract and concrete input-output examples as well as implementation skeletons” and uses “a new synthesis algorithm” that combines forms of insight to solve the problem as constraints for the Sketch solver [DBLP_conf_cav_SinghS12.pdf#p1#c7751].
+
+The papers also note that users can give additional intermediate state information to reduce search and help synthesize more complex manipulations: “Our tool allows users to write intermediate state configurations to reduce the search space” [DBLP_conf_cav_SinghS12.pdf#p6#c7767].
+
+So, in short: storyboard programming is a multi-modal program synthesis approach that uses examples plus high-level structural hints, and sometimes intermediate states or skeletons, to automatically generate pointer-manipulating data-structure code.
+--------------------------------------------------------------------------
+[2026-09-17T22:04:51] baseline | E1 | run 5
+primary=['DBLP_conf_sigsoft_SinghS11.pdf#p9#c12155', 'DBLP_conf_sigsoft_SinghS11.pdf#p1#c12097', 'DBLP_conf_cav_SinghS12.pdf#p1#c7751', 'DBLP_conf_cav_SinghS12.pdf#p6#c7767', 'DBLP_conf_mapl_GottschlichSTCR18.pdf#p3#c10136']
+context=[]
+distinct_papers=3
+verdict=fail
+answer=Storyboard programming is a synthesis framework for helping programmers write low-level imperative data-structure manipulations from higher-level descriptions.
+
+From the paper’s abstract, it is:
+
+> “a new synthesis system designed to help programmers write imperative low-level data-structure manipulations”
+
+and its goal is:
+
+> “to bridge the gap between the ‘boxes-and-arrows’ diagrams that programmers often use to think about data-structure manipulation algorithms and the low-level imperative code that implements them.”
+
+How it synthesizes manipulations:
+
+> “The system takes as input a set of partial input-output examples, as well as a description of the high-level structure of the desired solution. From this information, it is able to synthesize low-level imperative implementations in a matter of minutes.”
+
+The paper also says the framework uses:
+
+> “a new approach for combining constraint-based synthesis and abstract-interpretation”
+
+And the later SPT paper adds that the tool combines:
+
+> “abstract and concrete input-output examples as well as implementation skeletons”
+
+So, in short: storyboard programming lets users specify the intended manipulation using examples, high-level structural hints, and sometimes skeletons or intermediate states, and then synthesizes the corresponding pointer-manipulating code by combining constraint-based synthesis with abstraction.
+--------------------------------------------------------------------------
+[2026-09-17T22:04:58] both | E1 | run 1
+primary=['DBLP_conf_sigsoft_SinghS11.pdf#p1#c12097', 'DBLP_conf_cav_SinghS12.pdf#p1#c7751', 'DBLP_conf_sigsoft_SinghS11.pdf#p2#c12106']
+context=[('DBLP_conf_cikm_CheungSM12.pdf#p1#c7825', 'cites from DBLP_conf_sigsoft_SinghS11'), ('DBLP_conf_iclr_NyePBATS21.pdf#p11#c8656', 'cites from DBLP_conf_sigsoft_SinghS11')]
+distinct_papers=4
+verdict=pass
+answer=Storyboard Programming is described as “a new synthesis system designed to help programmers write imperative low-level data-structure manipulations.”
+
+It is meant to “bridge the gap between the ‘boxes-and-arrows’ diagrams that programmers often use to think about data-structure manipulation algorithms and the low-level imperative code that implements them.”
+
+How it synthesizes:
+- The system takes as input “a set of partial input-output examples, as well as a description of the high-level structure of the desired solution.”
+- More specifically, it uses a “storyboard composed of three elements”:
+  - “a set of scenarios, each of which corresponds to an abstract input-output pair”
+  - “a set of fold and unfold definitions”
+  - “a skeleton of the looping structure of the desired algorithm”
+- A scenario is “an input-output pair describing the effect of the manipulation on a potentially abstract data-structure,” using abstraction to hide details that are not relevant.
+- The paper says the system can then “synthesize low-level imperative implementations in a matter of minutes.”
+
+In short, storyboard programming uses abstract examples plus structural hints about the algorithm, then combines them with synthesis to derive pointer-manipulating code for data structures.
+--------------------------------------------------------------------------
+[2026-09-17T22:05:05] both | E1 | run 2
+primary=['DBLP_conf_sigsoft_SinghS11.pdf#p1#c12097', 'DBLP_conf_cav_SinghS12.pdf#p1#c7752', 'DBLP_conf_cav_SinghS12.pdf#p4#c7763']
+context=[('DBLP_conf_cikm_CheungSM12.pdf#p1#c7825', 'cites from DBLP_conf_sigsoft_SinghS11'), ('DBLP_conf_iclr_NyePBATS21.pdf#p11#c8656', 'cites from DBLP_conf_sigsoft_SinghS11')]
+distinct_papers=4
+verdict=pass
+answer=Storyboard Programming is a synthesis framework “designed to help programmers write imperative low-level data-structure manipulations.” It aims to “bridge the gap between the ‘boxes-and-arrows’ diagrams that programmers often use to think about data-structure manipulation algorithms and the low-level imperative code that implements them.”
+
+According to the paper, the system takes as input:
+- “a set of partial input-output examples,” and
+- “a description of the high-level structure of the desired solution.”
+
+Using that information, it can “synthesize low-level imperative implementations in a matter of minutes.”
+
+How it synthesizes the manipulations:
+- It is “based on a new approach for combining constraint-based synthesis and abstract-interpretation based shape-analysis.”
+- The algorithm “uses an abstraction refinement based approach to concisely encode synthesis constraints obtained from shape analysis.”
+- The tool’s architecture includes a storyboard parser that converts a storyboard description into an intermediate constraint language, implemented as “a set of prolog predicates.”
+
+The related paper also says the language for expressing a storyboard is “more concise” because it uses inference to derive many low-level details, and that the synthesis algorithm combines “abstract-interpretation based shape-analysis” with “constraint-based synthesis.”
+--------------------------------------------------------------------------
+[2026-09-17T22:05:13] both | E1 | run 3
+primary=['DBLP_conf_sigsoft_SinghS11.pdf#p1#c12097', 'DBLP_conf_cav_SinghS12.pdf#p1#c7751', 'DBLP_conf_sigsoft_SinghS11.pdf#p1#c12098']
+context=[('DBLP_conf_cikm_CheungSM12.pdf#p1#c7825', 'cites from DBLP_conf_sigsoft_SinghS11'), ('DBLP_conf_iclr_NyePBATS21.pdf#p11#c8656', 'cites from DBLP_conf_sigsoft_SinghS11')]
+distinct_papers=4
+verdict=pass
+answer=Storyboard programming is described as a framework “designed to help programmers write imperative low-level data-structure manipulations” by bridging “the ‘boxes-and-arrows’ diagrams that programmers often use to think about data-structure manipulation algorithms and the low-level imperative code that implements them.”
+
+According to the paper, the system takes as input:
+- “a set of partial input-output examples,” and
+- “a description of the high-level structure of the desired solution.”
+
+It then synthesizes implementations “in a matter of minutes.”
+
+How it works:
+- It uses “a new approach for combining constraint-based synthesis and abstract-interpretation-based shape analysis.”
+- The method “encod[es] both the synthesis and the abstract interpretation problem as a constraint satisfaction problem whose solution defines the desired low-level implementation.”
+
+So, in short: storyboard programming is a synthesis framework that turns high-level visual/structural intuition plus partial examples into low-level pointer-manipulating code for data structures, using constraints that combine synthesis with shape analysis. It was used to synthesize “several data-structure manipulations involving linked lists and binary search trees,” and also “an insertion operation into an And Inverter Graph.”
+--------------------------------------------------------------------------
+[2026-09-17T22:05:19] both | E1 | run 4
+primary=['DBLP_conf_sigsoft_SinghS11.pdf#p1#c12097', 'DBLP_conf_cav_SinghS12.pdf#p1#c7752', 'DBLP_conf_cav_SinghS12.pdf#p1#c7751']
+context=[('DBLP_conf_pldi_Solar-LezamaRBE05.pdf#p8#c11486', 'cites from DBLP_conf_cav_SinghS12'), ('DBLP_conf_aplas_Solar-Lezama09.pdf#p1#c527', 'similar_to from DBLP_conf_cav_SinghS12')]
+distinct_papers=4
+verdict=pass
+answer=Storyboard Programming is presented as “a new synthesis system designed to help programmers write imperative low-level data-structure manipulations.” Its purpose is “to bridge the gap between the ‘boxes-and-arrows’ diagrams that programmers often use to think about data-structure manipulation algorithms and the low-level imperative code that implements them.”
+
+According to the papers, the framework synthesizes code from:
+- “a set of partial input-output examples”
+- “a description of the high-level structure of the desired solution”
+- and, in the later tool description, “abstract and concrete input-output examples as well as implementation skeletons.”
+
+The synthesis engine combines “abstract-interpretation based shape-analysis” with “constraint-based synthesis.” The algorithm “uses an abstraction refinement based approach to concisely encode synthesis constraints obtained from shape analysis,” and those constraints are then solved by the Sketch solver.
+
+In short, storyboard programming lets programmers specify the intended data-structure manipulation at a high level, and the system automatically fills in the low-level pointer-manipulating code, “in a matter of minutes.”
+--------------------------------------------------------------------------
+[2026-09-17T22:05:27] both | E1 | run 5
+primary=['DBLP_conf_sigsoft_SinghS11.pdf#p1#c12097', 'DBLP_conf_sigsoft_SinghS11.pdf#p1#c12098', 'DBLP_conf_cav_SinghS12.pdf#p1#c7752']
+context=[('DBLP_conf_cikm_CheungSM12.pdf#p1#c7825', 'cites from DBLP_conf_sigsoft_SinghS11'), ('DBLP_conf_iclr_NyePBATS21.pdf#p3#c8619', 'cites from DBLP_conf_sigsoft_SinghS11')]
+distinct_papers=4
+verdict=fail
+answer=Storyboard Programming is described as “a new synthesis system designed to help programmers write imperative low-level data-structure manipulations.” Its goal is “to bridge the gap between the ‘boxes-and-arrows’ diagrams that programmers often use to think about data-structure manipulation algorithms and the low-level imperative code that implements them.”
+
+How it synthesizes these manipulations:
+- It takes “a set of partial input-output examples, as well as a description of the high-level structure of the desired solution.”
+- It then “synthesize[s] low-level imperative implementations in a matter of minutes.”
+- The key technique is “a new approach for combining constraint-based synthesis and abstract-interpretation-based shape analysis.”
+- More specifically, “the approach works by encoding both the synthesis and the abstract interpretation problem as a constraint satisfaction problem whose solution defines the desired low-level implementation.”
+
+The paper says the framework was used to synthesize “several data-structure manipulations involving linked lists and binary search trees, as well as an insertion operation into an And Inverter Graph.”
+--------------------------------------------------------------------------
+[2026-09-17T22:05:32] baseline | E4 | run 1
+primary=['DBLP_journals_pacmpl_BowersOWGTES23.pdf#p6#c21718', 'DBLP_journals_corr_abs-2503-22625.pdf#p18#c19657', 'DBLP_journals_pacmpl_BowersOWGTES23.pdf#p20#c21781', 'DBLP_conf_icml_GuJLSESS25.pdf#p39#c9213', 'DBLP_journals_corr_abs-2006-08381.pdf#p18#c17705']
+context=[]
+distinct_papers=4
+verdict=pass
+answer=The corpus mentions a few different approaches to learning reusable libraries of program abstractions:
+
+1. **Iterative library learning / compression-and-rewriting**
+   - In Stitch, library learning is done by **repeatedly discovering one abstraction at a time** and rewriting the corpus with it.
+   - The paper says: “**At each iteration, Stitch discovers a single abstraction that is used to rewrite the entire corpus of programs. Successive iterations therefore yield abstractions that build hierarchically on one another**.”
+   - This is an **iterative, hierarchical** approach: later abstractions can build on earlier ones, and programs “shrink into compact expressions.”
+
+2. **Traditional corpus-based library learning from a large program collection**
+   - Another Stitch experiment is described as learning “**libraries of abstractions from a large corpus of existing programs all at once**.”
+   - This differs from the iterative setting because it is framed as a **single large-scale learning problem over an existing dataset**, rather than the smaller, iterated discovery process.
+   - The paper contrasts this with the earlier “iterated learning setting” of Ellis et al. 2021, which used “**relatively small corpora of short programs discovered by the synthesizer**.”
+
+3. **API/library design by abstracting common reusable features**
+   - The ICML paper frames library learning more generally as: “**derive a library of useful abstractions from a corpus of programs by abstracting out common reusable features**.”
+   - This is less about a specific algorithm and more about the **goal** of the process: creating abstractions that improve code reuse and interfaces.
+   - It also emphasizes that a good library should not only support reuse, but also be “**easy to use and maintainable**,” and “**robust and adaptable to future extensions**.”
+
+4. **Learning on top of richer built-in resources**
+   - The older abstract notes a broader philosophy: rather than “blank-slate learning,” the future may lie in systems “**initialized with even richer yet broadly applicable resources**,” such as simulation engines or standard libraries.
+   - This is a different stance on learning reusable abstractions: instead of learning libraries purely from scratch, systems can **build on pre-existing generic operators and then learn specialized languages atop them**.
+
+### Main differences
+- **Iterative vs. one-shot corpus learning:** Stitch’s iterative method learns abstractions one by one and rewrites the corpus after each step, whereas the large-scale setup learns from a whole corpus at once.
+- **Small discovered programs vs. existing large corpora:** Ellis et al.’s setting uses small synthesized programs; the large-scale setting uses “existing programs.”
+- **Reuse-only vs. broader quality criteria:** The ICML discussion says good libraries should optimize not just reuse, but also usability, maintainability, robustness, and extensibility.
+- **From scratch vs. built on rich primitives:** Another perspective emphasizes starting from strong built-in abstractions and learning specialized ones on top, rather than learning everything from a blank slate.
+
+If you want, I can also turn this into a simple comparison table.
+--------------------------------------------------------------------------
+[2026-09-17T22:05:36] baseline | E4 | run 2
+primary=['DBLP_journals_pacmpl_BowersOWGTES23.pdf#p6#c21718', 'DBLP_journals_corr_abs-2503-22625.pdf#p18#c19657', 'DBLP_journals_pacmpl_BowersOWGTES23.pdf#p20#c21781', 'DBLP_conf_icml_GuJLSESS25.pdf#p39#c9213', 'DBLP_journals_corr_abs-2006-08381.pdf#p18#c17705']
+context=[]
+distinct_papers=4
+verdict=pass
+answer=The corpus mentions a few related approaches to learning reusable libraries of program abstractions:
+
+1. **Iterative library learning / compression-and-rewriting**
+   - In *Stitch*, the system can be run “for multiple iterations on a corpus of programs to build up an entire library of abstractions.”
+   - The process is iterative: “At each iteration, Stitch discovers a single abstraction that is used to rewrite the entire corpus of programs.”
+   - This means abstractions are learned **one at a time**, and later abstractions can “build hierarchically on one another,” yielding increasingly higher-level behaviors.
+
+2. **Large-scale corpus library learning**
+   - The paper also describes a “more traditional learning setting” where the goal is “to learn libraries of abstractions from a large corpus of existing programs all at once.”
+   - This differs from the iterative setting in that the library is learned from a **large existing corpus** rather than from short programs generated during synthesis, and it is framed as learning abstractions “all at once” rather than through successive iterations.
+
+3. **Library learning as API/library design from common reusable features**
+   - Another paper describes library learning more generally as deriving “a library of useful abstractions from a corpus of programs by abstracting out common reusable features.”
+   - This version emphasizes that the goal is not just compression or code reuse, but also that a good library should “prioritize ease of use and maintainability, as well as be robust and adaptable to future extensions.”
+
+4. **Learning atop built-in, broadly applicable resources**
+   - A related perspective says learning in program synthesis may be best done “on top of rich systems of built-in knowledge,” such as “relatively spartan but generically powerful sets of control flow operators, higher-order functions, and types.”
+   - Here the emphasis is less on discovering a library purely from a corpus and more on **growing specialized languages atop strong pre-existing foundations**.
+
+### Main differences
+- **One-at-a-time vs. all-at-once:** Stitch’s iterative learning adds abstractions incrementally, while the large-scale setting learns from a corpus in a single broader pass.
+- **Compression vs. API usefulness:** Some approaches focus on shrinking programs and reusing code; others stress library qualities like usability, maintainability, and extensibility.
+- **Learned library vs. built-in substrate:** One view learns abstractions from programs; another starts from a powerful base language and learns specialized extensions on top of it.
+
+If you want, I can also turn this into a compact comparison table.
+--------------------------------------------------------------------------
+[2026-09-17T22:05:41] baseline | E4 | run 3
+primary=['DBLP_journals_pacmpl_BowersOWGTES23.pdf#p6#c21718', 'DBLP_journals_corr_abs-2503-22625.pdf#p18#c19657', 'DBLP_journals_pacmpl_BowersOWGTES23.pdf#p20#c21781', 'DBLP_conf_icml_GuJLSESS25.pdf#p39#c9213', 'DBLP_journals_corr_abs-2006-08381.pdf#p18#c17705']
+context=[]
+distinct_papers=4
+verdict=fail
+answer=The corpus mentions a few different approaches to learning reusable libraries of program abstractions:
+
+1. **Iterative corpus-guided library learning**
+   - In Stitch, library learning is done by **repeating a top-down search over a corpus**.
+   - The paper says: “we can easily run this algorithm for multiple iterations on a corpus of programs to build up an entire library of abstractions.”
+   - Each iteration “discovers a single abstraction” that rewrites the whole corpus, and “successive iterations therefore yield abstractions that build hierarchically on one another.”
+   - So this approach is **incremental and hierarchical**: it learns one abstraction at a time and compresses programs repeatedly.
+
+2. **Traditional large-scale corpus library learning**
+   - The same Stitch paper also describes a more standard setting: learning “libraries of abstractions from a large corpus of existing programs all at once.”
+   - This is contrasted with the iterated learning setup of Ellis et al. 2021, which used “relatively small corpora of short programs discovered by the synthesizer.”
+   - So this approach is **batch-style corpus learning** rather than iterative buildup.
+
+3. **Library learning for API/design quality**
+   - The ICML paper frames library learning as deriving “a library of useful abstractions from a corpus of programs by abstracting out common reusable features.”
+   - It emphasizes that a good library should not only enable “more code reuse” but also “ease of use and maintainability,” and be “robust and adaptable to future extensions.”
+   - This is less a different algorithm than a **different goal/function** for library learning: not just reuse, but also usability and long-term design quality.
+
+4. **Learning specialized languages atop general built-in resources**
+   - Another paper suggests a broader learning strategy: start from “relatively spartan but generically powerful sets of control flow operators, higher-order functions, and types,” then “used learning to grow specialized languages atop these foundations.”
+   - It argues future systems may learn on top of even richer built-in resources, such as “simulation engines” or “standard libraries.”
+   - This differs from corpus-driven abstraction learning because it is about **bootstrapping specialized languages from strong priors**, not primarily mining abstractions from a program corpus.
+
+### Main differences
+- **Iterative vs. one-shot learning:** Stitch’s iterative learning builds abstractions hierarchically, while the large-scale corpus setting learns from many programs “all at once.”
+- **Compression vs. design quality:** Some work focuses on compressing/reusing code; the ICML paper broadens the objective to include maintainability, ease of use, robustness, and future extensibility.
+- **Corpus mining vs. learning on rich foundations:** Another line of work emphasizes growing specialized languages from strong built-in primitives rather than extracting abstractions purely from existing programs.
+
+If you want, I can also turn this into a **paper-by-paper comparison table**.
+--------------------------------------------------------------------------
+[2026-09-17T22:05:46] baseline | E4 | run 4
+primary=['DBLP_journals_pacmpl_BowersOWGTES23.pdf#p6#c21718', 'DBLP_journals_corr_abs-2503-22625.pdf#p18#c19657', 'DBLP_journals_pacmpl_BowersOWGTES23.pdf#p20#c21781', 'DBLP_conf_icml_GuJLSESS25.pdf#p39#c9213', 'DBLP_journals_corr_abs-2006-08381.pdf#p18#c17705']
+context=[]
+distinct_papers=4
+verdict=pass
+answer=The corpus mentions a few related but distinct approaches to learning reusable libraries of program abstractions:
+
+1. **Iterative corpus-guided abstraction learning / library learning**
+   - In *Stitch*, the system can run “for multiple iterations on a corpus of programs to build up an entire library of abstractions.”
+   - The process is iterative: “At each iteration, Stitch discovers a single abstraction that is used to rewrite the entire corpus of programs.”
+   - This yields “abstractions that build hierarchically on one another,” with programs becoming “compact expressions” as the library grows.
+
+2. **Large-scale corpus library learning**
+   - The same paper also describes a setting where the goal is to “learn libraries of abstractions from a large corpus of existing programs all at once.”
+   - This differs from the iterative setup above: instead of learning one abstraction per round from a small corpus of synthesized programs, it targets “a large corpus” and is framed as a “more traditional learning setting.”
+
+3. **General library learning as abstraction discovery from program corpora**
+   - Another paper summarizes library learning more broadly as deriving “a library of useful abstractions from a corpus of programs by abstracting out common reusable features.”
+   - It notes that traditional work has focused “primarily on code reuse,” but argues that an effective library should also prioritize “ease of use and maintainability,” and be “robust and adaptable to future extensions.”
+   - So this is not a separate algorithmic method so much as a broader design goal for learned libraries.
+
+4. **Learning specialized languages atop broadly useful built-ins**
+   - One paper frames the future as starting from “relatively spartan but generically powerful sets of control flow operators, higher-order functions, and types,” and then using learning to “grow specialized languages atop these foundations.”
+   - This is a different emphasis from directly mining a library from a corpus: it suggests learning on top of a strong built-in base, rather than learning everything from scratch.
+
+### How they differ
+- **Iteration vs. one-shot corpus learning:** Stitch’s iterative approach learns one abstraction at a time and rewrites the corpus repeatedly; the large-scale setting learns from a big corpus “all at once.”
+- **Small synthesized corpora vs. large existing corpora:** The iterated learning setting is described as using “relatively small corpora of short programs discovered by the synthesizer,” whereas the large-scale setting uses “a large corpus of existing programs.”
+- **Reuse-only vs. broader software qualities:** Some literature emphasizes code reuse, while others stress maintainability, usability, robustness, and extensibility.
+- **Learning abstractions vs. growing languages:** One perspective is to infer reusable abstractions directly; another is to start with generic foundations and learn specialized languages on top.
+
+If you want, I can also turn this into a comparison table with columns for **setting, corpus source, learning procedure, and goal**.
+--------------------------------------------------------------------------
+[2026-09-17T22:05:53] baseline | E4 | run 5
+primary=['DBLP_journals_pacmpl_BowersOWGTES23.pdf#p6#c21718', 'DBLP_journals_corr_abs-2503-22625.pdf#p18#c19657', 'DBLP_journals_pacmpl_BowersOWGTES23.pdf#p20#c21781', 'DBLP_conf_icml_GuJLSESS25.pdf#p39#c9213', 'DBLP_journals_corr_abs-2006-08381.pdf#p18#c17705']
+context=[]
+distinct_papers=4
+verdict=fail
+answer=The corpus describes a few related but distinct approaches to learning reusable libraries of program abstractions:
+
+1. **Iterative, corpus-guided top-down library learning**
+   - In *Stitch*, the algorithm “yields a single abstraction” per pass, and then it can be run “for multiple iterations on a corpus of programs to build up an entire library of abstractions.”
+   - The key idea is that “each iteration, Stitch discovers a single abstraction that is used to rewrite the entire corpus of programs,” so the library grows **hierarchically**, with “successive iterations” building “increasingly higher-level behaviors.”  
+   - This is explicitly described as “interleaves compression and rewriting.”
+
+2. **Traditional large-scale corpus library learning**
+   - Another Stitch experiment targets “a more traditional learning setting, in which we aim to learn libraries of abstractions from a large corpus of existing programs all at once.”
+   - This differs from the iterative setting above because it is **not** about repeatedly discovering one abstraction and rewriting the corpus; instead, it learns from the whole corpus in a single large-scale setup.
+   - The paper contrasts this with the “iterated learning setting considered by Ellis et al. 2021,” which used “relatively small corpora of short programs discovered by the synthesizer.”
+
+3. **Library learning as API/library design for reuse**
+   - The ICML and related text frame library learning more broadly as “derive a library of useful abstractions from a corpus of programs by abstracting out common reusable features.”
+   - Here the emphasis is on **designing APIs and libraries with useful abstractions** to achieve “more code reuse and more intuitive interfaces.”
+   - This view also adds goals beyond reuse: “ease of use and maintainability,” and being “robust and adaptable to future extensions.”
+
+4. **Learning on top of rich built-in resources**
+   - A broader perspective from the synthesis paper suggests that learning can grow specialized languages or abstractions “atop” existing foundations such as “control flow operators, higher-order functions, and types,” and even richer resources like “simulation engines” or “standard libraries.”
+   - This is less a direct library-learning algorithm and more a **development strategy**: rather than learning from scratch, systems start with “rich yet broadly applicable resources” and then learn specialized abstractions on top.
+
+### Main differences
+- **Iterative Stitch-style learning**: learns one abstraction at a time and repeatedly rewrites the corpus, producing a hierarchy.
+- **Large-scale one-shot corpus learning**: learns abstractions from a big existing corpus in a traditional batch setting.
+- **API/library design perspective**: focuses not just on compression/reuse but also usability, maintainability, and extensibility.
+- **Foundation-plus-learning approach**: emphasizes building on pre-existing powerful primitives rather than learning everything from a blank slate.
+
+If you want, I can also organize these approaches into a comparison table with “goal / input corpus / learning process / output library.”
+--------------------------------------------------------------------------
+[2026-09-17T22:06:02] both | E4 | run 1
+primary=['DBLP_conf_icml_GuJLSESS25.pdf#p39#c9213', 'DBLP_journals_corr_abs-2503-22625.pdf#p18#c19657', 'DBLP_journals_corr_abs-2409-17490.pdf#p6#c19239']
+context=[('DBLP_conf_icml_GuRLSS024.pdf#p3#c9355', 'cites from DBLP_conf_icml_GuJLSESS25'), ('DBLP_journals_corr_abs-2401-03065.pdf#p4#c18492', 'cites from DBLP_conf_icml_GuJLSESS25')]
+distinct_papers=5
+verdict=pass
+answer=The corpus mentions two distinct approaches to learning reusable libraries of program abstractions:
+
+1. **Library learning / Stitch**
+   - The papers describe library learning as the task of “**deriv[ing] a library of useful abstractions from a corpus of programs by abstracting out common reusable features**.”
+   - One document says this is done in a synthesis setting using **Stitch**, described as “**a library-learning algorithm**.”
+   - In that setting, the goal is to build abstractions that help with “**code reuse**,” but also with “**ease of use and maintainability**,” and being “**robust and adaptable to future extensions**.”
+
+2. **DreamCoder-style wake-sleep learning**
+   - Another document says that for program synthesis it uses **DreamCoder**, “**a wake-sleep learning algorithm, alongside Stitch**.”
+   - It explains that DreamCoder starts with an initial library **L0** of “**base primitives**” from the DSL, and ends with a learned final library **Lf** containing “**subroutines (or abstractions) generated by composing the program primitives**,” which help solve multiple tasks.
+
+### How they differ
+- **Stitch** is explicitly presented as the **library-learning algorithm** for extracting abstractions from programs.
+- **DreamCoder** is a broader **wake-sleep learning framework** that uses an initial primitive library and learns a final library of abstractions through composition and task solving.
+- The first emphasizes **what** library learning should produce: abstractions that improve reuse, usability, maintainability, and extensibility.
+- The second emphasizes **how** such a library can be learned: starting from base primitives and iteratively learning subroutines in a wake-sleep process.
+
+So, in short: **Stitch is the library-learning method, while DreamCoder is the larger wake-sleep system that learns a library of abstractions from primitives and task experience.**
+--------------------------------------------------------------------------
+[2026-09-17T22:06:14] both | E4 | run 2
+primary=['DBLP_journals_corr_abs-2006-08381.pdf#p13#c17687', 'DBLP_journals_pacmpl_BowersOWGTES23.pdf#p2#c21703', 'DBLP_journals_corr_abs-2409-17490.pdf#p6#c19239']
+context=[('DBLP_conf_iclr_LiWSZ0BM25.pdf#p14#c8585', 'cites from DBLP_journals_corr_abs-2006-'), ('DBLP_conf_icml_AletLKNSLKT21.pdf#p3#c8859', 'cites from DBLP_journals_corr_abs-2006-')]
+distinct_papers=5
+verdict=pass
+answer=The corpus mentions at least two distinct approaches to learning reusable libraries of program abstractions:
+
+1. **DreamCoder-style wake-sleep library learning**
+   - One document says DreamCoder uses “**a wake-sleep learning algorithm**” and returns “**a learned final library, \(L_f\), which contains the various subroutines (or abstractions) generated by composing the program primitives**” that helped solve tasks.
+   - Another passage notes that “**the recognition model appears to bootstrap ‘better’ libraries**,” and that “**the presence of a learned recognition model leads to better performance at all depths**.”
+   - So this approach learns abstractions jointly with a recognition model, and the model helps guide library growth and task similarity embedding.
+
+2. **Corpus-guided top-down synthesis**
+   - A different paper says: “**Instead of taking a deductive approach based on refactoring the corpus with rewrite rules, we directly synthesize abstractions. We call this approach corpus-guided top-down synthesis**.”
+   - It is “**based on the insight that when applied to the task of synthesizing abstractions, top-down search can be guided precisely towards discovering shared abstractions over a set of existing training programs**.”
+   - So this approach does not refactor programs using rewrite rules; instead, it searches top-down to synthesize abstractions directly from a corpus of programs.
+
+### Main difference
+- **DreamCoder** learns libraries through an iterative learning system with a **recognition model** and wake-sleep training, where the learned model helps discover deeper and broader libraries.
+- **Corpus-guided top-down synthesis** learns libraries by **directly synthesizing abstractions** using top-down search guided by similarities among training programs, rather than deductive refactoring.
+
+The corpus also references **Stitch** as “**a library-learning algorithm**” used alongside DreamCoder in one system description, but the provided text does not explain Stitch’s method in enough detail to compare it fully with the others.
+--------------------------------------------------------------------------
+[2026-09-17T22:06:24] both | E4 | run 3
+primary=['DBLP_journals_pacmpl_BowersOWGTES23.pdf#p2#c21701', 'DBLP_conf_nips_EllisMSST18.pdf#p9#c10289', 'DBLP_conf_icml_GuJLSESS25.pdf#p39#c9213']
+context=[('DBLP_journals_corr_abs-2006-08381.pdf#p4#c17651', 'cites from DBLP_journals_pacmpl_BowersO'), ('DBLP_journals_corr_abs-2206-06164.pdf#p23#c18173', 'similar_to from DBLP_journals_pacmpl_BowersO')]
+distinct_papers=5
+verdict=pass
+answer=The corpus mentions several different approaches to learning reusable libraries of program abstractions:
+
+1. **Searching for common tree fragments across a corpus of programs**
+   - The Bowers et al. paper says: “One popular approach to library learning is to search for common tree fragments across a corpus of programs, which can be introduced as new abstractions.”
+   - This approach treats abstractions as repeated syntactic pieces.
+
+2. **Reasoning about variable bindings to abstract out well-formed functions**
+   - The same paper contrasts this with Ellis et al. 2021: it “introduces an algorithm that reasons about variable bindings to abstract out well-formed functions instead of just tree fragments.”
+   - So this is more semantically aware: it aims to form actual functions with proper bindings, not merely recurring subtrees.
+
+3. **Inducing reusable subroutines via Fragment Grammars**
+   - Ellis et al. 2018 says they “propose a new algorithm for inducing reusable subroutines, based on Fragment Grammars.”
+   - Here the library is learned as reusable subroutines, with the grammar structure used to represent and induce them.
+
+4. **Bayesian multitask / Bayesian Program Learning style abstraction growth**
+   - The related DreamCoder text describes a “wake-sleep architecture” where learning alternates between “growing the learned language (generative model) by consolidating new abstractions from programs found during waking” and training a recognition model.
+   - This is a more integrated learning setup: abstractions are consolidated over time while a neural model helps propose/search programs.
+
+5. **Library learning from a corpus of programs with attention to usability**
+   - The ICML 2025 paper frames library learning as “deriv[ing] a library of useful abstractions from a corpus of programs by abstracting out common reusable features.”
+   - It adds that a good library should prioritize not just “code reuse” but also “ease of use and maintainability, as well as be robust and adaptable to future extensions.”
+
+### How they differ
+- **Tree-fragment methods** focus on repeated syntax.
+- **Variable-binding / well-formed-function methods** try to learn more meaningful abstractions that respect program structure and scoping.
+- **Fragment Grammar methods** induce reusable subroutines using a grammatical representation.
+- **Wake-sleep Bayesian/neural approaches** learn abstractions incrementally while also training a model to guide future synthesis.
+- **API/library-design-oriented views** emphasize that learned abstractions should be judged not only by reuse but also by usability, maintainability, robustness, and extensibility.
+
+If you want, I can also turn this into a side-by-side comparison table with the paper names attached to each approach.
+--------------------------------------------------------------------------
+[2026-09-17T22:06:32] both | E4 | run 4
+primary=['DBLP_journals_corr_abs-2503-22625.pdf#p18#c19657', 'DBLP_conf_icml_GuJLSESS25.pdf#p39#c9213', 'DBLP_journals_pacmpl_BowersOWGTES23.pdf#p2#c21701']
+context=[('DBLP_conf_icml_GuRLSS024.pdf#p3#c9355', 'cites from DBLP_journals_corr_abs-2503-'), ('DBLP_journals_corr_abs-2401-03065.pdf#p4#c18492', 'cites from DBLP_journals_corr_abs-2503-')]
+distinct_papers=5
+verdict=fail
+answer=The corpus mentions two main approaches to learning reusable libraries of program abstractions:
+
+1. **Searching for common tree fragments**
+   - One approach is to “**search for common tree fragments across a corpus of programs, which can be introduced as new abstractions**.”
+   - This is described as a popular library-learning method in program synthesis.
+
+2. **Reasoning about variable bindings to abstract out well-formed functions**
+   - A newer approach “**introduces an algorithm that reasons about variable bindings to abstract out well-formed functions instead of just tree fragments**.”
+   - So, compared with tree-fragment mining, this method is more semantically aware: it does not only reuse syntactic pieces, but tries to form actual functions with proper bindings.
+
+### How they differ
+- **Tree-fragment search** focuses on extracting reusable syntactic pieces from programs.
+- **Variable-binding-aware abstraction** aims to discover higher-level, well-formed functional abstractions that respect bindings, not merely repeated subtrees.
+
+The corpus also frames library learning more broadly as “**abstracting out common reusable features**” from programs, with the goal of “**more code reuse and more intuitive interfaces**,” and notes that a good library should also be “**easy to use and maintainable**” and “**robust and adaptable to future extensions**.”
+--------------------------------------------------------------------------
+[2026-09-17T22:06:40] both | E4 | run 5
+primary=['DBLP_journals_corr_abs-2503-22625.pdf#p18#c19657', 'DBLP_conf_icml_GuJLSESS25.pdf#p39#c9213', 'DBLP_journals_pacmpl_BowersOWGTES23.pdf#p2#c21701']
+context=[('DBLP_conf_icml_GuRLSS024.pdf#p3#c9355', 'cites from DBLP_journals_corr_abs-2503-'), ('DBLP_journals_corr_abs-2401-03065.pdf#p4#c18492', 'cites from DBLP_journals_corr_abs-2503-')]
+distinct_papers=5
+verdict=fail
+answer=The corpus mentions two main approaches to learning reusable libraries of program abstractions:
+
+1. **Search for common tree fragments**
+   - One popular method is “to search for common tree fragments across a corpus of programs, which can be introduced as new abstractions” [DBLP_journals_pacmpl_BowersOWGTES23.pdf#p2#c21701].
+   - This approach treats reusable structure as repeated syntax/tree pieces.
+
+2. **Reasoning about variable bindings to abstract out well-formed functions**
+   - The same source says that “Ellis et al. 2021 … introduces an algorithm that reasons about variable bindings to abstract out well-formed functions instead of just tree fragments” [DBLP_journals_pacmpl_BowersOWGTES23.pdf#p2#c21701].
+   - So this is more semantic/structural than fragment mining: it aims to form actual functions, not just repeated subtrees.
+
+The broader framing in the other paper adds that library learning is “to derive a library of useful abstractions from a corpus of programs by abstracting out common reusable features” and that a good library should not only maximize reuse but also “prioritize ease of use and maintainability, as well as be robust and adaptable to future extensions” [DBLP_conf_icml_GuJLSESS25.pdf#p39#c9213].
+
+So, in short:
+
+- **Tree-fragment mining**: finds repeated syntactic pieces.
+- **Binding-aware abstraction learning**: forms higher-level, well-formed functions by understanding variable bindings.
+- **The broader goal**: useful abstractions that are reusable, intuitive, maintainable, robust, and extensible.
+
+The corpus does not provide more distinct approaches beyond these two explicitly described ones.
+--------------------------------------------------------------------------

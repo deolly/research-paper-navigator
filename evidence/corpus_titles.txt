@@ -1,0 +1,153 @@
+conf_iclr_gupta2025sparling.pdf                           | SPARLING: END-TO-ENDSPATIALCONCEPTLEARN- ING VIAEXTREMELYSPARSEACTIVATIONS Kavi Gupta Department of Electrical
+conf_nips_li2025encompass.pdf                             | ENCOMPASS : Enhancing Agent Programming with Search Over Program Execution Paths Zhening Li∗ Asari AI, MIT CSA
+DBLP_conf_acl_GuLJOLSS24.pdf                              | Findings of the Association for Computational Linguistics: ACL 2024 , pages 74–117 August 11-16, 2024 ©2024 As
+DBLP_conf_aplas_2009.pdf                                  | Lecture Notes in Computer Science 5904 Commenced Publication in 1973 Founding and Former Series Editors: Gerha
+DBLP_conf_aplas_Solar-Lezama09.pdf                        | The Sketching Approach to Program Synthesis Armando Solar-Lezama Massachusetts Institute of Technology Abstrac
+DBLP_conf_cav_2011.pdf                                    | Lecture Notes in Computer Science 6806 Commenced Publication in 1973 Founding and Former Series Editors: Gerha
+DBLP_conf_cav_2012.pdf                                    | Lecture Notes in Computer Science 7358 Commenced Publication in 1973 Founding and Former Series Editors: Gerha
+DBLP_conf_cav_2015.pdf                                    | Lecture Notes in Computer Science 9207 Commenced Publication in 1973 Founding and Former Series Editors: Gerha
+DBLP_conf_cav_BraggFRS21.pdf                              | Alexandra Silva K. Rustan M. Leino (Eds.) LNCS 12759 33rd International Conference, CAV 2021 Virtual Event, Ju
+DBLP_conf_cav_ChaudhuriS11.pdf                            | Smoothing a Program Soundly and Robustly ⋆ Swarat Chaudhuri1 and Armando Solar-Lezama2 1 Rice University 2 MIT
+DBLP_conf_cav_ChaudhuriS12.pdf                            | Euler: A System for Numerical Optimization of Programs ⋆ Swarat Chaudhuri1 and Armando Solar-Lezama2 1 Rice Un
+DBLP_conf_cav_GaoKDRSAK19.pdf                             | Isil Dillig Serdar Tasiran (Eds.) LNCS 11562 31st International Conference, CAV 2019 New York City, NY , USA, 
+DBLP_conf_cav_JeonQSF15.pdf                               | Adaptive Concretization for Parallel Program Synthesis Jinseong Jeon1(B), Xiaokang Qiu2, Armando Solar-Lezama2
+DBLP_conf_cav_KongSG18.pdf                                | Hana Chockler Georg Weissenbacher (Eds.) LNCS 10982 30th International Conference, CAV 2018 Held as Part of th
+DBLP_conf_cav_SinghS12.pdf                                | SPT: Storyboard Programming T ool ⋆ Rishabh Singh and Armando Solar-Lezama MIT CSAIL, Cambridge, MA, USA Abstr
+DBLP_conf_cidr_CheungAMSM13.pdf                           | StatusQuo: Making Familiar Abstractions Perform Using Program Analysis Alvin Cheung Owen Arden Samuel Madden A
+DBLP_conf_cikm_CheungSM12.pdf                             | Using Program Synthesis for Social Recommendations Alvin Cheung Armando Solar-Lezama Samuel Madden MIT CSAIL {
+DBLP_conf_cvpr_WillisJCT0GSTLS22.pdf                      | JoinABLe: Learning Bottom-up Assembly of Parametric CAD Joints Karl D.D. Willis1 Pradeep Kumar Jayaraman1 Hang
+DBLP_conf_emnlp_OlaussonGLZSTL23.pdf                      | Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing , pages 5153–5176 Decem
+DBLP_conf_fmcad_AlurBJMRSSSTU13.pdf                       | To appear at the IEEE International Conference on IC Design and Technology 2026 (ICICDT), June 22 - 24, 2026, 
+DBLP_conf_hvc_2012.pdf                                    | Lecture Notes in Computer Science 7857 Commenced Publication in 1973 Founding and Former Series Editors: Gerha
+DBLP_conf_hvc_GaneshMSR12.pdf                             | Word Equations with Length Constraints: What’s Decidable? Vijay Ganesh1, Mia Minnes2, Armando Solar-Lezama1 an
+DBLP_conf_hybrid_HuntFMHDS21.pdf                          | VERIFIABLY SAFE EXPLORATION FOR END-TO-E ND REINFORCEMENT LEARNING Nathan Hunt1, Nathan Fulton2, Sara Magliaca
+DBLP_conf_iclr_InalaBTS20.pdf                             | Published as a conference paper at ICLR 2020 SYNTHESIZING PROGRAMMATIC POLICIES THAT INDUCTIVELY GENERALIZE Je
+DBLP_conf_iclr_JainHGLYZWSSS25.pdf                        | Published as a conference paper at ICLR 2025 LIVE CODE BENCH : H OLISTIC AND CONTAMINATION FREE EVALUATION OF 
+DBLP_conf_iclr_LiWSZ0BM25.pdf                             | Published as a conference paper at ICLR 2025 VLM ATERIAL : P ROCEDURAL MATERIAL GENERA - TION WITH LARGE VISIO
+DBLP_conf_iclr_NyePBATS21.pdf                             | Published as a conference paper at ICLR 2021 REPRESENTING PARTIAL PROGRAMS WITH BLENDED ABSTRACT SEMANTICS Max
+DBLP_conf_iclr_OlaussonIW0S24.pdf                         | Published as a conference paper at ICLR 2024 IS SELF -R EPAIR A SILVER BULLET FOR CODE GENERATION ? Theo X. Ol
+DBLP_conf_icml_AletLKNSLKT21.pdf                          | A large-scale benchmark for few-shot program induction and synthesis Ferran Alet * 1 Javier Lopez-Contreras * 
+DBLP_conf_icml_CanoPDRS25.pdf                             | Neurosymbolic World Models for Sequential Decision Making Leonardo Hern´andez Cano 1 Maxine Perroni-Scharf 1 N
+DBLP_conf_icml_GuJLSESS25.pdf                             | Position: Future Research and Challenges Remain Towards AI for Software Engineering Alex Gu 1 Naman Jain 2 * W
+DBLP_conf_icml_GuRLSS024.pdf                              | CRUXEval: A Benchmark for Code Reasoning, Understanding and Execution Alex Gu 1 2 Baptiste Rozi`ere 1 Hugh Lea
+DBLP_conf_icml_LiPS24.pdf                                 | When Do Skills Help Reinforcement Learning? A Theoretical Analysis of Temporal Abstractions Zhening Li 1 Gabri
+DBLP_conf_icml_NyeHTS19.pdf                               | Learning to Infer Program Sketches Maxwell Nye 1 2 Luke Hewitt 1 2 3 Joshua Tenenbaum 1 2 4 Armando Solar-Leza
+DBLP_conf_icml_PuMSK18.pdf                                | Selecting Representative Examples for Program Synthesis Y ewen Pu1 Zachery Miranda 1 Armando Solar-Lezama 1 Le
+DBLP_conf_icml_TavaresBMSR19.pdf                          | Predicate Exchange: Inference with Declarative Knowledge Zenna Tavares1 Javier Burroni 2 Edgar Minasyan 3 Arma
+DBLP_conf_icml_TavaresK0DS21.pdf                          | A Language for Counterfactual Generative Models Zenna Tavares1 James Koppel 1 Xin Zhang 2 Ria Das 1 Armando So
+DBLP_conf_icra_CamposISK19.pdf                            | Bench-Push: Benchmarking Pushing-based Navigation and Manipulation Tasks for Mobile Robots Ninghan Zhong 1*, S
+DBLP_conf_icse_JeonQFFS16.pdf                             | MANTRA: Synthesizing SMT-Validated Compliance Benchmarks for Tool-Using LLM Agents Ashwani Anand, Ivi Chatzi, 
+DBLP_conf_mapl_GottschlichSTCR18.pdf                      | The Three Pillars of Machine Programming Justin Gottschlich Intel Labs, USA justin.gottschlich@intel.com Arman
+DBLP_conf_nips_BastaniPS18.pdf                            | V eriﬁable Reinforcement Learning via Policy Extraction Osbert Bastani MIT obastani@csail.mit.edu Y ewen Pu MI
+DBLP_conf_nips_EllisMSST18.pdf                            | Library Learning for Neurally-Guided Bayesian Program Induction Kevin Ellis MIT ellisk@mit.edu Lucas Morales M
+DBLP_conf_nips_EllisRST18.pdf                             | Learning to Infer Graphics Programs from Hand-Drawn Images Kevin Ellis MIT ellisk@mit.edu Daniel Ritchie Brown
+DBLP_conf_nips_EllisST15.pdf                              | Unsupervised Learning by Program Synthesis Kevin Ellis Department of Brain and Cognitive Sciences Massachusett
+DBLP_conf_nips_EllisST16.pdf                              | Sampling for Bayesian Program Learning Kevin Ellis Brain and Cognitive Sciences MIT ellisk@mit.edu Armando Sol
+DBLP_conf_nips_Inala0PPB0RS20.pdf                         | We thank the reviewers for their comments and will do our best to address them in our paper.1 R1, comparison t
+DBLP_conf_nips_NyeS0L20.pdf                               | We would like to thank all three reviewers for their thoughtful comments. We are pleased with the generally po
+DBLP_conf_nips_PuEK0S20.pdf                               | Thanks for the engaging comments. We will ﬁrst address two common concerns, then address the reviewers individ
+DBLP_conf_nips_Tjandrasuwita0S24.pdf                      | MeMo: Meaningful, Modular Controllers via Noise Injection Megan Tjandrasuwita MIT megantj@mit.edu Jie Xu NVIDI
+DBLP_conf_nips_YangIBPSR21.pdf                            | Program Synthesis Guided Reinforcement Learning for Partially Observed Environments Yichen David Yang∗ MIT EEC
+DBLP_conf_nips_ZhangSS18.pdf                              | Interpreting Neural Network Judgments via Minimal, Stable, and Symbolic Corrections Xin Zhang CSAIL, MIT xzhan
+DBLP_conf_oopsla_PuNSB16.pdf                              | sk_p: a neural program corrector for MOOCs Yewen Pu MIT yewenpu@mit.edu Karthik Narasimhan MIT karthikn@mit.ed
+DBLP_conf_oopsla_YessenovXS11.pdf                         | From Equations to Algorithms and Data: Transforming Microwave Engineering and Education with Machine Learning 
+DBLP_conf_plas_AustinYFS13.pdf                            | Faceted Execution of Policy-Agnostic Programs Thomas H. Austin UC Santa Cruz taustin@ucsc.edu Jean Y ang MIT C
+DBLP_conf_pldi_ChaudhuriS10.pdf                           | Reduced-Order Modeling of Parameterized Visco-Plastic Shallow Flows Md Rezwan Bin Mizan * Ilya Timofeyev† Maxi
+DBLP_conf_pldi_KamilCIS16.pdf                             | Stencil-Lifting: Hierarchical Recursive Lifting System for Extracting Summary of Stencil Kernel in Legacy Code
+DBLP_conf_pldi_PolikarpovaKS16.pdf                        | Program Synthesis from Polymorphic Reﬁnement Types Extended Version Nadia Polikarpova Ivan Kuraj Armando Solar
+DBLP_conf_pldi_SinghGS13.pdf                              | Raven: Rethinking Automated Assessment for Scratch Programs via Video-Grounded Evaluation DONGLIN LI,Anhui Uni
+DBLP_conf_pldi_Solar-LezamaATBSS07.pdf                    | BLK-Assist: A Methodological Framework for Artist-Led Co-Creation with Generative AI Models Daniel Grimes Visu
+DBLP_conf_pldi_Solar-LezamaJB08.pdf                       | Enhance Sketch Recognition’s Explainability via Semantic Component-Level Parsing Guangming Zhu1,2,3, Siyuan Wa
+DBLP_conf_pldi_Solar-LezamaRBE05.pdf                      | Programming by Sketching for Bit-Streaming Programs Armando Solar-Lezama1 Rodric Rabbah2 Rastislav Bod·k1 Kem
+DBLP_conf_pldi_YangHASFC16.pdf                            | Precise, Dynamic Information Flow for Database-Backed Applications Jean Yang Carnegie Mellon University and Ha
+DBLP_conf_popl_YangYS12.pdf                               | PICACHV : Formally Verified Data Use Policy Enforcement for Secure Data Analytics Haobin Hiroki Chen1, Hongbo 
+DBLP_conf_ppopp_KurajSP22.pdf                             | Global Stabilization for Causally Consistent Partial Replication Zhuolun Xiang Department of Computer Science 
+DBLP_conf_ppsn_2014.pdf                                   | Lecture Notes in Computer Science 8672 Commenced Publication in 1973 Founding and Former Series Editors: Gerha
+DBLP_conf_ppsn_KrawiecS14.pdf                             | Improving Genetic Programming with Behavioral Consistency Measure Krzysztof Krawiec1 and Armando Solar-Lezama2
+DBLP_conf_sat_2012.pdf                                    | Lecture Notes in Computer Science 7317 Commenced Publication in 1973 Founding and Former Series Editors: Gerha
+DBLP_conf_sat_2016.pdf                                    | Lecture Notes in Computer Science 9710 Commenced Publication in 1973 Founding and Former Series Editors: Gerha
+DBLP_conf_sat_GaneshOSDRS12.pdf                           | Lynx: A Programmatic SAT Solver for the RNA-Folding Problem Vijay Ganesh1, Charles W. O’Donnell1, Mate Soos2, 
+DBLP_conf_sat_Inala0S16.pdf                               | Synthesis of Domain Speciﬁc CNF Encoders for Bit-Vector Solvers Jeevana Priya Inala, Rohit Singh, and Armando 
+DBLP_conf_sigsoft_JeonQFS15.pdf                           | JSKETCH : Sketching for Java Jinseong Jeon† Xiaokang Qiu‡ Jeffrey S. Foster† Armando Solar-Lezama‡ †University
+DBLP_conf_sigsoft_SinghS11.pdf                            | Synthesizing Data-structure Manipulations from Storyboards Rishabh Singh MIT CSAIL Massachusetts, USA rishabh@
+DBLP_conf_snapl_2015.pdf                                  | 1st Summit on Advances in Programming Languages SNAPL’15, May 3–6, 2015, Asilomar, California, US Edited by Th
+DBLP_conf_snapl_CheungKS15.pdf                            | Bridging the Gap Between General-Purpose and Domain-Speciﬁc Compilers with Synthesis Alvin Cheung 1, Shoaib Ka
+DBLP_conf_snapl_KurajS17.pdf                              | Leveraging Sequential Computation for Programming Eﬃcient and Reliable Distributed Systems Ivan Kuraj 1 and Ar
+DBLP_conf_tacas_2017-1.pdf                                | Lecture Notes in Computer Science 10205 Commenced Publication in 1973 Founding and Former Series Editors: Gerh
+DBLP_conf_tacas_InalaPQLS17.pdf                           | 123 23rd International Conference, TACAS 2017 Held as Part of the European Joint Conferences on Theory and Pra
+DBLP_conf_uai_PuKS17.pdf                                  | Learning to Acquire Information Yewen Pu MIT yewenpu@mit.edu Leslie P Kaelbling MIT lpk@csail.mit.edu Armando 
+DBLP_conf_vmcai_2014.pdf                                  | Lecture Notes in Computer Science 8318 Commenced Publication in 1973 Founding and Former Series Editors: Gerha
+DBLP_conf_vmcai_SinghSXKS14.pdf                           | Modular Synthesis of Sketches Using Models Rohit Singh, Rishabh Singh, Zhilei Xu, Rebecca Krosnick, and Armand
+DBLP_journals_cacm_AlurSFS18.pdf                          | Beyond the Training Distribution: Mapping Generalization Boundaries in Neural Program Synthesis Henrik Voigt h
+DBLP_journals_cacm_WangZKS16.pdf                          | arXiv:2507.03773v1 [cs.CR] 4 Jul 2025 RVISmith: Fuzzing Compilers for RVV Intrinsics Yibo He Peking University
+DBLP_journals_corr_0002S16.pdf                            | Automatic Generation of Formula Simpliﬁers based on Conditional Rewrite Rules Rohit Singh, Armando Solar-Lezam
+DBLP_journals_corr_abs-1204-1751.pdf                      | Automated Feedback Generation for Introductory Programming Assignments Rishabh Singh MIT CSAIL, Cambridge, MA 
+DBLP_journals_corr_abs-1208-2013.pdf                      | arXiv:1208.2013v1 [cs.PL] 9 Aug 2012 Inferring SQL Queries Using Program Synthesis Alvin Cheung Armando Solar-
+DBLP_journals_corr_abs-1208-2925.pdf                      | Using Program Synthesis for Social Recommendations Alvin Cheung Armando Solar-Lezama Samuel Madden MIT CSAIL {
+DBLP_journals_corr_abs-1710-10385.pdf                     | 10 Capturing the Future by Replaying the Past Functional Pearl JAMES KOPPEL, MIT GABRIEL SCHERER, INRIA ARMAND
+DBLP_journals_corr_abs-1711-03243.pdf                     | Selecting Representative Examples for Program Synthesis Y ewen Pu1 Zachery Miranda 1 Armando Solar-Lezama 1 Le
+DBLP_journals_corr_abs-1711-11438.pdf                     | D. Fisman, S. Jacobs (Eds.): Sixth Workshop on Synthesis (SYNT 2017) EPTCS 260, 2017, pp. 97–115, doi:10.4204/
+DBLP_journals_corr_abs-1802-04408.pdf                     | ReaS: Combining Numerical Optimization with SAT Solving Jeevana Priya Inala MIT jinala@csail.mit.edu Sicun Gao
+DBLP_journals_corr_abs-1802-07384.pdf                     | Interpreting Neural Network Judgments via Minimal, Stable, and Symbolic Corrections Xin Zhang CSAIL, MIT Arman
+DBLP_journals_corr_abs-1803-07244.pdf                     | The Three Pillars of Machine Programming Justin Gottschlich Intel Labs, USA justin.gottschlich@intel.com Arman
+DBLP_journals_corr_abs-1805-08328.pdf                     | Veriﬁable Reinforcement Learning via Policy Extraction Osbert Bastani MIT obastani@csail.mit.edu Yewen Pu MIT 
+DBLP_journals_corr_abs-1807-08137.pdf                     | Delta-Decision Procedures for Exists-Forall Problems over the Reals Soonho Kong1, Armando Solar-Lezama2, and S
+DBLP_journals_corr_abs-1812-02573.pdf                     | 118 Probabilistic Verification of Fairness Properties via Concentration OSBERT BASTANI, University of Pennsylv
+DBLP_journals_corr_abs-1901-05437.pdf                     | arXiv:1901.05437v1 [cs.AI] 16 Jan 2019 Soft Constraints for Inference with Declarative Knowledge Zenna T avare
+DBLP_journals_corr_abs-1902-06349.pdf                     | Learning to Infer Program Sketches Maxwell Nye 1 2 Luke Hewitt 1 2 3 Joshua Tenenbaum1 2 4 Armando Solar-Lezam
+DBLP_journals_corr_abs-1903-03229.pdf                     | Deductive Optimization of Relational Data Storage John K. Feser CSAIL MIT Cambridge, MA, USA feser@csail.mit.e
+DBLP_journals_corr_abs-1903-10556.pdf                     | The Random Conditional Distribution For Higher-Order Probabilistic Inference Zenna Tavares BCS, CSAIL MIT Xin 
+DBLP_journals_corr_abs-1906-04604.pdf                     | Write, Execute, Assess: Program Synthesis with a REPL Kevin Ellis∗ MIT Maxwell Nye∗ MIT Y ewen Pu∗ MIT Felix S
+DBLP_journals_corr_abs-2003-05562.pdf                     | Learning Compositional Rules via Neural Program Synthesis Maxwell I. Nye∗ MIT Armando Solar-Lezama MIT Joshua 
+DBLP_journals_corr_abs-2006-08381.pdf                     | DreamCoder: Growing generalizable, interpretable knowledge with wake-sleep Bayesian program learning Kevin Ell
+DBLP_journals_corr_abs-2101-03238.pdf                     | Neurosymbolic Transformers for Multi-Agent Communication Jeevana Priya Inala 1∗ Yichen Yang 1∗ James Paulos 2 
+DBLP_journals_corr_abs-2102-11137.pdf                     | Program Synthesis Guided Reinforcement Learning for Partially Observed Environments Yichen David Yang∗ MIT EEC
+DBLP_journals_corr_abs-2110-05440.pdf                     | Safe Human-Interactive Control via Shielding Jeevana Priya Inala 1, Yecheng Jason Ma 2, Osbert Bastani 2, Xin 
+DBLP_journals_corr_abs-2111-12772.pdf                     | JoinABLe: Learning Bottom-up Assembly of Parametric CAD Joints Karl D.D. Willis1 Pradeep Kumar Jayaraman1 Hang
+DBLP_journals_corr_abs-2206-06164.pdf                     | 1 Metric Program Synthesis JOHN FESER, MIT, USA ISIL DILLIG, UT Austin, USA ARMANDO SOLAR-LEZAMA, MIT, USA We 
+DBLP_journals_corr_abs-2206-07828.pdf                     | Searching Entangled Program Spaces JAMES KOPPEL, MIT, USA ZHENG GUO, UC San Diego, USA EDSKO DE VRIES, Well-Ty
+DBLP_journals_corr_abs-2302-01976.pdf                     | SPARLING: END-TO-ENDSPATIALCONCEPTLEARN- ING VIAEXTREMELYSPARSEACTIVATIONS Kavi Gupta Department of Electrical
+DBLP_journals_corr_abs-2401-03065.pdf                     | CRUXEval: A Benchmark for Code Reasoning, Understanding and Execution Alex Gu⋆ gua@mit.edu MIT CSAIL Baptiste 
+DBLP_journals_corr_abs-2402-19475.pdf                     | The Counterfeit Conundrum: Can Code Language Models Grasp the Nuances of Their Incorrect Generations? Alex Gu 
+DBLP_journals_corr_abs-2403-07974.pdf                     | LiveCodeBench: Holistic and Contamination Free Evaluation of Large Language Models for Code Naman Jain † King 
+DBLP_journals_corr_abs-2406-07897.pdf                     | When Do Skills Help Reinforcement Learning? A Theoretical Analysis of Temporal Abstractions Zhening Li 1 Gabri
+DBLP_journals_corr_abs-2407-01567.pdf                     | MeMo: Meaningful, Modular Controllers via Noise Injection Megan Tjandrasuwita MIT megantj@mit.edu Jie Xu NVIDI
+DBLP_journals_corr_abs-2409-17490.pdf                     | MathDSL: A Domain-Specific Language for Concise Mathematical Solutions Via Program Synthesis Sagnik Anupam MIT
+DBLP_journals_corr_abs-2501-02825.pdf                     | Randomly Sampled Language Reasoning Problems Elucidate Limitations of In-Context Learning Kavi Gupta Departmen
+DBLP_journals_corr_abs-2501-18623.pdf                     | Published as a conference paper at ICLR 2025 VLM ATERIAL : P ROCEDURAL MATERIAL GENERA - TION WITH LARGE VISIO
+DBLP_journals_corr_abs-2502-16671.pdf                     | MIMEQA: Towards Socially-Intelligent Nonverbal Foundation Models Hengzhi Li1,2 Megan Tjandrasuwita1 Yi R. Fung
+DBLP_journals_corr_abs-2503-22625.pdf                     | arXiv:2503.22625v1 [cs.SE] 28 Mar 2025 Challenges and Paths Towards AI for Software Engineering Alex Gu gua@mi
+DBLP_journals_corr_AlurFSS16.pdf                          | ˇCern´y, Kuncak, Madhusudan (Eds.): Fourth Workshop on Synthesis (SYNT 2015) EPTCS 202, 2016, pp. 3–26, doi:10
+DBLP_journals_corr_AlurFSS16a.pdf                         | Dimitrova, Piskac (Eds.): Fifth Workshop on Synthesis (SYNT 2016) EPTCS 229, 2016, pp. 178–202, doi:10.4204/EP
+DBLP_journals_corr_EllisRST17.pdf                         | Learning to Infer Graphics Programs from Hand-Drawn Images Kevin Ellis MIT ellisk@mit.edu Daniel Ritchie Brown
+DBLP_journals_corr_GaneshMSR13.pdf                        | arXiv:1306.6054v1 [cs.LO] 25 Jun 2013 (Un)Decidability Results for Word Equations with Length and Regular Expr
+DBLP_journals_corr_GopalakrishnanH17.pdf                  | Report of the HPC Correctness Summit Jan 25–26, 2017, Washington, DC report authors Ganesh Gopalakrishnan Univ
+DBLP_journals_corr_InalaQLS15.pdf                         | Synthesis of Recursive ADT Transformations from Reusable Templates Jeevana Priya Inala1, Nadia Polikarpova1, X
+DBLP_journals_corr_JeonQFS15.pdf                          | JSKETCH : Sketching for Java Jinseong Jeon† Xiaokang Qiu‡ Jeffrey S. Foster† Armando Solar-Lezama‡ †University
+DBLP_journals_corr_KoppelS17.pdf                          | 122 One Tool, Many Languages: Language-Parametric Transformation with Incremental Parametric Syntax JAMES KOPP
+DBLP_journals_corr_PolikarpovaS15.pdf                     | Program Synthesis from Polymorphic Reﬁnement Types Extended Version Nadia Polikarpova Ivan Kuraj Armando Solar
+DBLP_journals_corr_PolikarpovaYIS16.pdf                   | 105 Liquid Information Flow Control Extended Version NADIA POLIKARPOVA, University of California, San Diego DE
+DBLP_journals_corr_PuKS17.pdf                             | Learning to Acquire Information Yewen Pu MIT yewenpu@mit.edu Leslie P Kaelbling MIT lpk@csail.mit.edu Armando 
+DBLP_journals_corr_PuNSB16.pdf                            | sk_p: a neural program corrector for MOOCs Yewen Pu MIT yewenpu@mit.edu Karthik Narasimhan MIT karthikn@mit.ed
+DBLP_journals_corr_YangHASFC15.pdf                        | Precise, Dynamic Information Flow for Database-Backed Applications Jean Yang Carnegie Mellon University and Ha
+DBLP_journals_debu_CheungMSAM14.pdf                       | Using Program Analysis to Improve Database Applications Alvin Cheung Owen Arden Samuel Madden Armando Solar-Le
+DBLP_journals_fmsd_FismanSS21.pdf                         | Formal Methods in System Design (2021) 58:469–470 https://doi.org/10.1007/s10703-021-00386-0 Special Issue on 
+DBLP_journals_fmsd_JeonQSF17.pdf                          | Form Methods Syst Des (2017) 50:75–95 DOI 10.1007/s10703-017-0269-8 An empirical study of adaptive concretizat
+DBLP_journals_ftpl_ChaudhuriEPSSY21.pdf                   | NeSyCat: A Monad-Based Categorical Semantics of the Neurosymbolic ULLER Framework Daniel Romero Schellhorn 1 a
+DBLP_journals_ftpl_CheungS16.pdf                          | 1 Compact LLM Deployment and World Model Assisted Ofﬂoading in Mobile Edge Computing Ruichen Zhang, Xiaofeng L
+DBLP_journals_pacmpl_Bastani0S19.pdf                      | 118 Probabilistic Verification of Fairness Properties via Concentration OSBERT BASTANI, University of Pennsylv
+DBLP_journals_pacmpl_BowersOWGTES23.pdf                   | 41 Top-Down Synthesis for Library Learning MATTHEW BOWERS, Massachusetts Institute of Technology, USA THEO X. 
+DBLP_journals_pacmpl_FeserM0S20.pdf                       | Deductive Optimization of Relational Data Storage John K. Feser CSAIL MIT Cambridge, MA, USA feser@csail.mit.e
+DBLP_journals_pacmpl_KoppelGVSP22.pdf                     | Searching Entangled Program Spaces JAMES KOPPEL, MIT, USA ZHENG GUO, UC San Diego, USA EDSKO DE VRIES, Well-Ty
+DBLP_journals_pacmpl_KoppelKS22.pdf                       | 117 Automatically Deriving Control-Flow Graph Generators from Operational Semantics JAMES KOPPEL, MIT, USA JAC
+DBLP_journals_pacmpl_KoppelPS18.pdf                       | 122 One Tool, Many Languages: Language-Parametric Transformation with Incremental Parametric Syntax JAMES KOPP
+DBLP_journals_pacmpl_KoppelSS18.pdf                       | 10 Capturing the Future by Replaying the Past Functional Pearl JAMES KOPPEL, MIT GABRIEL SCHERER, INRIA ARMAND
+DBLP_journals_pacmpl_PolikarpovaSYIH20.pdf                | 105 Liquid Information Flow Control Extended Version NADIA POLIKARPOVA, University of California, San Diego DE
+DBLP_journals_pvldb_SinghMEMPQST17.pdf                    | Synthesizing Entity Matching Rules by Examples Rohit Singh ♠∇ Venkata Vamsikrishna Meduri♦ Ahmed Elmagarmid ♣ 
+DBLP_journals_sttt_Solar-Lezama13.pdf                     | Federal Information Processing Standards Publication 197 November 26, 2001 Announcing the ADVANCED ENCRYPTION 
+DBLP_journals_tocs_WangZKS15.pdf                          | arXiv:2507.03773v1 [cs.CR] 4 Jul 2025 RVISmith: Fuzzing Compilers for RVV Intrinsics Yibo He Peking University
+DBLP_journals_tog_WillisPLCDLSM21.pdf                     | Fusion 360 Gallery: A Dataset and Environment for Programmatic CAD Construction from Human Design Sequences KA
+DBLP_series_natosec_40.pdf                                | Beyond Rules: LLM-Powered Linting for Quantum Programs Pietro Cassieri Department of Computer Science Universi
+DBLP_series_natosec_AlurBDF0JKMMRSSSSTU15.pdf             | To appear at the IEEE International Conference on IC Design and Technology 2026 (ICICDT), June 22 - 24, 2026, 
+Ellis22Linguistics.pdf                                    | nature communications Article https://doi.org/10.1038/s41467-022-32012-w Synthesizing theories of human langua
+Gupta2024.pdf                                             | Open Access © The Author(s) 2024. Open Access This article is licensed under a Creative Commons Attribution 4.

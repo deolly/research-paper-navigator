@@ -1,0 +1,167 @@
+
+==============================================================================
+RUN 2026-09-02T18:30:57
+==============================================================================
+
+==============================================================================
+QUERY 1: What is storyboard programming and how does it synthesize data structure manipulations?
+==============================================================================
+
+-- BM25 only --
+    36.649  DBLP_conf_sigsoft_SinghS11.pdf#p9#c12155
+    33.600  DBLP_conf_sigsoft_SinghS11.pdf#p1#c12098
+    30.256  DBLP_conf_sigsoft_SinghS11.pdf#p1#c12097
+    29.250  DBLP_conf_sigsoft_SinghS11.pdf#p10#c12158
+    27.555  DBLP_conf_cav_SinghS12.pdf#p1#c7751
+
+-- Vector only --
+     0.512  DBLP_conf_sigsoft_SinghS11.pdf#p1#c12097
+     0.609  DBLP_conf_sigsoft_SinghS11.pdf#p2#c12106
+     0.677  DBLP_conf_sigsoft_SinghS11.pdf#p9#c12155
+     0.728  DBLP_conf_cav_SinghS12.pdf#p1#c7752
+     0.778  DBLP_conf_sigsoft_SinghS11.pdf#p10#c12159
+
+-- Hybrid (fused) --
+     0.827  DBLP_conf_sigsoft_SinghS11.pdf#p9#c12155
+     0.818  DBLP_conf_sigsoft_SinghS11.pdf#p1#c12097
+     0.604  DBLP_conf_sigsoft_SinghS11.pdf#p1#c12098
+     0.561  DBLP_conf_sigsoft_SinghS11.pdf#p2#c12106
+     0.397  DBLP_conf_cav_SinghS12.pdf#p1#c7751
+
+-- ANSWER --
+Storyboard programming is a synthesis framework for helping programmers write “imperative low-level data-structure manipulations.” The paper says its goal is “to bridge the gap between the ‘boxes-and-arrows’ diagrams that programmers often use to think about data-structure manipulation algorithms and the low-level imperative code that implements them.”
+
+It synthesizes code from a storyboard, which consists of:
+- “a set of scenarios, each of which corresponds to an abstract input-output pair”
+- “a set of fold and unfold definitions”
+- “a skeleton of the looping structure of the desired algorithm”
+
+The framework then “encod[es] both the synthesis and the abstract interpretation problem as a constraint satisfaction problem whose solution defines the desired low-level implementation.” In other words, it uses the storyboard information and solves constraints to generate the implementation.
+
+The paper also says it can take “a set of partial input-output examples, as well as a description of the high-level structure of the desired solution,” and from that “synthesize low-level imperative implementations in a matter of minutes.”
+
+==============================================================================
+QUERY 2: How do these systems learn reusable libraries of program abstractions?
+==============================================================================
+
+-- BM25 only --
+    19.791  DBLP_journals_pacmpl_BowersOWGTES23.pdf#p26#c21803
+    19.436  DBLP_journals_pacmpl_BowersOWGTES23.pdf#p19#c21777
+    18.378  DBLP_journals_pacmpl_BowersOWGTES23.pdf#p28#c21815
+    18.044  DBLP_conf_icml_GuJLSESS25.pdf#p39#c9213
+    18.030  DBLP_conf_nips_EllisMSST18.pdf#p9#c10289
+
+-- Vector only --
+     0.670  DBLP_journals_pacmpl_BowersOWGTES23.pdf#p2#c21701
+     0.728  DBLP_journals_pacmpl_BowersOWGTES23.pdf#p26#c21804
+     0.735  DBLP_journals_corr_abs-2503-22625.pdf#p18#c19657
+     0.753  DBLP_journals_pacmpl_BowersOWGTES23.pdf#p2#c21703
+     0.781  DBLP_journals_pacmpl_BowersOWGTES23.pdf#p24#c21797
+
+-- Hybrid (fused) --
+     0.500  DBLP_journals_pacmpl_BowersOWGTES23.pdf#p26#c21803
+     0.500  DBLP_journals_pacmpl_BowersOWGTES23.pdf#p2#c21701
+     0.463  DBLP_journals_pacmpl_BowersOWGTES23.pdf#p19#c21777
+     0.422  DBLP_journals_corr_abs-2503-22625.pdf#p18#c19657
+     0.394  DBLP_conf_icml_GuJLSESS25.pdf#p39#c9213
+
+-- ANSWER --
+These systems learn reusable libraries by **abstracting common structure across a corpus of programs**.
+
+From the documents:
+
+- “**learning libraries of program abstractions which capture reusable structure across a corpus of programs**”
+- “**search for common tree fragments across a corpus of programs, which can be introduced as new abstractions**”
+- Ellis et al. 2021 “**reasons about variable bindings to abstract out well-formed functions instead of just tree fragments**”
+
+So, in short, they identify repeated patterns in many programs and turn those patterns into abstractions that can be reused in new programs.
+
+==============================================================================
+QUERY 3: How can a programmer leave gaps in their code for the computer to fill in automatically?
+==============================================================================
+
+-- BM25 only --
+    14.640  DBLP_conf_tacas_InalaPQLS17.pdf#p527#c15519
+    14.618  DBLP_conf_snapl_2015.pdf#p284#c13320
+    14.490  DBLP_journals_corr_KoppelS17.pdf#p7#c20511
+    14.490  DBLP_journals_pacmpl_KoppelPS18.pdf#p7#c22391
+    13.950  DBLP_conf_snapl_2015.pdf#p266#c13244
+
+-- Vector only --
+     0.941  DBLP_journals_corr_abs-1906-04604.pdf#p1#c17506
+     0.951  DBLP_conf_icml_GuJLSESS25.pdf#p30#c9159
+     0.969  DBLP_conf_mapl_GottschlichSTCR18.pdf#p1#c10124
+     0.971  DBLP_journals_corr_abs-1803-07244.pdf#p1#c16891
+     0.973  DBLP_conf_nips_EllisMSST18.pdf#p2#c10258
+
+-- Hybrid (fused) --
+     0.500  DBLP_conf_tacas_InalaPQLS17.pdf#p527#c15519
+     0.500  DBLP_journals_corr_abs-1906-04604.pdf#p1#c17506
+     0.495  DBLP_conf_snapl_2015.pdf#p284#c13320
+     0.464  DBLP_journals_corr_KoppelS17.pdf#p7#c20511
+     0.464  DBLP_journals_pacmpl_KoppelPS18.pdf#p7#c22391
+
+-- ANSWER --
+The documents do not contain an explicit answer to how a programmer can leave gaps in code for the computer to fill in automatically.
+
+The closest relevant passage says that systems may help by “**transition[ing] between states of writing, executing, and assessing the code**” when “**writing a large body of code**,” and another document describes program representations where “**the user only writes code to translate between removed node types and their generic equivalents**.” But none of the provided text directly explains a method for leaving gaps in code for automatic filling.
+
+==============================================================================
+QUERY 4: How can a system automatically help students fix mistakes in their programming assignments?
+==============================================================================
+
+-- BM25 only --
+    29.593  DBLP_journals_corr_abs-1204-1751.pdf#p1#c16242
+    23.014  DBLP_journals_corr_abs-1204-1751.pdf#p10#c16308
+    22.573  DBLP_journals_corr_abs-1204-1751.pdf#p1#c16239
+    20.959  DBLP_conf_pldi_SinghGS13.pdf#p8#c11274
+    19.492  DBLP_journals_corr_abs-1204-1751.pdf#p1#c16244
+
+-- Vector only --
+     0.612  DBLP_journals_corr_abs-1204-1751.pdf#p1#c16239
+     0.639  DBLP_journals_corr_abs-1204-1751.pdf#p10#c16309
+     0.701  DBLP_journals_corr_abs-1204-1751.pdf#p2#c16247
+     0.703  DBLP_journals_corr_abs-1204-1751.pdf#p10#c16308
+     0.721  DBLP_journals_corr_abs-1204-1751.pdf#p1#c16244
+
+-- Hybrid (fused) --
+     0.748  DBLP_journals_corr_abs-1204-1751.pdf#p1#c16239
+     0.570  DBLP_journals_corr_abs-1204-1751.pdf#p10#c16308
+     0.562  DBLP_journals_corr_abs-1204-1751.pdf#p1#c16242
+     0.442  DBLP_journals_corr_abs-1204-1751.pdf#p10#c16309
+     0.407  DBLP_journals_corr_abs-1204-1751.pdf#p1#c16244
+
+-- ANSWER --
+A system can help by using a **reference implementation** and an **error model** of likely student mistakes to automatically find **minimal corrections** to the student’s program.
+
+The paper says it “**automatically derives minimal corrections to student’s incorrect solutions**,” giving students “**a quantifiable measure of exactly how incorrect a given solution was, as well as feedback about what they did wrong**.” It also says the system “**leverages program synthesis technology to automatically determine minimal fixes to the student’s solution that will make it match the behavior of a reference solution written by the instructor**.”
+
+So, in short, it helps by automatically comparing the student’s code to the instructor’s solution and generating targeted feedback about how to fix it.
+
+==============================================================================
+QUERY 5: What is the current market capitalization of Nvidia?
+==============================================================================
+
+-- BM25 only --
+    11.695  DBLP_conf_snapl_2015.pdf#p235#c13111
+    10.792  DBLP_conf_snapl_2015.pdf#p184#c12890
+    10.124  DBLP_conf_snapl_2015.pdf#p190#c12916
+     9.463  DBLP_journals_corr_KoppelS17.pdf#p17#c20552
+     9.463  DBLP_journals_pacmpl_KoppelPS18.pdf#p17#c22432
+
+-- Vector only --
+     1.341  DBLP_journals_corr_abs-2501-02825.pdf#p32#c19370
+     1.458  DBLP_conf_cav_BraggFRS21.pdf#p279#c1622
+     1.467  DBLP_conf_cav_BraggFRS21.pdf#p163#c1161
+     1.471  DBLP_conf_cav_BraggFRS21.pdf#p440#c2170
+     1.472  DBLP_conf_cav_BraggFRS21.pdf#p441#c2171
+
+-- Hybrid (fused) --
+     0.500  DBLP_conf_snapl_2015.pdf#p235#c13111
+     0.500  DBLP_journals_corr_abs-2501-02825.pdf#p32#c19370
+     0.376  DBLP_conf_snapl_2015.pdf#p184#c12890
+     0.349  DBLP_conf_cav_BraggFRS21.pdf#p440#c2170
+     0.283  DBLP_conf_snapl_2015.pdf#p190#c12916
+
+-- ANSWER --
+The provided documents do not contain Nvidia’s current market capitalization, so I can’t answer that from the documents alone.

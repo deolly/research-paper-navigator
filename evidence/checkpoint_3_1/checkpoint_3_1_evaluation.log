@@ -1,0 +1,102 @@
+[2026-09-08T20:30:27] RUN START
+Checkpoint 3.1 — baseline evaluation  |  scenario: research_papers  |  top_k=5  |  answerer=openai/gpt-5.4-mini  judge=openai/gpt-5.4-mini
+------------------------------------------------------------------------
+[2026-09-08T20:38:31] E1-rare-term: What is storyboard programming and how does it synthesize data structure manipulations?
+expected=pass
+verdict=pass
+distinct_sources=3
+retrieved=[('DBLP_conf_sigsoft_SinghS11.pdf#p9#c12155', np.float64(0.8272385298778745)), ('DBLP_conf_sigsoft_SinghS11.pdf#p1#c12097', np.float64(0.818389848516164)), ('DBLP_conf_cav_SinghS12.pdf#p1#c7751', np.float64(0.397490966138213)), ('DBLP_conf_cav_SinghS12.pdf#p6#c7767', np.float64(0.3537673499894023)), ('DBLP_conf_mapl_GottschlichSTCR18.pdf#p3#c10136', np.float64(0.0037941353941860247))]
+answer=Storyboard Programming is a synthesis framework “designed to help programmers write imperative low-level data-structure manipulations.” It aims to bridge the gap between the “boxes-and-arrows” diagrams programmers use to think about algorithms and the low-level code that implements them.
+
+According to the documents, it synthesizes implementations from:
+- “a set of partial input-output examples,” and
+- “a description of the high-level structure of the desired solution.”
+
+It then “is able to synthesize low-level imperative implementations in a matter of minutes.”
+
+The documents also say the framework is based on combining “constraint-based synthesis and abstract-interpretation” and that the tool uses “abstract and concrete input-output examples as well as implementation skeletons.”
+
+So, in short: storyboard programming lets users specify the intended transformation with examples, diagrams, and skeletons, and the synthesizer turns that into pointer-manipulating code.
+------------------------------------------------------------------------
+[2026-09-08T20:38:34] E2-accessible-paraphrase: How can a system automatically help students fix mistakes in their programming assignments?
+expected=pass
+verdict=pass
+distinct_sources=4
+retrieved=[('DBLP_journals_corr_abs-1204-1751.pdf#p1#c16239', np.float64(0.7483695852490416)), ('DBLP_journals_corr_abs-1204-1751.pdf#p10#c16308', np.float64(0.5700123067424279)), ('DBLP_conf_pldi_SinghGS13.pdf#p8#c11274', np.float64(0.19050640321275059)), ('DBLP_conf_oopsla_PuNSB16.pdf#p1#c10688', 0.14194034770980113), ('DBLP_journals_corr_PuNSB16.pdf#p1#c20975', 0.14139592402332257)]
+answer=The documents say a system can help by using:
+
+- “a reference implementation of the assignment”
+- “an error model consisting of potential corrections to errors that students might make”
+
+With that information, “the system automatically derives minimal corrections to student’s incorrect solutions,” giving “a quantiﬁable measure of exactly how incorrect a given solution was, as well as feedback about what they did wrong.”
+
+More specifically, it “uses an error model describing the potential corrections and constraint-based synthesis to compute minimal corrections to student’s incorrect solutions.”
+
+So, in short: the system compares a student’s program against a reference solution, searches over possible fixes described by an error model, and automatically returns the smallest corrections and feedback.
+------------------------------------------------------------------------
+[2026-09-08T20:38:37] E3-vocabulary-gap: How can a programmer leave gaps in their code for the computer to fill in automatically?
+expected=fail
+verdict=fail
+distinct_sources=5
+retrieved=[('DBLP_conf_tacas_InalaPQLS17.pdf#p527#c15519', np.float64(0.5)), ('DBLP_journals_corr_abs-1906-04604.pdf#p1#c17506', 0.5), ('DBLP_conf_snapl_2015.pdf#p284#c13320', np.float64(0.49485308964840635)), ('DBLP_journals_corr_KoppelS17.pdf#p7#c20511', np.float64(0.4641054464463758)), ('DBLP_journals_pacmpl_KoppelPS18.pdf#p7#c22391', np.float64(0.4641054464463758))]
+answer=The documents say this can be done by **executing partially written code** and using systems that can **transition between writing, executing, and assessing** code: “the ability to execute the partially-written code” and “designing systems with the ability to effectively transition between states of writing, executing, and assessing the code may prove crucial.”
+
+They also mention a mechanism where “the user only writes code to translate between removed node types and their generic equivalents,” with many translations “derived mostly automatically.” This suggests a programmer can leave gaps by using a representation that lets the system fill in the missing parts automatically.
+
+I don’t see a more direct description of “leaving gaps” in the documents.
+------------------------------------------------------------------------
+[2026-09-08T20:38:42] E4-multi-document: Which different approaches to learning reusable libraries of program abstractions appear in this corpus, and how do they differ from each other?
+expected=fail
+verdict=fail
+distinct_sources=4
+retrieved=[('DBLP_journals_pacmpl_BowersOWGTES23.pdf#p6#c21718', np.float64(0.7987345266845065)), ('DBLP_journals_corr_abs-2503-22625.pdf#p18#c19657', np.float64(0.6797635177689303)), ('DBLP_journals_pacmpl_BowersOWGTES23.pdf#p20#c21781', np.float64(0.558851749977004)), ('DBLP_conf_icml_GuJLSESS25.pdf#p39#c9213', np.float64(0.5533540464051409)), ('DBLP_journals_corr_abs-2006-08381.pdf#p18#c17705', np.float64(0.13531362889507254))]
+answer=The corpus mentions a few related but distinct approaches to learning reusable libraries of program abstractions:
+
+1. **Iterative, corpus-guided library learning**
+   - In *Stitch*, the algorithm is run repeatedly on a corpus: “**we can easily run this algorithm for multiple iterations on a corpus of programs to build up an entire library of abstractions**.”
+   - This is an **iterative compression-and-rewriting** process: “**it interleaves compression and rewriting**,” and “**Successive iterations therefore yield abstractions that build hierarchically on one another**.”
+   - So the library grows step by step, with each new abstraction rewriting the corpus and enabling higher-level abstractions later.
+
+2. **Traditional large-scale corpus library learning**
+   - Another experiment is described as learning “**libraries of abstractions from a large corpus of existing programs all at once**.”
+   - This differs from the iterative approach because it is **not focused on small synthesized corpora or repeated refinement**, but rather on a **single large batch learning setting**.
+
+3. **Library learning as API/design abstraction extraction**
+   - The broader framing says library learning is about “**derive a library of useful abstractions from a corpus of programs by abstracting out common reusable features**.”
+   - This is the conceptual goal underlying the methods above: find abstractions that improve “**code reuse**” and “**more intuitive interfaces**.”
+   - The corpus also emphasizes that a truly effective library should not only support reuse but also “**ease of use and maintainability**,” and be “**robust and adaptable to future extensions**.”
+
+4. **Learning on top of rich built-in resources**
+   - One document contrasts library learning with a broader vision for program induction: not “blank-slate learning,” but “**learning on top of rich systems of built-in knowledge**,” such as “**simulation engines or the standard libraries of modern programming languages**.”
+   - This is not exactly library learning from a corpus, but rather **using existing powerful primitives as a foundation** and then learning specialized languages or abstractions on top.
+
+### Main differences
+- **Iterative library learning** builds abstractions **hierarchically over multiple rounds**.
+- **Large-scale corpus learning** learns abstractions **from a big corpus in one go**.
+- **General library learning** is the broader idea of extracting reusable features to improve reuse and interface quality.
+- **Learning on top of built-in resources** starts from **pre-existing powerful libraries/systems**, rather than deriving everything from a corpus.
+
+If you want, I can also turn this into a short comparison table.
+------------------------------------------------------------------------
+[2026-09-08T20:38:44] E5-out-of-corpus: What is the current market capitalization of Nvidia?
+expected=pass
+verdict=pass
+distinct_sources=3
+retrieved=[('DBLP_conf_snapl_2015.pdf#p235#c13111', np.float64(0.5)), ('DBLP_journals_corr_abs-2501-02825.pdf#p32#c19370', 0.5), ('DBLP_conf_snapl_2015.pdf#p184#c12890', np.float64(0.37553704264749055)), ('DBLP_conf_cav_BraggFRS21.pdf#p440#c2170', np.float64(0.34947502897826765)), ('DBLP_conf_cav_BraggFRS21.pdf#p279#c1622', 0.19600794406919075)]
+answer=The provided documents do not contain Nvidia’s current market capitalization. They mention an “Nvidia GeForce RTX 2080 Ti GPU” and “NVIDIA RTX 6000 Ada Generation GPUs,” but no market-cap data.
+------------------------------------------------------------------------
+[2026-09-08T20:38:44] SUMMARY
+pass_rate=3/5 predicted=5/5
+------------------------------------------------------------------------
+[2026-09-08T20:38:47] FRAMEWORK VALIDATION
+correct answer: verdict=pass expected=PASS
+------------------------------------------------------------------------
+[2026-09-08T20:38:48] FRAMEWORK VALIDATION
+fabricated answer: verdict=fail expected=FAIL
+------------------------------------------------------------------------
+[2026-09-08T20:38:49] FRAMEWORK VALIDATION
+vague but not false: verdict=fail expected=FAIL
+------------------------------------------------------------------------
+[2026-09-08T20:38:49] PARSER CHECK
+substring parser vs first-token parser compared
+------------------------------------------------------------------------

@@ -1,0 +1,423 @@
+[2026-09-16T23:46:11] MODE=both  QUERY=Which different approaches to learning reusable libraries of program abstractions appear in this corpus, and how do they differ from each other?
+primary=['DBLP_journals_corr_abs-2503-22625.pdf#p18#c19657', 'DBLP_conf_icml_GuJLSESS25.pdf#p39#c9213', 'DBLP_journals_pacmpl_BowersOWGTES23.pdf#p2#c21701']
+context=[('DBLP_conf_icml_GuRLSS024.pdf#p3#c9355', 'cites from DBLP_journals_corr_abs-2503-'), ('DBLP_journals_corr_abs-2401-03065.pdf#p4#c18492', 'cites from DBLP_journals_corr_abs-2503-')]
+distinct_papers=5
+answer=The corpus mentions two main approaches to learning reusable libraries of program abstractions:
+
+1. **Searching for common tree fragments**
+   - One approach is “to search for common tree fragments across a corpus of programs, which can be introduced as new abstractions.”
+   - This is described as a popular library-learning method in program synthesis.
+
+2. **Reasoning about variable bindings to infer well-formed functions**
+   - Another approach, from Ellis et al. 2021, “introduces an algorithm that reasons about variable bindings to abstract out well-formed functions instead of just tree fragments.”
+   - So this method goes beyond surface-level repeated syntax and tries to learn abstractions that respect function structure and binding.
+
+How they differ:
+- The **tree-fragment** approach learns abstractions by reusing repeated syntactic pieces.
+- The **variable-binding / well-formed-function** approach learns more structured abstractions, aiming for actual functions rather than only fragments of program trees.
+
+The corpus also adds a broader design point: a useful library should not only maximize reuse, but also “prioritize ease of use and maintainability, as well as be robust and adaptable to future extensions.”
+--------------------------------------------------------------------------
+[2026-09-16T23:58:38] MODE=baseline  QUERY=Which different approaches to learning reusable libraries of program abstractions appear in this corpus, and how do they differ from each other?
+primary=['DBLP_journals_pacmpl_BowersOWGTES23.pdf#p6#c21718', 'DBLP_journals_corr_abs-2503-22625.pdf#p18#c19657', 'DBLP_journals_pacmpl_BowersOWGTES23.pdf#p20#c21781', 'DBLP_conf_icml_GuJLSESS25.pdf#p39#c9213', 'DBLP_journals_corr_abs-2006-08381.pdf#p18#c17705']
+context=[]
+distinct_papers=4
+answer=The corpus mentions a few related but distinct approaches to learning reusable libraries of program abstractions:
+
+1. **Iterative library learning / iterative compression-and-rewriting**
+   - In *Stitch*, the idea is to “run this algorithm for multiple iterations on a corpus of programs to build up an entire library of abstractions.”
+   - The process is iterative: “At each iteration, Stitch discovers a single abstraction that is used to rewrite the entire corpus of programs.”
+   - The result is a hierarchy: “Successive iterations therefore yield abstractions that build hierarchically on one another.”
+
+2. **Traditional corpus-based library learning**
+   - The same Stitch paper contrasts its larger-scale setting with earlier work by Ellis et al. 2021:
+   - It describes “a more traditional learning setting, in which we aim to learn libraries of abstractions from a large corpus of existing programs all at once.”
+   - So this approach is not necessarily iterative in the same sense; it learns abstractions from a corpus directly, as a batch process.
+
+3. **Library learning in API/design contexts**
+   - Another paper frames library learning more broadly as “designing APIs and libraries” so they provide “useful abstractions.”
+   - Here the goal is not just reuse: “a truly effective library must also prioritize ease of use and maintainability, as well as be robust and adaptable to future extensions.”
+   - This differs from the synthesis-oriented papers because it emphasizes software engineering qualities of libraries, not just compression or program reuse.
+
+4. **Learning specialized languages on top of broad built-in resources**
+   - One corpus paper on program synthesis says they “used learning to grow specialized languages atop these foundations,” after starting with “generically powerful sets of control flow operators, higher-order functions, and types.”
+   - This is a different style of abstraction learning: instead of extracting abstractions from a program corpus, it learns new language features on top of an already rich base.
+   - The same paper suggests a future in which systems are initialized with “even richer yet broadly applicable resources,” such as simulation engines or standard libraries.
+
+### Main differences
+- **Where abstractions come from**:
+  - Iterative Stitch: learned one at a time from the corpus.
+  - Traditional library learning: learned from a corpus “all at once.”
+  - API/library design framing: abstractions are judged by human usability and maintainability.
+  - Program synthesis approach: abstractions are grown on top of a pre-existing expressive foundation.
+
+- **What the goal is**:
+  - Stitch and Ellis-style library learning focus on “code reuse” and compression.
+  - The API/design framing expands the goal to include “ease of use and maintainability.”
+  - The synthesis paper emphasizes building more human-like AI by learning atop rich built-in knowledge.
+
+If you want, I can also turn this into a side-by-side comparison table.
+--------------------------------------------------------------------------
+[2026-09-16T23:58:44] MODE=decompose  QUERY=Which different approaches to learning reusable libraries of program abstractions appear in this corpus, and how do they differ from each other?
+primary=['DBLP_journals_corr_abs-2503-22625.pdf#p18#c19657', 'DBLP_conf_icml_GuJLSESS25.pdf#p39#c9213', 'DBLP_journals_pacmpl_BowersOWGTES23.pdf#p2#c21703', 'DBLP_conf_nips_EllisMSST18.pdf#p9#c10289', 'DBLP_journals_pacmpl_BowersOWGTES23.pdf#p2#c21701']
+context=[]
+distinct_papers=4
+answer=The corpus mentions several approaches to learning reusable libraries of program abstractions:
+
+1. **Tree-fragment-based library learning**
+   - One “popular approach” is “to search for common tree fragments across a corpus of programs, which can be introduced as new abstractions.”
+   - This is described as learning abstractions from repeated syntactic fragments in programs.
+
+2. **Deductive refactoring-based library learning**
+   - The paper contrasts this with Ellis et al. 2021, which “takes a deductive approach based on refactoring the corpus with rewrite rules.”
+   - In this style, abstractions are derived by transforming existing programs using rewrite rules rather than directly synthesizing them.
+
+3. **Well-formed function abstraction learning**
+   - Ellis et al. 2021 is also described as “reason[ing] about variable bindings to abstract out well-formed functions instead of just tree fragments.”
+   - So this differs from fragment mining by focusing on function-level abstractions that are semantically well-formed.
+
+4. **Corpus-guided top-down synthesis**
+   - Bowers et al. 2023 introduce “an alternate approach to library learning.”
+   - “Instead of taking a deductive approach based on refactoring the corpus with rewrite rules, we directly synthesize abstractions.”
+   - Their method is called “corpus-guided top-down synthesis,” where “top-down search can be guided precisely towards discovering shared abstractions over a set of existing training programs.”
+
+5. **Reusable subroutine invention via program induction**
+   - Ellis et al. 2018 discusses “inventing new subroutines for program induction,” aiming to “learn new, reusable subroutines that are shared in a multitask setting.”
+   - This is related in spirit, but it is framed as program induction and “inducing reusable subroutines,” rather than library learning over a corpus of programs.
+
+### How they differ
+- **Tree-fragment methods** focus on repeated syntactic pieces.
+- **Ellis et al. 2021-style methods** go beyond fragments by accounting for **variable bindings** and learning **well-formed functions**.
+- **Refactoring/deductive methods** derive abstractions by rewriting the corpus.
+- **Corpus-guided top-down synthesis** directly synthesizes abstractions, using the corpus to guide search rather than refactoring programs first.
+- **Program-induction/subroutine invention** targets reusable components in a multitask learning setting, which is related but not exactly the same framing as corpus-based library learning.
+
+If you want, I can also turn this into a compact comparison table.
+--------------------------------------------------------------------------
+[2026-09-16T23:58:50] MODE=graph  QUERY=Which different approaches to learning reusable libraries of program abstractions appear in this corpus, and how do they differ from each other?
+primary=['DBLP_journals_pacmpl_BowersOWGTES23.pdf#p6#c21718', 'DBLP_journals_corr_abs-2503-22625.pdf#p18#c19657', 'DBLP_journals_pacmpl_BowersOWGTES23.pdf#p20#c21781']
+context=[('DBLP_journals_corr_abs-2006-08381.pdf#p7#c17663', 'cites from DBLP_journals_pacmpl_BowersO'), ('DBLP_journals_corr_abs-2206-06164.pdf#p25#c18182', 'similar_to from DBLP_journals_pacmpl_BowersO')]
+distinct_papers=4
+answer=The corpus mentions a few different approaches to learning reusable libraries of program abstractions, but it does **not** fully spell out all of them in detail. From the provided documents, these are the main ones:
+
+1. **Iterative corpus-guided abstraction learning (Stitch)**
+   - The PACMPL paper says Stitch can be run “for multiple iterations on a corpus of programs to build up an entire library of abstractions.”
+   - It describes this as **interleaving compression and rewriting**: “At each iteration, Stitch discovers a single abstraction that is used to rewrite the entire corpus of programs.”
+   - The result is a **hierarchical library**, where “Successive iterations therefore yield abstractions that build hierarchically on one another.”
+
+2. **Traditional library learning from a large corpus all at once**
+   - The same Stitch paper contrasts its iterative setting with “a more traditional learning setting, in which we aim to learn libraries of abstractions from a large corpus of existing programs all at once.”
+   - So this approach is more **one-shot corpus learning** rather than building the library incrementally.
+
+3. **Sleep-phase / wake-sleep concept learning over programs**
+   - The related context from the abstraction paper describes an approach where the model stores programs and in the “abstraction sleep phase” it “grows its library of concepts.”
+   - Its goal is “discovering specialized abstractions that allow it to easily express solutions to the tasks at hand.”
+   - The criterion is compression-oriented: “the abstraction sleep objective ... is equivalent to minimizing the description length of the library ... plus the description lengths of refactorings of programs found during waking.”
+   - This differs from Stitch’s description in that it is framed as a **probabilistic/wake-sleep learning objective** with marginalization over a beam of programs, rather than iterative top-down search over a corpus.
+
+4. **Library learning as abstraction extraction for reuse and APIs**
+   - The abstraction survey text says library learning is about “deriv[ing] a library of useful abstractions from a corpus of programs by abstracting out common reusable features.”
+   - It also emphasizes that a useful library should support “code reuse” but also “ease of use and maintainability,” and be “robust and adaptable to future extensions.”
+   - This is more of a **high-level characterization** of the goal of library learning than a specific algorithm.
+
+### Key differences
+- **Iterative vs. one-shot**: Stitch’s library learning is explicitly iterative and hierarchical, while another setting learns from the corpus “all at once.”
+- **Search/compression vs. probabilistic sleep-wake learning**: Stitch uses top-down search plus rewriting/compression; the related abstraction paper uses a sleep-phase objective based on description length and beam-marginalized programs.
+- **Goal focus**: Some descriptions emphasize pure compression and reuse, while the survey text stresses that real libraries also need usability, maintainability, robustness, and extensibility.
+
+If you want, I can also turn this into a **side-by-side comparison table**.
+--------------------------------------------------------------------------
+[2026-09-16T23:59:01] MODE=both  QUERY=Which different approaches to learning reusable libraries of program abstractions appear in this corpus, and how do they differ from each other?
+primary=['DBLP_conf_nips_EllisMSST18.pdf#p9#c10289', 'DBLP_conf_icml_AletLKNSLKT21.pdf#p3#c8856', 'DBLP_journals_corr_abs-2006-08381.pdf#p13#c17687']
+context=[('DBLP_conf_nips_EllisRST18.pdf#p9#c10332', 'cites from DBLP_conf_nips_EllisMSST18'), ('DBLP_journals_corr_EllisRST17.pdf#p11#c20108', 'cites from DBLP_conf_nips_EllisMSST18')]
+distinct_papers=5
+answer=The corpus mentions several approaches to learning reusable libraries of program abstractions, especially in the context of program induction and synthesis:
+
+1. **EC algorithm / invented subroutines**
+   - The NIPS paper says many program induction methods aim to “learn new, reusable subroutines” in a multitask setting, “most prominently the EC algorithm.”
+   - It describes their own contribution as extending this idea in two ways: “we propose a new algorithm for inducing reusable subroutines, based on Fragment Grammars,” and “we show how to combine these techniques with bottom-up neural recognition models.”
+
+2. **Fragment Grammars**
+   - This is the specific mechanism proposed in the paper for inducing reusable subroutines.
+   - The paper contrasts it with prior subroutine-invention work by presenting it as a new algorithmic basis for library learning.
+
+3. **Bayesian Program Learning / Bayesian program merging**
+   - The paper explicitly places its work under “Bayesian Program Learning (BPL).”
+   - It also cites “Bayesian program merging” as a related idea.
+   - Compared with the fragment-grammar approach, this framing emphasizes probabilistic learning over program structures and libraries.
+
+4. **Predicate invention in Inductive Logic Programming**
+   - This is another cited approach to learning reusable abstractions.
+   - Unlike subroutine induction in functional/program synthesis, predicate invention is rooted in logical representations and learns reusable predicates rather than code fragments.
+
+5. **MagicHaskeller**
+   - Mentioned as another related instance of the idea.
+   - The corpus does not explain it in detail, but it is grouped with approaches that learn reusable program components/subroutines.
+
+6. **Schmidhuber’s OOPS model**
+   - Cited as an allied idea in program induction.
+   - In the related-work text, the authors say their search-based approach draws “theoretical underpinnings from Levin search and Schmidhuber’s OOPS model.”
+   - So OOPS is another way of building reusable program structures, but the corpus does not give a direct comparison beyond that.
+
+7. **Mining “code idioms” from programs**
+   - The paper notes “closely allied ideas have been applied to mining ‘code idioms’ from programs.”
+   - This differs from subroutine invention in that it is framed as extracting recurring idiomatic code patterns from existing programs.
+
+8. **DreamCoder-style library learning with a recognition model**
+   - A later paper says that across domains, “deeper libraries correlate well with solving more tasks,” and that “the presence of a learned recognition model leads to better performance at all depths.”
+   - It further says the recognition model “bootstraps ‘better’ libraries,” where better means “both the depth and breadth of the learned symbolic representation.”
+   - This differs from pure symbolic library learning by adding a neural recognition model that helps guide and improve the learned library.
+
+### Main differences across these approaches
+- **Representation**
+  - Some learn **subroutines/program fragments** (EC, Fragment Grammars, MagicHaskeller, Bayesian program merging).
+  - Some learn **logical predicates** (predicate invention).
+  - Some learn **code idioms** from existing code.
+  - Some combine symbolic learning with a **neural recognition model** (DreamCoder-style approach).
+
+- **Learning strategy**
+  - Some are **symbolic/probabilistic** (Fragment Grammars, BPL, Bayesian program merging).
+  - Some are **search-based** or grounded in search theory (OOPS, Levin search-related work).
+  - Some use **neural guidance** to improve library learning (the recognition model in DreamCoder).
+
+- **Scope**
+  - The NIPS paper focuses on inducing reusable subroutines and combining that with neural recognition.
+  - The ICML paper focuses more on scaling program induction benchmarks rather than a new library-learning method, but the broader corpus shows that learned libraries become more effective when paired with a recognition model.
+
+If you want, I can also turn this into a compact comparison table with columns for **method**, **what it learns**, and **how it differs**.
+--------------------------------------------------------------------------
+[2026-09-17T00:10:42] MODE=baseline  QUERY=How can a programmer leave gaps in their code for the computer to fill in automatically?
+primary=['DBLP_conf_tacas_InalaPQLS17.pdf#p527#c15519', 'DBLP_journals_corr_abs-1906-04604.pdf#p1#c17506', 'DBLP_conf_snapl_2015.pdf#p284#c13320', 'DBLP_journals_corr_KoppelS17.pdf#p7#c20511', 'DBLP_journals_pacmpl_KoppelPS18.pdf#p7#c22391']
+context=[]
+distinct_papers=5
+answer=The documents indicate that a programmer can do this by using an **incremental parametric syntax** with multiple mutually isomorphic representations, where the user “**only writes code to translate between removed node types and their generic equivalents**” and the rest is “**generated ... automatically**” using “**the Template Haskell code-generation engine**” ([KoppelS17]/[KoppelPS18]). In other words, the programmer can create a partially specified program and let the system fill in the missing pieces through generated translations and representations.
+
+A related motivation from the coding paper is that programming often involves “**trying out a piece of code, executing it to see if you’re still on the right track, and trying out something different if the current execution looks buggy**,” suggesting systems that support writing code in stages and assessing partial programs ([abs-1906-04604]).
+--------------------------------------------------------------------------
+[2026-09-17T00:10:46] MODE=decompose  QUERY=How can a programmer leave gaps in their code for the computer to fill in automatically?
+primary=['DBLP_conf_icml_GuJLSESS25.pdf#p30#c9159', 'DBLP_conf_tacas_InalaPQLS17.pdf#p321#c14805', 'DBLP_journals_corr_abs-1204-1751.pdf#p10#c16307', 'DBLP_journals_corr_InalaQLS15.pdf#p7#c20387', 'DBLP_conf_tacas_InalaPQLS17.pdf#p278#c14655']
+context=[]
+distinct_papers=4
+answer=A programmer can leave **gaps** by writing a **partial program** or **template program** that contains **holes** or **template parameters** for the missing pieces.
+
+Relevant descriptions from the documents:
+
+- “many practical synthesis techniques operate on partially-complete programs, **filling in well-structured gaps**”
+- “A synthesis template expresses the shape of program constructs, but includes **holes** (sometimes called template parameters)”
+- SyntRec likewise starts from a user-written program that can contain “**PSCs, choices and holes**” and then uses synthesis to produce a complete program.
+
+So, the idea is to write the code structure you know, and mark the unknown parts as holes; the synthesis system then automatically fills them in.
+--------------------------------------------------------------------------
+[2026-09-17T00:10:50] MODE=graph  QUERY=How can a programmer leave gaps in their code for the computer to fill in automatically?
+primary=['DBLP_conf_tacas_InalaPQLS17.pdf#p527#c15519', 'DBLP_journals_corr_abs-1906-04604.pdf#p1#c17506', 'DBLP_conf_snapl_2015.pdf#p284#c13320']
+context=[('DBLP_conf_icml_PuMSK18.pdf#p5#c9744', 'cites from DBLP_journals_corr_abs-1906-'), ('DBLP_journals_corr_abs-1711-03243.pdf#p5#c16638', 'cites from DBLP_journals_corr_abs-1906-')]
+distinct_papers=5
+answer=The documents do **not** directly answer how a programmer can leave gaps in code for automatic completion.
+
+The closest related document says that programming systems may need to support a workflow of “**trying out a piece of code, executing it to see if you’re still on the right track, and trying out something different if the current execution looks buggy**,” and that “**designing systems with the ability to effectively transition between states of writing, executing, and assessing the code may prove crucial**” [DBLP_journals_corr_abs-1906-04604.pdf#p1#c17506].
+
+But none of the provided documents explain a specific mechanism for leaving holes or gaps for the computer to fill in automatically.
+--------------------------------------------------------------------------
+[2026-09-17T00:10:57] MODE=both  QUERY=How can a programmer leave gaps in their code for the computer to fill in automatically?
+primary=['DBLP_conf_tacas_InalaPQLS17.pdf#p278#c14655', 'DBLP_conf_tacas_InalaPQLS17.pdf#p321#c14805', 'DBLP_journals_corr_abs-1204-1751.pdf#p10#c16307']
+context=[('DBLP_conf_cav_JeonQSF15.pdf#p11#c5880', 'cites from DBLP_journals_corr_abs-1204-'), ('DBLP_conf_nips_EllisST16.pdf#p1#c10384', 'cites from DBLP_journals_corr_abs-1204-')]
+distinct_papers=4
+answer=A programmer can do this by writing a **partial program** or **template program** with **holes** for missing pieces.
+
+The papers describe this as follows:
+
+- “**partial programs, filling in well-structured gaps**”
+- “A synthesis template expresses the shape of program constructs, but includes **holes** (sometimes called template parameters)”
+- “We refer to a program containing such templates as a **template program**”
+
+So the basic idea is: the programmer writes the structure of the code and leaves placeholders, and a synthesis system automatically fills those placeholders in.
+--------------------------------------------------------------------------
+[2026-09-18T11:53:32] MODE=baseline  QUERY=How can a programmer leave gaps in their code for the computer to fill in automatically?
+primary=['DBLP_conf_tacas_InalaPQLS17.pdf#p527#c15519', 'DBLP_journals_corr_abs-1906-04604.pdf#p1#c17506', 'DBLP_conf_snapl_2015.pdf#p284#c13320', 'DBLP_journals_corr_KoppelS17.pdf#p7#c20511', 'DBLP_journals_pacmpl_KoppelPS18.pdf#p7#c22391']
+context=[]
+distinct_papers=5
+answer=The documents do not directly answer this question in a general “code synthesis” sense. The closest relevant description is that a programmer can use an **incremental parametric syntax** where the system generates multiple representations of the code and the programmer only writes translations for the parts that change:
+
+- “**the user only writes code to translate between removed node types and their generic equivalents**”
+- and the definitions are “**generated completely automatically, using the Template Haskell code-generation engine**”
+
+So, from the provided text, the way to “leave gaps” is not described as a literal hole-filling language feature, but as a setup where **parts of the AST/syntax are generated automatically and the programmer supplies only the missing translations or special cases**.
+--------------------------------------------------------------------------
+[2026-09-18T11:53:37] MODE=decompose  QUERY=How can a programmer leave gaps in their code for the computer to fill in automatically?
+primary=['DBLP_conf_tacas_InalaPQLS17.pdf#p321#c14805', 'DBLP_journals_corr_abs-2503-22625.pdf#p75#c19890', 'DBLP_journals_corr_JeonQFS15.pdf#p4#c20463', 'DBLP_conf_icml_GuJLSESS25.pdf#p30#c9159', 'DBLP_conf_sigsoft_JeonQFS15.pdf#p4#c12080']
+context=[]
+distinct_papers=5
+answer=A programmer can use a **template program** or **program sketch** with **holes** left for the system to fill.
+
+The TACAS paper says that synthesis techniques often work on “**partially-complete programs, filling in well-structured gaps**,” and that “**A synthesis template expresses the shape of program constructs, but includes holes (sometimes called template parameters)**.” It further says: “**We refer to a program containing such templates as a template program**” and these holes can be instantiated automatically.
+
+So, the basic idea is to write code with placeholders, and let the synthesis tool fill them in automatically.
+--------------------------------------------------------------------------
+[2026-09-18T11:53:42] MODE=graph  QUERY=How can a programmer leave gaps in their code for the computer to fill in automatically?
+primary=['DBLP_conf_tacas_InalaPQLS17.pdf#p527#c15519', 'DBLP_journals_corr_abs-1906-04604.pdf#p1#c17506', 'DBLP_conf_snapl_2015.pdf#p284#c13320']
+context=[('DBLP_conf_icml_PuMSK18.pdf#p5#c9744', 'cites from DBLP_journals_corr_abs-1906-'), ('DBLP_journals_corr_abs-1711-03243.pdf#p5#c16638', 'cites from DBLP_journals_corr_abs-1906-')]
+distinct_papers=5
+answer=The provided documents do not directly answer that question.
+
+The closest relevant idea is from the program synthesis paper, which says that to build systems that automatically write large programs, they may need to support “the ability to execute the partially-written code” and “transition between states of writing, executing, and assessing the code.” But it does not explain a specific method for “leaving gaps” in code for the computer to fill in automatically.
+
+If you want, I can help infer the likely intended answer from the related program synthesis context, but strictly from these documents, the mechanism is not specified.
+--------------------------------------------------------------------------
+[2026-09-18T11:53:49] MODE=both  QUERY=How can a programmer leave gaps in their code for the computer to fill in automatically?
+primary=['DBLP_journals_corr_abs-1204-1751.pdf#p10#c16307', 'DBLP_journals_fmsd_JeonQSF17.pdf#p12#c21259', 'DBLP_conf_iclr_NyePBATS21.pdf#p2#c8611']
+context=[('DBLP_conf_cav_JeonQSF15.pdf#p1#c5841', 'cites from DBLP_journals_corr_abs-1204-'), ('DBLP_conf_nips_EllisST16.pdf#p8#c10415', 'cites from DBLP_journals_corr_abs-1204-')]
+distinct_papers=5
+answer=A programmer can do this by writing a **partial program** or **template** with **unknowns/holes** left in place for the system to synthesize.
+
+From the papers:
+
+- S KETCH “**takes a partial program and a reference implementation as input and uses constraint-based reasoning to synthesize a complete program**” and, in the setup described here, “**we use the student’s solution as the template program and teacher’s solution as the reference implementation**.”
+- Another paper describes these unknowns explicitly as “**holes**,” noting that “**Holes are named by prefixing their unique id with H__**.”
+
+So the basic idea is: **leave placeholders (holes) in the code**, provide a sketch/template of the program, and let the synthesis tool automatically fill in the missing parts.
+--------------------------------------------------------------------------
+[2026-09-18T12:06:13] MODE=baseline  QUERY=Which different approaches to learning reusable libraries of program abstractions appear in this corpus, and how do they differ from each other?
+primary=['DBLP_journals_pacmpl_BowersOWGTES23.pdf#p6#c21718', 'DBLP_journals_corr_abs-2503-22625.pdf#p18#c19657', 'DBLP_journals_pacmpl_BowersOWGTES23.pdf#p20#c21781', 'DBLP_conf_icml_GuJLSESS25.pdf#p39#c9213', 'DBLP_journals_corr_abs-2006-08381.pdf#p18#c17705']
+context=[]
+distinct_papers=4
+answer=The corpus mentions a few related but distinct approaches to learning reusable libraries of program abstractions:
+
+1. **Iterative library learning / compression-and-rewriting**
+   - In Stitch, library learning is done by repeatedly discovering one abstraction at a time and rewriting the corpus with it:  
+     > “we can easily run this algorithm for multiple iterations on a corpus of programs to build up an entire library of abstractions”  
+     > “interleaves compression and rewriting”  
+     > “At each iteration, Stitch discovers a single abstraction that is used to rewrite the entire corpus of programs.”
+   - This means abstractions are learned **hierarchically**, with later abstractions building on earlier ones.
+
+2. **Large-scale corpus library learning**
+   - Another approach is to learn abstractions from a **large corpus of existing programs all at once** rather than from short programs produced during iterative synthesis:  
+     > “we aim to learn libraries of abstractions from a large corpus of existing programs all at once.”
+   - The text contrasts this with earlier settings that used “relatively small corpora of short programs.”
+
+3. **Traditional library learning focused on code reuse**
+   - The related ICML paper summarizes the traditional view as deriving “a library of useful abstractions from a corpus of programs by abstracting out common reusable features.”
+   - It notes that this literature has “focused primarily on code reuse.”
+
+4. **A broader, more design-oriented view of library learning**
+   - The same paper argues that a truly effective library should not only support reuse, but also:  
+     > “prioritize ease of use and maintainability, as well as be robust and adaptable to future extensions.”
+   - So this approach treats library learning as more than compression or reuse; it is about API quality and future usability too.
+
+5. **Learning specialized languages atop broadly applicable foundations**
+   - Another paper describes a related strategy of starting with “relatively spartan but generically powerful sets” of primitives, then using learning to “grow specialized languages atop these foundations.”
+   - This differs from directly extracting abstractions from a corpus: it emphasizes **building on built-in, broadly useful structure** rather than only mining patterns from existing programs.
+
+### Main differences
+- **Iterative Stitch-style learning**: learns abstractions one-by-one, rewriting the corpus after each step.
+- **Large-scale corpus learning**: learns from a big existing dataset in one broad learning setting.
+- **Traditional library learning**: mainly targets **code reuse**.
+- **Broader API/library design view**: also values **ease of use, maintainability, robustness, and extensibility**.
+- **Foundation-plus-specialization approach**: starts from general-purpose primitives and learns specialized constructs on top.
+
+If you want, I can also turn this into a small comparison table.
+--------------------------------------------------------------------------
+[2026-09-18T12:06:19] MODE=decompose  QUERY=Which different approaches to learning reusable libraries of program abstractions appear in this corpus, and how do they differ from each other?
+primary=['DBLP_journals_corr_abs-2503-22625.pdf#p18#c19657', 'DBLP_conf_icml_GuJLSESS25.pdf#p39#c9213', 'DBLP_journals_pacmpl_BowersOWGTES23.pdf#p6#c21718', 'DBLP_journals_pacmpl_BowersOWGTES23.pdf#p2#c21703', 'DBLP_journals_pacmpl_BowersOWGTES23.pdf#p2#c21701']
+context=[]
+distinct_papers=3
+answer=The corpus mentions at least three approaches to learning reusable libraries of program abstractions:
+
+1. **Searching for common tree fragments**
+   - One “popular approach to library learning is to search for common tree fragments across a corpus of programs, which can be introduced as new abstractions.”
+   - This is a fairly syntactic, fragment-based method: it looks for repeated subtrees/patterns and turns them into abstractions.
+
+2. **Deductive refactoring with rewrite rules**
+   - The paper contrasts this with “a deductive approach based on refactoring the corpus with rewrite rules.”
+   - In this style, abstractions are derived indirectly by rewriting existing programs to factor out shared structure, rather than synthesizing abstractions directly.
+
+3. **Corpus-guided top-down synthesis**
+   - Bowers et al. describe “an alternate approach to library learning” called “corpus-guided top-down synthesis.”
+   - They say that “instead of taking a deductive approach based on refactoring the corpus with rewrite rules, we directly synthesize abstractions.”
+   - Their method guides top-down search using “syntactic comparisons between a partially constructed abstraction and the set of training programs,” aiming to discover “shared abstractions over a set of existing training programs.”
+
+How they differ:
+- **Tree-fragment search** focuses on repeated syntactic pieces.
+- **Deductive rewrite-based learning** starts from the corpus and refactors it using rules.
+- **Corpus-guided top-down synthesis** builds abstractions directly, using the corpus as guidance during search rather than first refactoring programs.
+
+The corpus also emphasizes that effective libraries should not only support code reuse, but also “ease of use and maintainability,” and be “robust and adaptable to future extensions.”
+--------------------------------------------------------------------------
+[2026-09-18T12:06:25] MODE=graph  QUERY=Which different approaches to learning reusable libraries of program abstractions appear in this corpus, and how do they differ from each other?
+primary=['DBLP_journals_pacmpl_BowersOWGTES23.pdf#p6#c21718', 'DBLP_journals_corr_abs-2503-22625.pdf#p18#c19657', 'DBLP_journals_pacmpl_BowersOWGTES23.pdf#p20#c21781']
+context=[('DBLP_journals_corr_abs-2006-08381.pdf#p7#c17663', 'cites from DBLP_journals_pacmpl_BowersO'), ('DBLP_journals_corr_abs-2206-06164.pdf#p25#c18182', 'similar_to from DBLP_journals_pacmpl_BowersO')]
+distinct_papers=4
+answer=The corpus mentions at least two related but different approaches to learning reusable libraries of program abstractions:
+
+1. **Iterative corpus-guided abstraction learning / library growth**
+   - In *Stitch*, the system can run the top-down search algorithm **multiple times on a corpus of programs** to “build up an entire library of abstractions.”
+   - The key idea is that **“At each iteration, Stitch discovers a single abstraction that is used to rewrite the entire corpus of programs.”**
+   - This is an **iterative compression-and-rewriting** process: successive abstractions “build hierarchically on one another,” so programs become increasingly compact.
+   - This is described as **iterated learning** over a corpus, where each round adds one abstraction to the library.
+
+2. **Large-scale corpus library learning from existing programs all at once**
+   - The paper also describes a **“traditional learning setting”** where the goal is to **“learn libraries of abstractions from a large corpus of existing programs all at once.”**
+   - This differs from the iterative setting because it is not focused on discovering abstractions in a small loop of synthesis and rewriting; instead it aims to learn from a **large existing corpus** in one broader learning experiment.
+   - The corpus used here comes from benchmark datasets in domains like **technical drawings** and **block-tower planning tasks**.
+
+3. **A broader “library learning” perspective focused on useful abstractions**
+   - The related context frames library learning as **“deriv[ing] a library of useful abstractions from a corpus of programs by abstracting out common reusable features.”**
+   - It emphasizes not just code reuse, but also that a good library should prioritize **“ease of use and maintainability,”** and be **“robust and adaptable to future extensions.”**
+   - So this differs from the purely compression-oriented framing by adding design concerns about API usefulness and maintainability.
+
+### Main differences
+- **Iterative Stitch-style learning:** learns **one abstraction per iteration**, rewrites the corpus, and builds a hierarchy of abstractions.
+- **Large-scale traditional learning:** learns from a **large corpus all at once**, rather than via repeated compression rounds.
+- **Broader library-design view:** focuses on abstraction quality beyond reuse, including **usability, maintainability, robustness, and extensibility**.
+
+If you want, I can also turn this into a side-by-side comparison table.
+--------------------------------------------------------------------------
+[2026-09-18T12:06:34] MODE=both  QUERY=Which different approaches to learning reusable libraries of program abstractions appear in this corpus, and how do they differ from each other?
+primary=['DBLP_conf_nips_EllisMSST18.pdf#p9#c10289', 'DBLP_journals_pacmpl_BowersOWGTES23.pdf#p2#c21702', 'DBLP_journals_corr_abs-2006-08381.pdf#p1#c17641']
+context=[('DBLP_conf_nips_EllisRST18.pdf#p9#c10332', 'cites from DBLP_conf_nips_EllisMSST18'), ('DBLP_journals_corr_EllisRST17.pdf#p11#c20108', 'cites from DBLP_conf_nips_EllisMSST18')]
+distinct_papers=5
+answer=The corpus mentions several different approaches to learning reusable libraries or subroutines for program abstraction:
+
+1. **EC algorithm / library learning in a multitask setting**
+   - Ellis et al. describe prior work where the goal is to “**learn new, reusable subroutines that are shared in a multitask setting**.”
+   - They cite the **EC algorithm** as the most prominent example.
+
+2. **Fragment Grammars**
+   - The same paper says they “**propose a new algorithm for inducing reusable subroutines, based on Fragment Grammars**.”
+   - So this is their own alternative to EC-style multitask subroutine learning.
+
+3. **Bayesian program merging**
+   - Also listed as a related idea.
+   - From the corpus, it is mentioned alongside subroutine invention approaches, but no detailed comparison is given beyond being another method for discovering reusable structure.
+
+4. **Predicate invention in Inductive Logic Programming**
+   - Mentioned as another closely allied idea.
+   - This is library-like abstraction discovery in logical form, rather than program fragments in the functional/program synthesis setting.
+
+5. **Mining “code idioms” from programs**
+   - The paper notes that similar ideas have been used to mine “**code idioms**” from programs.
+   - These are reusable patterns extracted from existing code rather than learned as explicit subroutines in a synthesis loop.
+
+6. **Using code idioms for synthesis from natural language**
+   - The corpus says that, concurrently, those idioms were used “**to better synthesize functional programs from natural language**.”
+   - This is more of an application of mined abstractions than a library-learning method itself.
+
+7. **Deductive library learning with semantics-preserving rewrites**
+   - A later paper says Ellis et al. 2021 uses “**a deductive approach to library learning**” that “**uses semantics-preserving rewrite rules to attempt to refactor existing programs to expose shared structure**.”
+   - It differs because it searches over refactorings of existing programs, which is expensive: it must represent and evaluate “**an exponentially large space of proposed refactorings**.”
+
+8. **Dynamic bottom-up refactoring with version spaces**
+   - The same related context says prior work like Ellis et al. 2020/2021 combines “**a dynamic bottom-up approach to refactoring with version spaces**” to search more efficiently over refactored programs.
+   - This is presented as an efficiency improvement over the purely deductive refactoring approach.
+
+9. **Wake-sleep Bayesian program induction / DreamCoder**
+   - The corpus introduces DreamCoder as “**wake-sleep Bayesian program induction**.”
+   - It is a different framing: instead of only deducing libraries from existing programs, it learns in a Bayesian program-induction framework and can “**grow with experience**,” learning to learn more efficiently.
+
+### Main differences
+- **Some methods discover abstractions by refactoring existing programs** using rewrite rules and search over program spaces.
+- **Some learn reusable subroutines directly across tasks** in a multitask setting.
+- **Some mine abstractions from code corpora** as idioms or fragments.
+- **Some operate in a Bayesian/inference-based framework**, where libraries are part of a probabilistic model and are learned to improve future program induction.
+
+If you want, I can also summarize these approaches in a compact comparison table.
+--------------------------------------------------------------------------

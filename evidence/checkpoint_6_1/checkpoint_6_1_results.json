@@ -1,0 +1,114 @@
+{
+  "cost": [
+    {
+      "task": "T1 comparison",
+      "steps": 2,
+      "by_role": {
+        "planner": {
+          "input": 1599,
+          "output": 119,
+          "calls": 2
+        },
+        "answerer": {
+          "input": 1270,
+          "output": 349,
+          "calls": 1
+        }
+      },
+      "total_tokens": 3337,
+      "total_input": 2869,
+      "total_output": 468,
+      "calls": 3,
+      "chunks_gathered": 5,
+      "chunks_used": 5,
+      "clarified": false
+    },
+    {
+      "task": "T2 lineage",
+      "steps": 2,
+      "by_role": {
+        "planner": {
+          "input": 1595,
+          "output": 108,
+          "calls": 2
+        },
+        "answerer": {
+          "input": 1235,
+          "output": 277,
+          "calls": 1
+        }
+      },
+      "total_tokens": 3215,
+      "total_input": 2830,
+      "total_output": 385,
+      "calls": 3,
+      "chunks_gathered": 5,
+      "chunks_used": 5,
+      "clarified": false
+    },
+    {
+      "task": "T3 broad",
+      "steps": 1,
+      "by_role": {
+        "planner": {
+          "input": 655,
+          "output": 103,
+          "calls": 1
+        }
+      },
+      "total_tokens": 758,
+      "total_input": 655,
+      "total_output": 103,
+      "calls": 1,
+      "chunks_gathered": 0,
+      "chunks_used": 0,
+      "clarified": true
+    },
+    {
+      "task": "T4 vocabulary gap",
+      "steps": 2,
+      "by_role": {
+        "planner": {
+          "input": 1670,
+          "output": 109,
+          "calls": 2
+        },
+        "answerer": {
+          "input": 1227,
+          "output": 168,
+          "calls": 1
+        }
+      },
+      "total_tokens": 3174,
+      "total_input": 2897,
+      "total_output": 277,
+      "calls": 3,
+      "chunks_gathered": 5,
+      "chunks_used": 5,
+      "clarified": false
+    },
+    {
+      "task": "T5 out-of-corpus",
+      "steps": 1,
+      "by_role": {
+        "planner": {
+          "input": 654,
+          "output": 41,
+          "calls": 1
+        },
+        "answerer": {
+          "input": 85,
+          "output": 27,
+          "calls": 1
+        }
+      },
+      "total_tokens": 807,
+      "total_input": 739,
+      "total_output": 68,
+      "calls": 2,
+      "chunks_gathered": 0,
+      "chunks_used": 0,
+      "clarified": false
+    }
+  ]
+}

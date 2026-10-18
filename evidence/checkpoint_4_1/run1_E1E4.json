@@ -1,0 +1,86 @@
+{
+  "E1": {
+    "baseline": {
+      "verdicts": [
+        "fail",
+        "pass",
+        "pass",
+        "fail",
+        "pass"
+      ],
+      "pass_rate": 0.6,
+      "completed": 5,
+      "errors": 0,
+      "avg_distinct_papers": 3.0,
+      "sub_queries": []
+    },
+    "both": {
+      "verdicts": [
+        "pass",
+        "pass",
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "pass_rate": 1.0,
+      "completed": 5,
+      "errors": 0,
+      "avg_distinct_papers": 3.8,
+      "sub_queries": [
+        [
+          "storyboard programming definition and core ideas in program synthesis research",
+          "how storyboard programming represents and synthesizes data structure manipulation operations",
+          "examples or case studies of storyboard programming applied to heap, list, tree, or graph data structure updates"
+        ],
+        [
+          "storyboard programming definition in programming languages and end-user development research",
+          "storyboard programming synthesis of data structure manipulations from examples or traces",
+          "mechanism and formal model used by storyboard programming to generate loops, conditionals, and object/collection updates",
+          "applications and limitations of storyboard programming for program synthesis and data structure editing"
+        ]
+      ]
+    }
+  },
+  "E4": {
+    "baseline": {
+      "verdicts": [
+        "fail",
+        "pass",
+        "pass",
+        "pass",
+        "fail"
+      ],
+      "pass_rate": 0.6,
+      "completed": 5,
+      "errors": 0,
+      "avg_distinct_papers": 4.0,
+      "sub_queries": []
+    },
+    "both": {
+      "verdicts": [
+        "pass",
+        "pass",
+        "pass",
+        "pass",
+        "fail"
+      ],
+      "pass_rate": 0.8,
+      "completed": 5,
+      "errors": 0,
+      "avg_distinct_papers": 5.0,
+      "sub_queries": [
+        [
+          "learning reusable libraries of program abstractions in computer science research papers",
+          "methods for inducing program abstractions, APIs, or library components from code corpora",
+          "comparative taxonomy of approaches for library learning, program synthesis, and abstraction discovery"
+        ],
+        [
+          "methods for learning reusable libraries of program abstractions from data or examples in program synthesis and inductive programming",
+          "neural or probabilistic approaches for discovering reusable subroutines, functions, or latent program abstractions in code corpora",
+          "grammar induction, library learning, and hierarchical Bayesian approaches to abstraction discovery and code reuse",
+          "comparative distinctions among abstraction-learning methods, including representation, supervision signal, compositionality, and reuse mechanism"
+        ]
+      ]
+    }
+  }
+}
