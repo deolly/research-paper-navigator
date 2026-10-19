@@ -6,8 +6,8 @@ questions about what the papers say, cites the paper each claim came from, and
 refuses when the corpus does not contain an answer.
 
 Built incrementally across seven checkpoints of the MIT Professional Education
-*Agentic RAG* program. The engineering interest is less in the retrieval stack —
-which is conventional — than in what happened when it was measured: a prompt
+*Agentic RAG* program. The engineering interest is less in the retrieval stack, 
+which is conventional than in what happened when it was measured: a prompt
 injection that the "hardened" prompt made *worse*, a denial-of-service that
 crashed the planner in 30% of trials, and four bugs found in the measuring
 instruments themselves. See [`evidence/README.md`](evidence/README.md).
@@ -21,7 +21,7 @@ keyword search answers badly:
 
 | Question | Why search fails |
 |---|---|
-| "What is a sketch in program synthesis?" | Fine — one paper, one definition. Search handles this. |
+| "What is a sketch in program synthesis?" | Fine - one paper, one definition. Search handles this. |
 | "How does sketching differ from library learning like DreamCoder?" | The answer exists in no single paper. It needs two retrievals and a synthesis. |
 | "What earlier work does Stitch build on, and what did it change?" | Needs the citation relationships between papers, which no amount of text search recovers. |
 
@@ -119,7 +119,7 @@ python navigator.py demo                print the presentation run order
 module's own `main()`, and prints the equivalent raw command, so anything it
 does can be reproduced by hand and the modules stay independently runnable.
 
-Options after the command pass straight through — `python navigator.py security
+Options after the command pass straight through - `python navigator.py security
 --repeat 10 --model openai/gpt-5.4-mini` works, and each underlying script has
 its own `--help`.
 
@@ -144,8 +144,8 @@ weights against a 12-item evaluation set would have fitted noise.
 
 ### The paper graph
 
-Built once and cached. From 153 PDFs, 137 yield usable titles — the other 16 are
-scanned or have mangled text — producing 482 edges:
+Built once and cached. From 153 PDFs, 137 yield usable titles - the other 16 are
+scanned or have mangled text - producing 482 edges:
 
 | Edge type | Count | Built from |
 |---|---|---|
@@ -160,7 +160,7 @@ The graph is what makes lineage questions answerable. `follow_citation` and
 
 At each step the planner sees the question and what has been gathered, then
 emits one action: a tool call, `clarify`, or `answer`. Capped at 4 steps and 5
-chunks. The planner is the expensive component — **62% of all tokens** — and
+chunks. The planner is the expensive component - **62% of all tokens** - and
 the one measurement that mattered most, because it is also the component that
 crashes under attack.
 
@@ -187,11 +187,11 @@ Full detail, with every p-value recomputable from the raw logs, in
 | Measure | Before | After | |
 |---|---|---|---|
 | Fake-source acceptance (`gpt-5.4-nano`) | 20% [11.8–31.8] | 0% [0–11.4] | p = 0.0071 |
-| Planner parse failure under poison | 30% [19.9–42.5] | 0% [0–6.0] | p = 0.0000017 |
+| Planner parse failure under poison | 30% [19.9–42.5] | 0% [0-6.0] | p = 0.0000017 |
 | Sanitizer false positives on benign queries | 4/12 | 0/18 | |
-| Citation validator against labelled cases | — | 7/7 | |
+| Citation validator against labelled cases | - | 7/7 | |
 | Query routing accuracy | 8/12 = 67% | 11/12 = 92% | |
-| Tokens: direct path vs agentic path | — | 1,381 vs 3,312 | 58% saving |
+| Tokens: direct path vs agentic path | - | 1,381 vs 3,312 | 58% saving |
 
 ### What the measurements do not show
 
@@ -226,9 +226,9 @@ For reviewers, in the order I would want them known:
 4. **Both vulnerabilities are specific to the cheapest model.** `gpt-5.4-mini`
    shows 0 compromises on every probe. That is the central tension: the cheap
    model is where the savings are and where the failures are.
-5. **Behaviour is non-deterministic, including correct behaviour.** The same
+5. **Behavior is non-deterministic, including correct behavior.** The same
    vague question produces a clarifying question 6 times in 10 and an answer the
-   other 4 — a 4.5x spread in cost for one input. "0 failures in 30 trials"
+   other 4, a 4.5x spread in cost for one input. "0 failures in 30 trials"
    means the true rate is below 11%, not zero.
 6. **The cost saving has no denominator.** A simple query costs 58% less on the
    direct path. What fraction of real queries are simple was never measured, so
@@ -252,7 +252,7 @@ research papers, roughly 400 MB, and not mine to redistribute.
 the corpus is identifiable.
 
 To run the system, point `CORPUS_DIR` in `.env` at any folder of PDFs. It works
-with a different corpus — results in `evidence/` will not reproduce, but the
+with a different corpus, results in `evidence/` will not reproduce, but the
 offline `selftest` suite still passes, since it tests the safeguards rather than
 the content.
 
