@@ -328,3 +328,24 @@ with. `langchain-core` 1.6.0, `langchain-openai` 1.6.0, `langchain-chroma`
 
 Pinned rather than loose because an unpinned install in six months is a
 different system, and the numbers in `evidence/` would no longer describe it.
+
+
+---
+
+## AI assistance disclosure
+
+AI assistance was used in this capstone. It computed the reported statistics, 
+drafted the README, the evidence documentation, and the presentation slide diagrams.
+
+The author directed the work throughout: defining scope at each checkpoint,
+executing every run, supplying the corpus and course context, and deciding what
+was kept, revised or discarded. Several key decisions were the author's, including
+the addition of the fourth experimental arm that isolated prompt effects from code
+effects and the result that reframed the security findings.
+
+All results reported here come from runs the author executed. Where AI-generated
+analysis conflicted with the recorded data, the data was followed: four measurement
+bugs and three self-authored test sets were identified and corrected during the
+project, and several earlier claims were revised after re-reading the raw logs. The
+author reviewed the code, the measurements and the conclusions, and is responsible
+for the accuracy of what is submitted.
